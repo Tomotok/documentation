@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. Inversions &mdash; tomotok 1.0rc5 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.1. Minimum Fisher Regularization" href="mfr.html" />
+    <link rel="prev" title="3. Installation" href="../install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> tomotok
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">1. Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licence.html">2. Licence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Inversions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mfr.html">4.1. Minimum Fisher Regularization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lame.html">4.2. Linear Algebraic Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bob.html">4.3. BiOrthogonal Basis Decomposition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../auxilia/auxilia.html">5. Auxiliary functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gui/gui.html">6. Graphical User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">7. Glossary</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Api Doc</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.core.html">tomotok.core package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">tomotok.gui package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">tomotok</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>4. Inversions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/inversions/inversions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="inversions">
+<h1>4. Inversions<a class="headerlink" href="#inversions" title="Permalink to this headline">¶</a></h1>
+<p>Inversion methods are independent on the rest of the package. Can be used on any data if required inputs are provided. However, this package can provide these only with assumption of toroidal symmetry and for regularly spaced reconstruction nodes of rectangular in reconstruction plane. This was selected as it is the simplest and most widely used option for reconstructions of tokamak plasma. For more detailed description see for example <a class="reference internal" href="#i1" id="id1">[I1]</a>, which is a nice overview article on tomography of tokamak plasma.</p>
+<p>All methods are using local basis functions and are also referred to as discretisation methods. Currently implemented methods are based on Phillips-Tikhonov regularisation (MFR, LAMe) and biorthogonal basis decomposition (BoB).</p>
+<p>Tomographic inversion uses localised measurements to determine spatial distribution of a physical quantity. In case of tokamak plasma, this quantity is usually an electromagnetic radiation emitted by the plasma. There are various parts of the emission spectrum that are used for inversion, depending on the used detector and the physics to be studied. This radiation could be recorded by metallic foil bolometers, photodiode arrays or even fast visible cameras. All of these systems consist of multiple sensitive elements, here referred to as channels. The tomography problem can be written as</p>
+<div class="math notranslate nohighlight" id="tomobase">
+\[\mathbf{f} = \mathbf{T} \cdot \mathbf{g} \,,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{f}\)</span> is the measured signal, <span class="math notranslate nohighlight">\(\mathbf{g}\)</span> is the discretized emissivity in reconstruction plane and <span class="math notranslate nohighlight">\(\mathbf{T}\)</span> is a geometry matrix describing the spatial distribution of detectors (also called contribution or sensitivity matrix).</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Implemented inversion methods</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mfr.html">4.1. Minimum Fisher Regularization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lame.html">4.2. Linear Algebraic Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bob.html">4.3. BiOrthogonal Basis Decomposition</a></li>
+</ul>
+</div>
+<p class="rubric">References</p>
+<table class="docutils citation" frame="void" id="i1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[I1]</a></td><td><ol class="first last upperalpha simple" start="12">
+<li>Ingesson, B. Alper, B. Peterson and J.-C. Vallet, Chapter 7: Tomography diagnostics: Bolometry and soft-x-ray detection, Fusion Sci. Technol. 53 (2008) 528.</li>
+</ol>
+</td></tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../install.html" class="btn btn-neutral float-left" title="3. Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mfr.html" class="btn btn-neutral float-right" title="4.1. Minimum Fisher Regularization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Tomotok team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

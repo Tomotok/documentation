@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tomotok.core.geometry package &mdash; tomotok 1.0rc5 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="tomotok.core.inversions package" href="tomotok.core.inversions.html" />
+    <link rel="prev" title="tomotok.core package" href="tomotok.core.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> tomotok
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">1. Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licence.html">2. Licence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inversions/inversions.html">4. Inversions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auxilia/auxilia.html">5. Auxiliary functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gui/gui.html">6. Graphical User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">7. Glossary</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Api Doc</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="tomotok.core.html">tomotok.core package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tomotok.core.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">tomotok.core.geometry package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tomotok.core.geometry.analytical">tomotok.core.geometry.analytical module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tomotok.core.geometry.generators">tomotok.core.geometry.generators module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tomotok.core.geometry.grids">tomotok.core.geometry.grids module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tomotok.core.geometry.handler">tomotok.core.geometry.handler module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tomotok.core.geometry.io">tomotok.core.geometry.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tomotok.core.geometry.los">tomotok.core.geometry.los module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tomotok.core.inversions.html">tomotok.core.inversions package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tomotok.core.io.html">tomotok.core.io package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tomotok.core.tools.html">tomotok.core.tools package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tomotok.core.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tomotok.core.html#module-tomotok.core.derivative">tomotok.core.derivative module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tomotok.core.html#module-tomotok.core.phantoms">tomotok.core.phantoms module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tomotok.gui.html">tomotok.gui package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">tomotok</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="tomotok.core.html">tomotok.core package</a> &raquo;</li>
+      <li>tomotok.core.geometry package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/tomotok.core.geometry.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-tomotok.core.geometry">
+<span id="tomotok-core-geometry-package"></span><h1>tomotok.core.geometry package<a class="headerlink" href="#module-tomotok.core.geometry" title="Permalink to this headline">¶</a></h1>
+<p>Contains functions and classes required for geometry matrix computation using single line of sight approximation.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Functions computing contributions of nodes to gmat</li>
+<li>reconstruction grid definition</li>
+<li>line of sight generators for artificial diagnostics</li>
+<li>gmat handler prototype</li>
+</ul>
+</div></blockquote>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tomotok.core.geometry.analytical">
+<span id="tomotok-core-geometry-analytical-module"></span><h2>tomotok.core.geometry.analytical module<a class="headerlink" href="#module-tomotok.core.geometry.analytical" title="Permalink to this headline">¶</a></h2>
+<p>Contains analytical geometry matrix generators. Requires shapely library.</p>
+<p>Shapely module is imported after the function is called so that it is not a hard dependence.
+These are significantly slower than numerical ones, but can use polygons instead of line of sights.</p>
+<dl class="function">
+<dt id="tomotok.core.geometry.analytical.distance_mat">
+<code class="descclassname">tomotok.core.geometry.analytical.</code><code class="descname">distance_mat</code><span class="sig-paren">(</span><em>grid</em>, <em>ph</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.analytical.distance_mat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes distances of pixels centers from pinhole and returns them in a
+matrix form. Indexing starts with bottom row.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
+<blockquote>
+<div><p>class describing reconstruction area</p>
+</div></blockquote>
+<p><strong>ph</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>contains pinhole coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>matrix with pixel center distances from pinhole</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tomotok.core.geometry.analytical.lines_len">
+<code class="descclassname">tomotok.core.geometry.analytical.</code><code class="descname">lines_len</code><span class="sig-paren">(</span><em>lines</em>, <em>grid</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.analytical.lines_len" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes lengths of chords inside whole pixel grid</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>lines</strong> : array of shapely.geometry.LineString</p>
+<blockquote>
+<div><p>Contains central lines from polygon chord</p>
+</div></blockquote>
+<p><strong>grid</strong> : RegularGrid</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>array with lengths of chords in pixel grid</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tomotok.core.geometry.analytical.shapely_line_mat">
+<code class="descclassname">tomotok.core.geometry.analytical.</code><code class="descname">shapely_line_mat</code><span class="sig-paren">(</span><em>xchord</em>, <em>ychord</em>, <em>grid</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.analytical.shapely_line_mat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates geometry matrix using shapely module</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>xchord, ychord</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>chord coordinates with shape (#chords, 2)</p>
+</div></blockquote>
+<p><strong>grid</strong> : RegularGrid</p>
+<blockquote>
+<div><p>class of tomotok module describing reconstruction area</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gmat</strong> : dict</p>
+<blockquote class="last">
+<div><p>holds geometry matrix and grid coordinates</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tomotok.core.geometry.analytical.shapely_poly_mat">
+<code class="descclassname">tomotok.core.geometry.analytical.</code><code class="descname">shapely_poly_mat</code><span class="sig-paren">(</span><em>xchord</em>, <em>ychord</em>, <em>grid</em>, <em>ph=None</em>, <em>w=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.analytical.shapely_poly_mat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates geometry matrix using polygon object from shapely module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>xchord, ychord</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>chord coordinates with shape (#chords, #2) or (#chords, #curve_points)</p>
+</div></blockquote>
+<p><strong>grid</strong> : RegularGrid</p>
+<blockquote>
+<div><p>class of tomotok module describing reconstruction area</p>
+</div></blockquote>
+<p><strong>ph</strong> : numpy.ndarray, optional</p>
+<blockquote>
+<div><p>matrix with pinholes coords with shape (#chords, 2)
+If no values are supplied, start points of chords are used.</p>
+</div></blockquote>
+<p><strong>w</strong> : numpy.ndarray, optional</p>
+<blockquote>
+<div><p>contains widening coefficients for chords with shape (#chords,).
+If no values are supplied, locally predefined value is used.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict</p>
+<blockquote class="last">
+<div><p>geometry matrix and parameters</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tomotok.core.geometry.generators">
+<span id="tomotok-core-geometry-generators-module"></span><h2>tomotok.core.geometry.generators module<a class="headerlink" href="#module-tomotok.core.geometry.generators" title="Permalink to this headline">¶</a></h2>
+<p>Module with numeric generators of geometry matrix.</p>
+<dl class="function">
+<dt id="tomotok.core.geometry.generators.calcam_sparse_line_3d">
+<code class="descclassname">tomotok.core.geometry.generators.</code><code class="descname">calcam_sparse_line_3d</code><span class="sig-paren">(</span><em>pupil</em>, <em>dirs</em>, <em>grid</em>, <em>rmin=0.3</em>, <em>steps=10000</em>, <em>elong=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.generators.calcam_sparse_line_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes geometry matrix from calcam input using sparse_line_3d algorithm.</p>
+<p>Assumes that pupil and dirs coordinates are (x, y, z) = (horizontal, horizontal, vertical)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pupil</strong> : np.ndarray</p>
+<blockquote>
+<div><p>(x, y, z) coordinates of pupil position</p>
+</div></blockquote>
+<p><strong>dirs</strong> : np.ndarray</p>
+<blockquote>
+<div><p>(#rows, #columns, 3) line of sight direction vector coordinates</p>
+</div></blockquote>
+<p><strong>grid</strong> : tomotok.core.geometry.RegularGrid</p>
+<blockquote>
+<div><p>reconstruction grid</p>
+</div></blockquote>
+<p><strong>rmin</strong> : float, optional</p>
+<blockquote>
+<div><p>cut lines of sight if they intersect cylinder with radius of rmin, by default 0.3</p>
+</div></blockquote>
+<p><strong>steps</strong> : int, optional</p>
+<blockquote>
+<div><p>number of steps for numerical integration, by default 10000</p>
+</div></blockquote>
+<p><strong>elong</strong> : float, optional</p>
+<blockquote>
+<div><p>multiplier for direction vectors elongation</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">sparse.csr_matrix</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tomotok.core.geometry.generators.sparse_line_3d">
+<code class="descclassname">tomotok.core.geometry.generators.</code><code class="descname">sparse_line_3d</code><span class="sig-paren">(</span><em>rchord</em>, <em>vchord</em>, <em>grid</em>, <em>ychord=None</em>, <em>step=0.001</em>, <em>rmin=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.generators.sparse_line_3d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes geometry matrix using simple numerical integration algorithm.</p>
+<p>Assumes toroidally symmetric pixels. Optiized version working with sparse matrices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>rchord</strong> : array-like</p>
+<blockquote>
+<div><p>radial coordinates of chord start and end points</p>
+</div></blockquote>
+<p><strong>vchord</strong> : array-like</p>
+<blockquote>
+<div><p>vertical coordinates of chord start and end points</p>
+</div></blockquote>
+<p><strong>grid</strong> : RegularGrid</p>
+<p><strong>ychord</strong> : array_like, optional</p>
+<blockquote>
+<div><p>if specified, 3D Cartesian coordinates are assumed and rchord represents coordinates of x axis</p>
+</div></blockquote>
+<p><strong>step</strong> : float, optional</p>
+<blockquote>
+<div><p>Integration step in meters.</p>
+</div></blockquote>
+<p><strong>rmin</strong> : float, optional</p>
+<blockquote>
+<div><p>Stop iteration if r is lower. Useful when chords may go through central column.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">sparse.csr_matrix</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tomotok.core.geometry.grids">
+<span id="tomotok-core-geometry-grids-module"></span><h2>tomotok.core.geometry.grids module<a class="headerlink" href="#module-tomotok.core.geometry.grids" title="Permalink to this headline">¶</a></h2>
+<p>Contains class describing regularly spaced node grid</p>
+<dl class="class">
+<dt id="tomotok.core.geometry.grids.RegularGrid">
+<em class="property">class </em><code class="descclassname">tomotok.core.geometry.grids.</code><code class="descname">RegularGrid</code><span class="sig-paren">(</span><em>nr</em>, <em>nz</em>, <em>rlims</em>, <em>zlims</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.grids.RegularGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Rectangular grid of regularly spaced rectangles of same size</p>
+<p>Describes rectangular reconstruction grid consisting of regularly spaced toroidally szmmetric nodes
+that have rectangular projection to reconstruction plane.</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="76%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>nr</strong></td>
+<td>(int) number of nodes along r (radial) axis</td>
+</tr>
+<tr class="row-even"><td><strong>nz</strong></td>
+<td>(int) number of nodes along z (vertical) axis</td>
+</tr>
+<tr class="row-odd"><td><strong>nodes_num</strong></td>
+<td>(int) total number of nodes</td>
+</tr>
+<tr class="row-even"><td><strong>rmin, rmax</strong></td>
+<td>(float) limits of r axis</td>
+</tr>
+<tr class="row-odd"><td><strong>zmin, zmax</strong></td>
+<td>(float) limits of z axis</td>
+</tr>
+<tr class="row-even"><td><strong>dr, dz</strong></td>
+<td>(float) dimension of node in r or z axis</td>
+</tr>
+<tr class="row-odd"><td><strong>r_border, z_border</strong></td>
+<td>(numpy.ndarray) arrays containing r resp. z coordinates of node borders</td>
+</tr>
+<tr class="row-even"><td><strong>r_center, z_center</strong></td>
+<td>(numpy.ndarray) arrays containing r resp. z coordinates of node centers</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="attribute">
+<dt id="tomotok.core.geometry.grids.RegularGrid.center_mesh">
+<code class="descname">center_mesh</code><a class="headerlink" href="#tomotok.core.geometry.grids.RegularGrid.center_mesh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="tomotok.core.geometry.grids.RegularGrid.centre">
+<code class="descname">centre</code><a class="headerlink" href="#tomotok.core.geometry.grids.RegularGrid.centre" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="tomotok.core.geometry.grids.RegularGrid.extent">
+<code class="descname">extent</code><a class="headerlink" href="#tomotok.core.geometry.grids.RegularGrid.extent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grid extent in format for use in matplotlib</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">tuple of floats</p>
+<blockquote class="last">
+<div><p>rmin, rmax, zmin, zmax</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.geometry.grids.RegularGrid.is_inside">
+<code class="descname">is_inside</code><span class="sig-paren">(</span><em>r</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.grids.RegularGrid.is_inside" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether node centers are inside given polygon.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>r, z</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Coordinate vectors of polygon</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>Mask matrix for pixgrid with True values for nodes inside polygon</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tomotok.core.geometry.grids.RegularGrid.nodevol">
+<code class="descname">nodevol</code><a class="headerlink" href="#tomotok.core.geometry.grids.RegularGrid.nodevol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Volumes of individual nodes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>matrix with volume values for each node with shape (nz, nr)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tomotok.core.geometry.grids.RegularGrid.shape">
+<code class="descname">shape</code><a class="headerlink" href="#tomotok.core.geometry.grids.RegularGrid.shape" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="tomotok.core.geometry.grids.RegularGrid.size">
+<code class="descname">size</code><a class="headerlink" href="#tomotok.core.geometry.grids.RegularGrid.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tomotok.core.geometry.handler">
+<span id="tomotok-core-geometry-handler-module"></span><h2>tomotok.core.geometry.handler module<a class="headerlink" href="#module-tomotok.core.geometry.handler" title="Permalink to this headline">¶</a></h2>
+<p>Tool for easier handling of geometry matrices. Work in progress.</p>
+<dl class="class">
+<dt id="tomotok.core.geometry.handler.GmatHandler">
+<em class="property">class </em><code class="descclassname">tomotok.core.geometry.handler.</code><code class="descname">GmatHandler</code><span class="sig-paren">(</span><em>diag</em>, <em>grid</em>, <em>gmat=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.handler.GmatHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>[summary]</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>diag</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>grid</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>gmat</strong></td>
+<td>(dict)</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.core.geometry.handler.GmatHandler.compute_sparse_lines">
+<code class="descname">compute_sparse_lines</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.handler.GmatHandler.compute_sparse_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes geometry matrix using single line of sight approx. with numerical algorithm.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.geometry.handler.GmatHandler.fetch">
+<code class="descname">fetch</code><span class="sig-paren">(</span><em>gmat_path=''</em>, <em>gtype='line'</em>, <em>save=False</em>, <em>force_comp=False</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.handler.GmatHandler.fetch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries to load geometry matrix for specified grid from gmat path.
+Computes new matrix if appropriate matrix is not available.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>gmat_path</strong> : str or Path, optional</p>
+<p><strong>gtype</strong> : str, optional</p>
+<blockquote>
+<div><p>Specifies type of geometry matrix to be used. {‘line’, ‘poly’} are supported for computation.</p>
+</div></blockquote>
+<p><strong>save</strong> : bool, optional</p>
+<p><strong>force_comp</strong> : bool, optional</p>
+<blockquote class="last">
+<div><p>Forces computation of geometry matrix</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.geometry.handler.GmatHandler.load_dense">
+<code class="descname">load_dense</code><span class="sig-paren">(</span><em>gpath</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.handler.GmatHandler.load_dense" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads geometry matrix.</p>
+<p>Assumes that gpath is full path to gmat file if filename is omitted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>gpath</strong> : str or Path</p>
+<p><strong>filename</strong> : str, optional</p>
+<blockquote>
+<div><p>name of file containing geometry matrix</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.geometry.handler.GmatHandler.save_dense">
+<code class="descname">save_dense</code><span class="sig-paren">(</span><em>gmat_path</em>, <em>grid=None</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.handler.GmatHandler.save_dense" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves geometry matrix to gmat_path. Either grid or filename must be specified.</p>
+<p>If filename is not specified, the default filename is generated using grid properties.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>gmat_path</strong> : str or Path</p>
+<blockquote>
+<div><p>saving folder</p>
+</div></blockquote>
+<p><strong>grid</strong> : Pixgrid, optional</p>
+<p class="last"><strong>filename</strong> : str, optional</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tomotok.core.geometry.io">
+<span id="tomotok-core-geometry-io-module"></span><h2>tomotok.core.geometry.io module<a class="headerlink" href="#module-tomotok.core.geometry.io" title="Permalink to this headline">¶</a></h2>
+<p>Saving and loading functions for geometry matrices in sparse format using h5py module.</p>
+<dl class="function">
+<dt id="tomotok.core.geometry.io.load_gmat">
+<code class="descclassname">tomotok.core.geometry.io.</code><code class="descname">load_gmat</code><span class="sig-paren">(</span><em>floc</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.io.load_gmat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads hdf file and creates sparse csr_matrix and RegularGrid class</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>floc</strong> : str</p>
+<blockquote>
+<div><p>hdf file location</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>gmat</strong> : sparse.csr_matrix</p>
+<p class="last"><strong>grid</strong> : geometry.RegularGrid</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tomotok.core.geometry.io.save_sparse_gmat">
+<code class="descclassname">tomotok.core.geometry.io.</code><code class="descname">save_sparse_gmat</code><span class="sig-paren">(</span><em>floc</em>, <em>gmat</em>, <em>grid</em>, <em>attrs_dct=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.io.save_sparse_gmat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves geometry matrix together with description of the grid.</p>
+<p>Currently suports only sparse CSR matrices and regular rectangular grids.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>floc</strong> : str</p>
+<blockquote>
+<div><p>file location</p>
+</div></blockquote>
+<p><strong>gmat</strong> : csr_matrix</p>
+<blockquote>
+<div><p>with shape (#chanels, #nodes)</p>
+</div></blockquote>
+<p><strong>grid</strong> : RegularGrid</p>
+<blockquote>
+<div><p>class describing regular grid the gmat was computed for</p>
+</div></blockquote>
+<p><strong>attrs_dict</strong> : dict, optional</p>
+<blockquote class="last">
+<div><p>additional attributes to be saved in hdf file</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tomotok.core.geometry.los">
+<span id="tomotok-core-geometry-los-module"></span><h2>tomotok.core.geometry.los module<a class="headerlink" href="#module-tomotok.core.geometry.los" title="Permalink to this headline">¶</a></h2>
+<p>Routines for generation of line of sight start and end points.</p>
+<p>Creates the lines of sights in x axis direction and then rotates them about the other horizontal axis, then about vertical axis.</p>
+<dl class="function">
+<dt id="tomotok.core.geometry.los.generate_directions">
+<code class="descclassname">tomotok.core.geometry.los.</code><code class="descname">generate_directions</code><span class="sig-paren">(</span><em>num=(10</em>, <em>1)</em>, <em>fov=(45</em>, <em>0)</em>, <em>axis=(1</em>, <em>0</em>, <em>0)</em>, <em>elong=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.los.generate_directions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates direction vectors for lines of sight using camera like convention.</p>
+<p>The first line of sight is top left, then the numbering follows a row, the last one is bottom right.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>num</strong> : int or (int,int), optional</p>
+<blockquote>
+<div><p>number of generated chords (vertical, horizontal)</p>
+</div></blockquote>
+<p><strong>fov</strong> : float, or tuple of two float, optional</p>
+<blockquote>
+<div><p>vertical or (vertical, horizontal) field of view in degrees</p>
+</div></blockquote>
+<p><strong>axis</strong> : tuple of three floats, optional</p>
+<blockquote>
+<div><p>direction of symmetry axis</p>
+</div></blockquote>
+<p><strong>elong</strong> : float, optional</p>
+<blockquote>
+<div><p>vector length multiplier</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dirs</strong> : numpy.ndarray</p>
+<blockquote class="last">
+<div><p>contains direction vectors cartesian coordinates, shape (#los, 3)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tomotok.core.geometry.los.generate_los">
+<code class="descclassname">tomotok.core.geometry.los.</code><code class="descname">generate_los</code><span class="sig-paren">(</span><em>pinhole=(0</em>, <em>0</em>, <em>0)</em>, <em>num=(10</em>, <em>1)</em>, <em>fov=(45</em>, <em>0)</em>, <em>axis=(1</em>, <em>0</em>, <em>0)</em>, <em>elong=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.los.generate_los" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates line of sight endpoints with uniform distribution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>num</strong> : int or (int,int), optional</p>
+<blockquote>
+<div><p>number of generated chords (vertical, horizontal)</p>
+</div></blockquote>
+<p><strong>pinhole</strong> : tuple of three floats, optional</p>
+<blockquote>
+<div><p>r and z coordinates of pinhole</p>
+</div></blockquote>
+<p><strong>fov</strong> : float, or tuple of two float, optional</p>
+<blockquote>
+<div><p>vertical and horizontal field of view in degrees</p>
+</div></blockquote>
+<p><strong>axis</strong> : tuple of three floats, optional</p>
+<blockquote>
+<div><p>direction of chordal axis</p>
+</div></blockquote>
+<p><strong>elong</strong> : float, optional</p>
+<blockquote>
+<div><p>chord length multiplier</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>start</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>array with line of sight start points coordinates, shape (#los, 3)</p>
+</div></blockquote>
+<p><strong>end</strong> : numpy.ndarray</p>
+<blockquote class="last">
+<div><p>array with line of sight end points coordinates, shape (#los, 3)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tomotok.core.geometry.los.rot_h">
+<code class="descclassname">tomotok.core.geometry.los.</code><code class="descname">rot_h</code><span class="sig-paren">(</span><em>points</em>, <em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.los.rot_h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotates given points in horizontal direction, that is about vertical axis z.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>points</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>3D coordinates of points to be rotated with shape (#points, 3)</p>
+</div></blockquote>
+<p><strong>angle</strong> : float</p>
+<blockquote>
+<div><p>angle of rotation in radians</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>array of rotated points</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="tomotok.core.geometry.los.rot_v">
+<code class="descclassname">tomotok.core.geometry.los.</code><code class="descname">rot_v</code><span class="sig-paren">(</span><em>points</em>, <em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.geometry.los.rot_v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotates given points in vertical direction, that is about horizontal y axis perpendicular to r/x.</p>
+<p>Should be done before horizontal rotation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>points</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>3D coordinates of points to be rotated with shape (#points, 3)</p>
+</div></blockquote>
+<p><strong>angle</strong> : float</p>
+<blockquote>
+<div><p>angle of rotation in radians</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>array of rotated points</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tomotok.core.html" class="btn btn-neutral float-left" title="tomotok.core package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tomotok.core.inversions.html" class="btn btn-neutral float-right" title="tomotok.core.inversions package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Tomotok team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

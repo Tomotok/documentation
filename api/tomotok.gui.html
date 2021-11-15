@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tomotok.gui package &mdash; tomotok 1.0rc5 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="tomotok.core.tools package" href="tomotok.core.tools.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> tomotok
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">1. Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licence.html">2. Licence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inversions/inversions.html">4. Inversions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auxilia/auxilia.html">5. Auxiliary functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gui/gui.html">6. Graphical User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">7. Glossary</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Api Doc</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tomotok.core.html">tomotok.core package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">tomotok.gui package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tomotok.gui.apps">tomotok.gui.apps module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tomotok.gui.menus">tomotok.gui.menus module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tomotok.gui.merfer">tomotok.gui.merfer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tomotok.gui.profiler">tomotok.gui.profiler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tomotok.gui.roi">tomotok.gui.roi module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tomotok.gui.widgets">tomotok.gui.widgets module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-tomotok.gui.widgets_tomo">tomotok.gui.widgets_tomo module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">tomotok</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>tomotok.gui package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/tomotok.gui.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-tomotok.gui">
+<span id="tomotok-gui-package"></span><h1>tomotok.gui package<a class="headerlink" href="#module-tomotok.gui" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tomotok.gui.apps">
+<span id="tomotok-gui-apps-module"></span><h2>tomotok.gui.apps module<a class="headerlink" href="#module-tomotok.gui.apps" title="Permalink to this headline">¶</a></h2>
+<p>Module with tkinter apps for computing tomography reconstructions.</p>
+<dl class="class">
+<dt id="tomotok.gui.apps.AnalyzerApp">
+<em class="property">class </em><code class="descclassname">tomotok.gui.apps.</code><code class="descname">AnalyzerApp</code><span class="sig-paren">(</span><em>master=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.AnalyzerApp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.ttk.Frame</span></code></p>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.gui.apps.AnalyzerApp.do">
+<code class="descname">do</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.AnalyzerApp.do" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads data from files and creates requested graphs and analytical widgets.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.AnalyzerApp.expand">
+<code class="descname">expand</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.AnalyzerApp.expand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executed after main ‘Do’ method.
+Makes buttons for recreating closed graph windows.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.AnalyzerApp.get_ctrl">
+<code class="descname">get_ctrl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.AnalyzerApp.get_ctrl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks for existing slave graphical windows and returns them in list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>control</strong> : array</p>
+<blockquote class="last">
+<div><p>Contains all slave graphs widgets.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.AnalyzerApp.make_bol">
+<code class="descname">make_bol</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.AnalyzerApp.make_bol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes Bolometry graph window or updates data in existing window.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.AnalyzerApp.make_cnt">
+<code class="descname">make_cnt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.AnalyzerApp.make_cnt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes contours graph window or updates data in existing window.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.AnalyzerApp.make_mc">
+<code class="descname">make_mc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.AnalyzerApp.make_mc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes Master controls widget for slave graphs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.AnalyzerApp.make_mrf">
+<code class="descname">make_mrf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.AnalyzerApp.make_mrf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes Merfer graph window or updates data in existing RGB graph window.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.AnalyzerApp.make_ntr">
+<code class="descname">make_ntr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.AnalyzerApp.make_ntr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes neutron graph window or updates data in existing window.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.AnalyzerApp.make_prf">
+<code class="descname">make_prf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.AnalyzerApp.make_prf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes profiler graph window or updates data in existing window.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.AnalyzerApp.make_pwr">
+<code class="descname">make_pwr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.AnalyzerApp.make_pwr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes power graph window or updates data in existing window.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.AnalyzerApp.make_rec">
+<code class="descname">make_rec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.AnalyzerApp.make_rec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes rectangles graph window or updates data in existing window.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.AnalyzerApp.make_rgb">
+<code class="descname">make_rgb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.AnalyzerApp.make_rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes RGB graph window or updates data in existing RGB graph window.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.AnalyzerApp.make_sxr">
+<code class="descname">make_sxr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.AnalyzerApp.make_sxr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes Soft X-Ray graph window or updates data in existing window.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tomotok.gui.apps.SelectorApp">
+<em class="property">class </em><code class="descclassname">tomotok.gui.apps.</code><code class="descname">SelectorApp</code><span class="sig-paren">(</span><em>master=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.SelectorApp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tomotok.gui.apps.AnalyzerApp" title="tomotok.gui.apps.AnalyzerApp"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.gui.apps.AnalyzerApp</span></code></a></p>
+<p>Manually select hdf files to be used for comparative analysis.</p>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.gui.apps.SelectorApp.do">
+<code class="descname">do</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.SelectorApp.do" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads data from files and creates requested graphs and analytical widgets.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.SelectorApp.make_mrf">
+<code class="descname">make_mrf</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.SelectorApp.make_mrf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes Merfer graph window or updates data in existing RGB graph window.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.SelectorApp.select1">
+<code class="descname">select1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.SelectorApp.select1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.SelectorApp.select2">
+<code class="descname">select2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.SelectorApp.select2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.SelectorApp.select3">
+<code class="descname">select3</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.SelectorApp.select3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.apps.SelectorApp.selectm">
+<code class="descname">selectm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.SelectorApp.selectm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="tomotok.gui.apps.launcher">
+<code class="descclassname">tomotok.gui.apps.</code><code class="descname">launcher</code><span class="sig-paren">(</span><em>app='analyzer'</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.apps.launcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Launches specified application and ensures stdout.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>app</strong> : string</p>
+<blockquote class="last">
+<div><p>Specifies which app should be launched. Legal options are
+and ‘analyzer’, ‘a’. These are not case sensitive.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tomotok.gui.menus">
+<span id="tomotok-gui-menus-module"></span><h2>tomotok.gui.menus module<a class="headerlink" href="#module-tomotok.gui.menus" title="Permalink to this headline">¶</a></h2>
+<p>Contains frame widget subclasses prepared for use as selection menu in different GUI apps.</p>
+<dl class="class">
+<dt id="tomotok.gui.menus.AnalyzerMenu">
+<em class="property">class </em><code class="descclassname">tomotok.gui.menus.</code><code class="descname">AnalyzerMenu</code><span class="sig-paren">(</span><em>parent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.menus.AnalyzerMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.ttk.Frame</span></code></p>
+<p>TTK Frame based class containing options for tomography.</p>
+<p class="rubric">Methods</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="tomotok.gui.menus.ExpandMenu">
+<em class="property">class </em><code class="descclassname">tomotok.gui.menus.</code><code class="descname">ExpandMenu</code><span class="sig-paren">(</span><em>parent</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.menus.ExpandMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.ttk.Frame</span></code></p>
+<p>Executed after main ‘Do’ method.
+Makes buttons for recreating closed graph windows.</p>
+<p class="rubric">Methods</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="tomotok.gui.menus.SelectorMenu">
+<em class="property">class </em><code class="descclassname">tomotok.gui.menus.</code><code class="descname">SelectorMenu</code><span class="sig-paren">(</span><em>parent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.menus.SelectorMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.ttk.Frame</span></code></p>
+<p class="rubric">Methods</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tomotok.gui.merfer">
+<span id="tomotok-gui-merfer-module"></span><h2>tomotok.gui.merfer module<a class="headerlink" href="#module-tomotok.gui.merfer" title="Permalink to this headline">¶</a></h2>
+<p>MEasured vs RetroFit comparator graphical window widget</p>
+<dl class="class">
+<dt id="tomotok.gui.merfer.GraphMerfer">
+<em class="property">class </em><code class="descclassname">tomotok.gui.merfer.</code><code class="descname">GraphMerfer</code><span class="sig-paren">(</span><em>parent=None</em>, <em>data=None</em>, <em>errors=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.merfer.GraphMerfer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tomotok.gui.widgets.GraphWindow" title="tomotok.gui.widgets.GraphWindow"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.gui.widgets.GraphWindow</span></code></a></p>
+<p>Widgets for comparing MEasured data with RetroFit</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter widget</p>
+<blockquote>
+<div><p>Default is None.</p>
+</div></blockquote>
+<p><strong>data</strong> : dict</p>
+<blockquote class="last">
+<div><p>Contains data, default is empty dict.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.gui.merfer.GraphMerfer.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>val</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.merfer.GraphMerfer.plot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.merfer.GraphMerfer.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>fname='Graphs'</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.merfer.GraphMerfer.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.merfer.GraphMerfer.update_data">
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>err=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.merfer.GraphMerfer.update_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads new data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ndata</strong> : dict</p>
+<blockquote>
+<div><p>New data to be loaded to Graph window</p>
+</div></blockquote>
+<p><strong>err</strong> : np.ndarray</p>
+<blockquote class="last">
+<div><p>contains errors of measured data with shape (#chnl, #tslices)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tomotok.gui.profiler">
+<span id="tomotok-gui-profiler-module"></span><h2>tomotok.gui.profiler module<a class="headerlink" href="#module-tomotok.gui.profiler" title="Permalink to this headline">¶</a></h2>
+<p>Averaging of emissivity in bins shaped according to magnetic flux reconstruction</p>
+<dl class="class">
+<dt id="tomotok.gui.profiler.GraphProfiler">
+<em class="property">class </em><code class="descclassname">tomotok.gui.profiler.</code><code class="descname">GraphProfiler</code><span class="sig-paren">(</span><em>parent=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.profiler.GraphProfiler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tomotok.gui.widgets_tomo.GraphRgb" title="tomotok.gui.widgets_tomo.GraphRgb"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.gui.widgets_tomo.GraphRgb</span></code></a></p>
+<p>Based on GraphRgb class. Usefull for observing power profile in respect to
+magentic flux surfaces.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter class parent</p>
+<blockquote>
+<div><p>Default is None.</p>
+</div></blockquote>
+<p><strong>data</strong> : dict</p>
+<blockquote class="last">
+<div><p>Contains data, default is empty dict.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.gui.profiler.GraphProfiler.compute">
+<code class="descname">compute</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.profiler.GraphProfiler.compute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes radiated power in given regions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.profiler.GraphProfiler.get_levels">
+<code class="descname">get_levels</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.profiler.GraphProfiler.get_levels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets levels from widgets for plotting contours</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.profiler.GraphProfiler.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>val</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.profiler.GraphProfiler.plot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.profiler.GraphProfiler.plot_contour">
+<code class="descname">plot_contour</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.profiler.GraphProfiler.plot_contour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots contours to highlight flux locations separating profiled regions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.profiler.GraphProfiler.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>fname='Graphs/'</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.profiler.GraphProfiler.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.profiler.GraphProfiler.save_nth">
+<code class="descname">save_nth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.profiler.GraphProfiler.save_nth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves every nth slice, where n is defined by snvar tk.Stringvar
+asociated with snsbox tk.Spinbox widget.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.profiler.GraphProfiler.update_data">
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.profiler.GraphProfiler.update_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads new data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ndata</strong> : dict</p>
+<blockquote class="last">
+<div><p>New data to be loaded to Graph window.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tomotok.gui.roi">
+<span id="tomotok-gui-roi-module"></span><h2>tomotok.gui.roi module<a class="headerlink" href="#module-tomotok.gui.roi" title="Permalink to this headline">¶</a></h2>
+<p>Region of interest analysis widgets</p>
+<dl class="class">
+<dt id="tomotok.gui.roi.GraphContours">
+<em class="property">class </em><code class="descclassname">tomotok.gui.roi.</code><code class="descname">GraphContours</code><span class="sig-paren">(</span><em>parent=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tomotok.gui.widgets_tomo.GraphRgb" title="tomotok.gui.widgets_tomo.GraphRgb"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.gui.widgets_tomo.GraphRgb</span></code></a></p>
+<p>Based on GraphRgb class. Usefull for observing power in specified areas.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter class parent</p>
+<blockquote>
+<div><p>Default is None.</p>
+</div></blockquote>
+<p><strong>data</strong> : dict</p>
+<blockquote class="last">
+<div><p>Contains data, default is empty dict.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.add_patch">
+<code class="descname">add_patch</code><span class="sig-paren">(</span><em>contours</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.add_patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds collections created by contours to axes</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.clear_patch">
+<code class="descname">clear_patch</code><span class="sig-paren">(</span><em>contours</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.clear_patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes collections representing given cotnours from axes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.compute">
+<code class="descname">compute</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.compute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.decrease_pcount">
+<code class="descname">decrease_pcount</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.decrease_pcount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variable pcount represents total number of patches.
+Should be called after removing a new patch.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.get_levels">
+<code class="descname">get_levels</code><span class="sig-paren">(</span><em>pnum</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.get_levels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets levels from contour object. If length of levels is one,
+returns array with zero as minimum.</p>
+<dl class="docutils">
+<dt>pnum <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>Number of patch</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>limits</strong> : np.ndarray</p>
+<blockquote class="last">
+<div><p>Array with minimum and maximum limited by given contours.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.get_pnum">
+<code class="descname">get_pnum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.get_pnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variable pnum represents selected contours, starts from 1.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>Number of selected contours pair starting from 0.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.get_predef">
+<code class="descname">get_predef</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.get_predef" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns predefined contours. Used for initalization of wondow.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>Contains coordinates of predefined rectangles</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.make_patch">
+<code class="descname">make_patch</code><span class="sig-paren">(</span><em>min_=0.5</em>, <em>max_=1</em>, <em>pnum=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.make_patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates new contours and adds collections to axes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.move_limits">
+<code class="descname">move_limits</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.move_limits" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>val</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.plot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.pselect">
+<code class="descname">pselect</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.pselect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes spinbox values to selected contours when selection changes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.raise_pcount">
+<code class="descname">raise_pcount</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.raise_pcount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variable pcount represents total number of patches.
+Should be called after adding a new patch.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.remove_patch">
+<code class="descname">remove_patch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.remove_patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes last patch from computing and from axes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>fname=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.save_nth">
+<code class="descname">save_nth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.save_nth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves every nth slice, where n is defined by snvar tk.Stringvar
+asociated with snsbox tk.Spinbox widget.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphContours.update_data">
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphContours.update_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads new data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ndata</strong> : dict</p>
+<blockquote class="last">
+<div><p>New data to be loaded to Graph window.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tomotok.gui.roi.GraphRectangles">
+<em class="property">class </em><code class="descclassname">tomotok.gui.roi.</code><code class="descname">GraphRectangles</code><span class="sig-paren">(</span><em>parent=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tomotok.gui.widgets_tomo.GraphRgb" title="tomotok.gui.widgets_tomo.GraphRgb"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.gui.widgets_tomo.GraphRgb</span></code></a></p>
+<p>Based on GraphRgb class. Usefull for observing power in specified areas.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter class parent</p>
+<blockquote>
+<div><p>Default is None.</p>
+</div></blockquote>
+<p><strong>data</strong> : dict</p>
+<blockquote class="last">
+<div><p>Contains data, default is empty dict.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.compute">
+<code class="descname">compute</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.compute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.get_pnum">
+<code class="descname">get_pnum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.get_pnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variable pnum represents selected patch, starts from 1.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>Number of selected patch (rectangle) starting from 0. Can be used
+as idices for Axes.patches array.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.get_predef">
+<code class="descname">get_predef</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.get_predef" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predefined rectangles in interesting areas are defined here.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict</p>
+<blockquote class="last">
+<div><p>Contains coordinates of predefined rectangles</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.lower_pcount">
+<code class="descname">lower_pcount</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.lower_pcount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variable pcount represents total number of patches.
+Should be called after removing a new patch.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.make_patch">
+<code class="descname">make_patch</code><span class="sig-paren">(</span><em>x=-1</em>, <em>y=-1</em>, <em>w=-1</em>, <em>h=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.make_patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates new patch and adds it to axes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.moveh">
+<code class="descname">moveh</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.moveh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.movew">
+<code class="descname">movew</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.movew" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.movex">
+<code class="descname">movex</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.movex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.movey">
+<code class="descname">movey</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.movey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>val</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.plot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.pselect">
+<code class="descname">pselect</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.pselect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes spinbox values to selected patch when selection changes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.raise_pcount">
+<code class="descname">raise_pcount</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.raise_pcount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Variable pcount represents total number of patches.
+Should be called after adding a new patch.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.remove_patch">
+<code class="descname">remove_patch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.remove_patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes last patch from computing and from axes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>fname='Graphs/'</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.save_nth">
+<code class="descname">save_nth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.save_nth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves every nth slice, where n is defined by snvar Stringvar asociated
+with snsbox Spinbox widget.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.roi.GraphRectangles.update_data">
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.roi.GraphRectangles.update_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads new data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ndata</strong> : dict</p>
+<blockquote class="last">
+<div><p>New data to be loaded to Graph window.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tomotok.gui.widgets">
+<span id="tomotok-gui-widgets-module"></span><h2>tomotok.gui.widgets module<a class="headerlink" href="#module-tomotok.gui.widgets" title="Permalink to this headline">¶</a></h2>
+<p>Library of custom tkinter widgets that have not been specially designed for displaying or processing tomography results.</p>
+<dl class="class">
+<dt id="tomotok.gui.widgets.ConsoleText">
+<em class="property">class </em><code class="descclassname">tomotok.gui.widgets.</code><code class="descname">ConsoleText</code><span class="sig-paren">(</span><em>master=None</em>, <em>cnf=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.ConsoleText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.Frame</span></code></p>
+<p>A Tkinter Text widget that provides a scrolling display of console stdout.</p>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.gui.widgets.ConsoleText.log_update">
+<code class="descname">log_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.ConsoleText.log_update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.ConsoleText.set_scrl">
+<code class="descname">set_scrl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.ConsoleText.set_scrl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.ConsoleText.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.ConsoleText.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.ConsoleText.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.ConsoleText.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.ConsoleText.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.ConsoleText.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tomotok.gui.widgets.ConsoleWindow">
+<em class="property">class </em><code class="descclassname">tomotok.gui.widgets.</code><code class="descname">ConsoleWindow</code><span class="sig-paren">(</span><em>parent=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.ConsoleWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.Toplevel</span></code></p>
+<p>Console text embedded in Toplevel window.</p>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.gui.widgets.ConsoleWindow.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.ConsoleWindow.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.ConsoleWindow.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.ConsoleWindow.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tomotok.gui.widgets.GraphWindow">
+<em class="property">class </em><code class="descclassname">tomotok.gui.widgets.</code><code class="descname">GraphWindow</code><span class="sig-paren">(</span><em>parent=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.GraphWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.Toplevel</span></code></p>
+<p>Basic window prepared for displaing data sequence with use of matplotlib.
+Contains Figure and Axes for plotting, but no method for plotting or 
+atribute with data.
+By default it consists of listbox with data sequence, frame for buttons,
+canvas for plot and slider for navigation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter widget</p>
+<blockquote class="last">
+<div><p>Default is None. Used in GUI interface to specify hierarchy.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.gui.widgets.GraphWindow.bb_row_raise">
+<code class="descname">bb_row_raise</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.GraphWindow.bb_row_raise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increases bb_row, atribute that describes number of placed buttons in
+button box frame widget positioned under listbox. Used for automated 
+row placement.
+Should be called after placing new button to bbox.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.GraphWindow.go_next">
+<code class="descname">go_next</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.GraphWindow.go_next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.GraphWindow.go_prev">
+<code class="descname">go_prev</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.GraphWindow.go_prev" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.GraphWindow.go_to">
+<code class="descname">go_to</code><span class="sig-paren">(</span><em>val</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.GraphWindow.go_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Puts slider into position given by ‘val’.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>val</strong> : int</p>
+<blockquote class="last">
+<div><p>Nunber of slider position.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.GraphWindow.init_datarange">
+<code class="descname">init_datarange</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.GraphWindow.init_datarange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepares vals or slices for widget construction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.GraphWindow.lbox_selection">
+<code class="descname">lbox_selection</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.GraphWindow.lbox_selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executed when selection in listbox was executed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.GraphWindow.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>num</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.GraphWindow.plot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.GraphWindow.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.GraphWindow.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.GraphWindow.set_slices">
+<code class="descname">set_slices</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.GraphWindow.set_slices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks keywords for slices infromation. Sets slices to specified number
+or 1 if number of slices was not specified.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.GraphWindow.set_vals">
+<code class="descname">set_vals</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.GraphWindow.set_vals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rutine to set values for listbox menu and displayed numbers and range
+of scale widget.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.GraphWindow.slider_move">
+<code class="descname">slider_move</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.GraphWindow.slider_move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executed when position of slider is changed. Changes label of slider,
+plots apropirate data and moves in listbox widget.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.GraphWindow.update_data">
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.GraphWindow.update_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads new data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ndata</strong> : data structure</p>
+<blockquote class="last">
+<div><p>New data to be loaded to Graph window.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.GraphWindow.update_graph">
+<code class="descname">update_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.GraphWindow.update_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots data slice apropirate to slider position.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tomotok.gui.widgets.MasterControls">
+<em class="property">class </em><code class="descclassname">tomotok.gui.widgets.</code><code class="descname">MasterControls</code><span class="sig-paren">(</span><em>parent</em>, <em>slices</em>, <em>*controled</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.MasterControls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tkinter.Toplevel</span></code></p>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.gui.widgets.MasterControls.change_sync">
+<code class="descname">change_sync</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.MasterControls.change_sync" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.MasterControls.go_next">
+<code class="descname">go_next</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.MasterControls.go_next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.MasterControls.go_prev">
+<code class="descname">go_prev</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.MasterControls.go_prev" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.MasterControls.set_slices">
+<code class="descname">set_slices</code><span class="sig-paren">(</span><em>slices</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.MasterControls.set_slices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.MasterControls.set_vals">
+<code class="descname">set_vals</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.MasterControls.set_vals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets.MasterControls.slider_move">
+<code class="descname">slider_move</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets.MasterControls.slider_move" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tomotok.gui.widgets_tomo">
+<span id="tomotok-gui-widgets-tomo-module"></span><h2>tomotok.gui.widgets_tomo module<a class="headerlink" href="#module-tomotok.gui.widgets_tomo" title="Permalink to this headline">¶</a></h2>
+<p>Module with tkinter widgets for basic tomography analysis.</p>
+<dl class="class">
+<dt id="tomotok.gui.widgets_tomo.DiagGraphWindow">
+<em class="property">class </em><code class="descclassname">tomotok.gui.widgets_tomo.</code><code class="descname">DiagGraphWindow</code><span class="sig-paren">(</span><em>parent=None</em>, <em>data=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.DiagGraphWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tomotok.gui.widgets.GraphWindow" title="tomotok.gui.widgets.GraphWindow"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.gui.widgets.GraphWindow</span></code></a></p>
+<p>Based on GraphWindow class from widgets.py
+Used for displaying results of single diagnostic tomography</p>
+<p>See documentation of GraphWindow for information about other keyword arguments.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter widget</p>
+<blockquote>
+<div><p>Default is None. Used in GUI interface to specify hierarchy.</p>
+</div></blockquote>
+<p><strong>data</strong> : dict</p>
+<blockquote>
+<div><p>Contains data, default is empty dict.</p>
+</div></blockquote>
+<p><strong>**kw</strong></p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>title <span class="classifier-delimiter">:</span> <span class="classifier">str {‘Bolometry’, ‘Neutrons’, ‘SXR’}</span></dt>
+<dd><p class="first last">Name of graph window. If dname is not specified, title is used to 
+determin what key from provided data to load.</p>
+</dd>
+<dt>dname <span class="classifier-delimiter">:</span> <span class="classifier">str {‘bol’, ‘ntr’, ‘sxr’}</span></dt>
+<dd><p class="first last">Shorter string to specify diagnostic for graph window. Though not recommended, both title and dname can be used.
+If so, dname and title should always match to avoid inconsistency of title and data.</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GraphWindow</span></code></p>
+</div>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.gui.widgets_tomo.DiagGraphWindow.get_mval">
+<code class="descname">get_mval</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.DiagGraphWindow.get_mval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns index for ploting magnetic data from index of reconstrution.
+Should not be called if magnetics data are not loaded.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>val</strong> : int</p>
+<blockquote class="last">
+<div><p>Index of reconstrition.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets_tomo.DiagGraphWindow.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>val</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.DiagGraphWindow.plot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets_tomo.DiagGraphWindow.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.DiagGraphWindow.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets_tomo.DiagGraphWindow.update_data">
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.DiagGraphWindow.update_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads new data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ndata</strong> : dict</p>
+<blockquote class="last">
+<div><p>New data to be loaded to Graph window.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tomotok.gui.widgets_tomo.GraphPower">
+<em class="property">class </em><code class="descclassname">tomotok.gui.widgets_tomo.</code><code class="descname">GraphPower</code><span class="sig-paren">(</span><em>parent=None</em>, <em>data=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.GraphPower" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tomotok.gui.widgets.GraphWindow" title="tomotok.gui.widgets.GraphWindow"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.gui.widgets.GraphWindow</span></code></a></p>
+<p>Based on GraphWindow class from widgets.py
+Vals are not time steps for this class but types of diagnotics to plot 
+power emitted or to show correlations of these.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter class parent, optional</p>
+<blockquote>
+<div><p>Default is None.</p>
+</div></blockquote>
+<p><strong>data</strong> : dict, optional</p>
+<blockquote class="last">
+<div><p>Contains data, default is empty dict.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.gui.widgets_tomo.GraphPower.normalize">
+<code class="descname">normalize</code><span class="sig-paren">(</span><em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.GraphPower.normalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switches data to normalized or standard, depending on norvar state.
+Normalizes data and if no normalized data are available.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets_tomo.GraphPower.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>val</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.GraphPower.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepares data for matplotlib and draws them onto canvas</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>val</strong> : int</p>
+<blockquote class="last">
+<div><p>number of slice in this case meaning type of analysis</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets_tomo.GraphPower.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.GraphPower.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets_tomo.GraphPower.update_data">
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.GraphPower.update_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates class data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ndata</strong> : dict</p>
+<blockquote class="last">
+<div><p>Dictionary containign new data under keys ‘bol’, ‘ntr’, ‘sxr’.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="tomotok.gui.widgets_tomo.GraphRgb">
+<em class="property">class </em><code class="descclassname">tomotok.gui.widgets_tomo.</code><code class="descname">GraphRgb</code><span class="sig-paren">(</span><em>parent=None</em>, <em>data=None</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.GraphRgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tomotok.gui.widgets.GraphWindow" title="tomotok.gui.widgets.GraphWindow"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.gui.widgets.GraphWindow</span></code></a></p>
+<p>Based on GraphWindow class from widgets.py. Usefull for comparing
+tomography results from different diagnostics simultaneously.</p>
+<p>See documentation of Graf_window for information about other keyword arguments.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter class parent</p>
+<blockquote>
+<div><p>Default is None.</p>
+</div></blockquote>
+<p><strong>data</strong> : dict</p>
+<blockquote class="last">
+<div><p>Contains data, default is empty dict.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.gui.widgets_tomo.GraphRgb.get_mval">
+<code class="descname">get_mval</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.GraphRgb.get_mval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns index for ploting magnetic data from index of reconstrution.
+Should not be called if magnetics data are not loaded.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>val</strong> : int</p>
+<blockquote class="last">
+<div><p>Index of reconstrition.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets_tomo.GraphRgb.get_rgbval">
+<code class="descname">get_rgbval</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.GraphRgb.get_rgbval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets indexes for given timeslices. Independent on provided diagnostics.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray of ints</p>
+<blockquote class="last">
+<div><p>Contains indexes of nearest tim vector values
+to reference diagnostic.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets_tomo.GraphRgb.plot">
+<code class="descname">plot</code><span class="sig-paren">(</span><em>val</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.GraphRgb.plot" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets_tomo.GraphRgb.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.GraphRgb.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="tomotok.gui.widgets_tomo.GraphRgb.update_data">
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.gui.widgets_tomo.GraphRgb.update_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads new data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ndata</strong> : dict</p>
+<blockquote class="last">
+<div><p>New data to be loaded to Graph window.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tomotok.core.tools.html" class="btn btn-neutral float-left" title="tomotok.core.tools package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Tomotok team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

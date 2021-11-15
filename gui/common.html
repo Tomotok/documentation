@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Common GUI widgets &mdash; tomotok 1.0rc5 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> tomotok
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">1. Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licence.html">2. Licence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inversions/inversions.html">4. Inversions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auxilia/auxilia.html">5. Auxiliary functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">6. Graphical User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">7. Glossary</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Api Doc</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.core.html">tomotok.core package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">tomotok.gui package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">tomotok</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Common GUI widgets</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/gui/common.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="common-gui-widgets">
+<h1>Common GUI widgets<a class="headerlink" href="#common-gui-widgets" title="Permalink to this headline">¶</a></h1>
+<p>General purpose widgets that have not been specially design for displaying or processing tomography results.</p>
+<p>Library of custom tkinter widgets that have not been specially designed for displaying or processing tomography results.</p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">tomotok.gui.widgets.</code><code class="descname">GraphWindow</code><span class="sig-paren">(</span><em>parent=None</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Basic window prepared for displaing data sequence with use of matplotlib.
+Contains Figure and Axes for plotting, but no method for plotting or 
+atribute with data.
+By default it consists of listbox with data sequence, frame for buttons,
+canvas for plot and slider for navigation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter widget</p>
+<blockquote class="last">
+<div><p>Default is None. Used in GUI interface to specify hierarchy.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt>
+<code class="descname">bb_row_raise</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Increases bb_row, atribute that describes number of placed buttons in
+button box frame widget positioned under listbox. Used for automated 
+row placement.
+Should be called after placing new button to bbox.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">go_to</code><span class="sig-paren">(</span><em>val</em>, <em>*args</em><span class="sig-paren">)</span></dt>
+<dd><p>Puts slider into position given by ‘val’.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>val</strong> : int</p>
+<blockquote class="last">
+<div><p>Nunber of slider position.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">init_datarange</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Prepares vals or slices for widget construction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">lbox_selection</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
+<dd><p>Executed when selection in listbox was executed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>num</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num</strong></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">set_slices</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Checks keywords for slices infromation. Sets slices to specified number
+or 1 if number of slices was not specified.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">set_vals</code><span class="sig-paren">(</span><em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Rutine to set values for listbox menu and displayed numbers and range
+of scale widget.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">slider_move</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
+<dd><p>Executed when position of slider is changed. Changes label of slider,
+plots apropirate data and moves in listbox widget.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Loads new data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ndata</strong> : data structure</p>
+<blockquote class="last">
+<div><p>New data to be loaded to Graph window.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">update_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Plots data slice apropirate to slider position.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">tomotok.gui.widgets.</code><code class="descname">MasterControls</code><span class="sig-paren">(</span><em>parent</em>, <em>slices</em>, <em>*controled</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p class="rubric">Methods</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Tomotok team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

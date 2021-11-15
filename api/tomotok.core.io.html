@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tomotok.core.io package &mdash; tomotok 1.0rc5 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="tomotok.core.tools package" href="tomotok.core.tools.html" />
+    <link rel="prev" title="tomotok.core.inversions package" href="tomotok.core.inversions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> tomotok
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">1. Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licence.html">2. Licence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inversions/inversions.html">4. Inversions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auxilia/auxilia.html">5. Auxiliary functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gui/gui.html">6. Graphical User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">7. Glossary</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Api Doc</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="tomotok.core.html">tomotok.core package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tomotok.core.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tomotok.core.geometry.html">tomotok.core.geometry package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tomotok.core.inversions.html">tomotok.core.inversions package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">tomotok.core.io package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tomotok.core.io.diag">tomotok.core.io.diag module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tomotok.core.io.support">tomotok.core.io.support module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tomotok.core.io.tokamaks">tomotok.core.io.tokamaks module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tomotok.core.tools.html">tomotok.core.tools package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tomotok.core.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tomotok.core.html#module-tomotok.core.derivative">tomotok.core.derivative module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tomotok.core.html#module-tomotok.core.phantoms">tomotok.core.phantoms module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tomotok.gui.html">tomotok.gui package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">tomotok</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="tomotok.core.html">tomotok.core package</a> &raquo;</li>
+      <li>tomotok.core.io package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/tomotok.core.io.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-tomotok.core.io">
+<span id="tomotok-core-io-package"></span><h1>tomotok.core.io package<a class="headerlink" href="#module-tomotok.core.io" title="Permalink to this headline">¶</a></h1>
+<p>Contains classes and functions used for creating database interfaces.</p>
+<blockquote>
+<div><ul class="simple">
+<li>base class Dsystem for a general diagnostic system</li>
+<li>sublcass with magnetics handling typical for tokamaks</li>
+<li>simple hdf interface using h5py</li>
+</ul>
+</div></blockquote>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-tomotok.core.io.diag">
+<span id="tomotok-core-io-diag-module"></span><h2>tomotok.core.io.diag module<a class="headerlink" href="#module-tomotok.core.io.diag" title="Permalink to this headline">¶</a></h2>
+<p>Template class for general tomographic diagnostic system.</p>
+<dl class="class">
+<dt id="tomotok.core.io.diag.Dsystem">
+<em class="property">class </em><code class="descclassname">tomotok.core.io.diag.</code><code class="descname">Dsystem</code><span class="sig-paren">(</span><em>shot</em>, <em>geometry_path=''</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.diag.Dsystem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Contains basic information about diagnostic system</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>chnl_index</strong></td>
+<td>(dict) dict maping channel to detector</td>
+</tr>
+<tr class="row-even"><td><strong>geometry_path</strong></td>
+<td>(pathlib.Path) path to location with saved geometrical data</td>
+</tr>
+<tr class="row-odd"><td><strong>name</strong></td>
+<td>(str) name of diagnostic system</td>
+</tr>
+<tr class="row-even"><td><strong>n_dets</strong></td>
+<td>(int) number of cameras with separate calibration files, (to be removed)</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.core.io.diag.Dsystem.compute_bd_mat">
+<code class="descname">compute_bd_mat</code><span class="sig-paren">(</span><em>grid</em>, <em>loc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.diag.Dsystem.compute_bd_mat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simple generation of boundary matrix 1 inside rec area, 0 outside</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>boundary_matrix</strong> : numpy.ndarray of bool</p>
+<blockquote class="last">
+<div><p>matrix with true inside border, false otherwise, with shape (grid.nz, grid.nr)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tomotok.core.io.diag.Dsystem.data_name">
+<code class="descname">data_name</code><a class="headerlink" href="#tomotok.core.io.diag.Dsystem.data_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Template data file name</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.diag.Dsystem.download_data">
+<code class="descname">download_data</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.diag.Dsystem.download_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads data from network/database using <cite>source</cite> method or database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.diag.Dsystem.fetch_data">
+<code class="descname">fetch_data</code><span class="sig-paren">(</span><em>data_path=''</em>, <em>source=None</em>, <em>save=False</em>, <em>force_dl=False</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.diag.Dsystem.fetch_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads data from data storage specified by data_path or downloads data
+from network storage.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data_path</strong> : str or Path, optional</p>
+<blockquote>
+<div><p>default is working directory</p>
+</div></blockquote>
+<p><strong>source</strong> : <a class="reference external" href="https://docs.python.org/3/library/string.html#module-string" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">string</span></code></a>, optional</p>
+<blockquote>
+<div><p>specifies method for data download</p>
+</div></blockquote>
+<p><strong>save</strong> : bool, optional</p>
+<blockquote>
+<div><p>switches saving to local storage</p>
+</div></blockquote>
+<p><strong>force_dl</strong> : bool, optional</p>
+<blockquote>
+<div><p>forces download of data</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.diag.Dsystem.get_calb">
+<code class="descname">get_calb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.diag.Dsystem.get_calb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads preset calibrations for detectors, if not specified returns array of ones with length n_dets.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.diag.Dsystem.get_chord_geometry">
+<code class="descname">get_chord_geometry</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.diag.Dsystem.get_chord_geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads chord geometry from <cite>geometry_path</cite>.</p>
+<p>Expected names of detectors are detector_[num]_[x,y].txt.
+Data for x and y coordinates are in separate files.
+Each row represents one detector.
+Number of rows and columns should be same in all files containing coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>xchords, ychords</strong> : numpy.ndarray</p>
+<blockquote class="last">
+<div><p>arrays with coordinates of chord points with shape (#chords, #points)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.diag.Dsystem.get_chord_widening">
+<code class="descname">get_chord_widening</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.diag.Dsystem.get_chord_widening" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries to load widening coefficients from file. Returns None if IOError</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">array-like or None</p>
+<blockquote class="last">
+<div><p>Contains widening coefficients for each channel</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.diag.Dsystem.get_pinholes">
+<code class="descname">get_pinholes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.diag.Dsystem.get_pinholes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads pinhole coordinates for each chord from <cite>pinholes.txt</cite> located
+in geometry folder.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ph</strong> : numpy.ndarray</p>
+<blockquote class="last">
+<div><p>matrix containing pinhole x,y coordinates with shape (#chords, 2)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.diag.Dsystem.load_border">
+<code class="descname">load_border</code><span class="sig-paren">(</span><em>loc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.diag.Dsystem.load_border" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load border coordinates from geometry path or from tokamak module.
+Sets boundary_coord attribute to loaded coords.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>loc</strong> : str or Path</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>contains (R, z) coordinates of vacuum vessel cross section, shape (#points, 2)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.diag.Dsystem.load_boundary_coord">
+<code class="descname">load_boundary_coord</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.diag.Dsystem.load_boundary_coord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load border coordinates from geometry path or from tokamak module.
+Sets boundary_coord attribute to loaded coords.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>contains (R, z) coordinates of vacuum vessel cross section points, should have shape (#points, 2)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.diag.Dsystem.load_data">
+<code class="descname">load_data</code><span class="sig-paren">(</span><em>loc</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.diag.Dsystem.load_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads hdf file containing data.</p>
+<p>If loc is path to a directory, default data file name from property data_name is assumed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>loc</strong> : str or Path</p>
+<blockquote>
+<div><p>Path to file with signal data. Can be full path or path to folder if default name is used.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict</p>
+<blockquote class="last">
+<div><p>keys values, chnl, time</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.diag.Dsystem.load_los">
+<code class="descname">load_los</code><span class="sig-paren">(</span><em>loc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.diag.Dsystem.load_los" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads line of sights geometry from hdf file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>loc</strong> : str or Path, optional</p>
+<blockquote>
+<div><p>location of los file, by default geometry path is used</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict</p>
+<blockquote class="last">
+<div><p>with coordinates of los start and end points with shape (2, #chords, 3)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="tomotok.core.io.diag.Dsystem.save_data">
+<em class="property">static </em><code class="descname">save_data</code><span class="sig-paren">(</span><em>loc</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.diag.Dsystem.save_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves downloaded detector data to data_path</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>loc</strong> : str or pathlib.Path</p>
+<blockquote>
+<div><p>saving path with file name</p>
+</div></blockquote>
+<p><strong>data</strong> : dict</p>
+<blockquote class="last">
+<div><p>contains signal values, channel numbers and time stamps</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-tomotok.core.io.support">
+<span id="tomotok-core-io-support-module"></span><h2>tomotok.core.io.support module<a class="headerlink" href="#module-tomotok.core.io.support" title="Permalink to this headline">¶</a></h2>
+<p>Simple hdf saving and loading functions</p>
+<dl class="function">
+<dt id="tomotok.core.io.support.from_hdf">
+<code class="descclassname">tomotok.core.io.support.</code><code class="descname">from_hdf</code><span class="sig-paren">(</span><em>floc</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.support.from_hdf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="tomotok.core.io.support.to_hdf">
+<code class="descclassname">tomotok.core.io.support.</code><code class="descname">to_hdf</code><span class="sig-paren">(</span><em>dct</em>, <em>floc</em>, <em>attrs={}</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.support.to_hdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves provided dict into a hdf file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dct</strong> : dict</p>
+<blockquote>
+<div><p>[description]</p>
+</div></blockquote>
+<p><strong>floc</strong> : str</p>
+<blockquote>
+<div><p>path to file with name</p>
+</div></blockquote>
+<p><strong>attrs</strong> : dict</p>
+<blockquote class="last">
+<div><p>metadata to be saved to attributes</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-tomotok.core.io.tokamaks">
+<span id="tomotok-core-io-tokamaks-module"></span><h2>tomotok.core.io.tokamaks module<a class="headerlink" href="#module-tomotok.core.io.tokamaks" title="Permalink to this headline">¶</a></h2>
+<p>Universal tokamak template class for creating machine specific subclasses</p>
+<dl class="class">
+<dt id="tomotok.core.io.tokamaks.Tokamak">
+<em class="property">class </em><code class="descclassname">tomotok.core.io.tokamaks.</code><code class="descname">Tokamak</code><span class="sig-paren">(</span><em>shot</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.tokamaks.Tokamak" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#tomotok.core.io.diag.Dsystem" title="tomotok.core.io.diag.Dsystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.core.io.diag.Dsystem</span></code></a></p>
+<p>Handles magnetic field and divertor</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>name</strong></td>
+<td>(str) Name of tokamak</td>
+</tr>
+<tr class="row-even"><td><strong>params</strong></td>
+<td>(dict) Keyword arguments provided to initialization</td>
+</tr>
+<tr class="row-odd"><td><strong>divertor_coord</strong></td>
+<td>(tuple of float) Contains bounds for divertor area. (x1, x2, y1, y2)</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt id="tomotok.core.io.tokamaks.Tokamak.compute_weight_matrix">
+<code class="descname">compute_weight_matrix</code><span class="sig-paren">(</span><em>grid</em>, <em>diw=0.4</em>, <em>smooth_boundary=None</em>, <em>bdr=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.tokamaks.Tokamak.compute_weight_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes weight matrix. Supports different weight for pixels located in divertor area or those that are
+outside vacuum vessel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
+<p><strong>diw</strong> : float, optional</p>
+<blockquote>
+<div><p>Specifies divertor pixels’ weight. Default value for divertor is 0.4 and standard weight of pixel is 1.
+If standard weight is used, the divertor area will not have any preference.</p>
+</div></blockquote>
+<p><strong>smooth_boundary</strong> : float, optional</p>
+<blockquote>
+<div><p>Specifies weight for pixels outside of vacuum vessel, that is used for smoothing the boundary.
+Vacuum vessel coordinates are defined by bdr parameter. Recommended value is 0.1</p>
+</div></blockquote>
+<p><strong>bdr</strong> : tuple of numpy.ndarray</p>
+<blockquote>
+<div><p>Contains coordinates of vacuum vessel border. Must be provided if smooth_boundary is requested.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray dtype float64</p>
+<blockquote class="last">
+<div><p>matrix with pixel weights with same shape as grid (#y pixels, #x pixels)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.tokamaks.Tokamak.download_mag_field">
+<code class="descname">download_mag_field</code><span class="sig-paren">(</span><em>shot</em>, <em>tvec=None</em>, <em>source=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.tokamaks.Tokamak.download_mag_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dowloads magnetic field data from network.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>shot</strong> : int</p>
+<p><strong>tvec</strong> : list-like, optional</p>
+<blockquote>
+<div><p>specifies timeslices to be loaded</p>
+</div></blockquote>
+<p><strong>source</strong> : string, optional</p>
+<blockquote>
+<div><p>specifies source for loading magnetics data</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict</p>
+<blockquote class="last">
+<div><p>Psi normalized stored in dict with keys (values, time, z, r)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.tokamaks.Tokamak.fetch_mag_field">
+<code class="descname">fetch_mag_field</code><span class="sig-paren">(</span><em>shot</em>, <em>mag_path</em>, <em>grid=None</em>, <em>tvec=None</em>, <em>save=False</em>, <em>force_dl=False</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.tokamaks.Tokamak.fetch_mag_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads magnetic field from local storage or database and interpolates it if grid is provided.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>shot</strong> : int</p>
+<p><strong>mag_path</strong> : str or Path</p>
+<p><strong>grid</strong> : RegularGrid, optional</p>
+<blockquote>
+<div><p>Returned values are interpolated to this grid if provided.</p>
+</div></blockquote>
+<p><strong>tvec</strong> : numpy.ndarray, optional</p>
+<blockquote>
+<div><p>Time vector  of requested  magnetic field for download</p>
+</div></blockquote>
+<p><strong>save</strong> : bool, optional</p>
+<p><strong>force_dl</strong> : bool, optional</p>
+<blockquote class="last">
+<div><p>forces download from remote database</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.tokamaks.Tokamak.get_divertor_area">
+<code class="descname">get_divertor_area</code><span class="sig-paren">(</span><em>grid</em>, <em>boundary=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.tokamaks.Tokamak.get_divertor_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns mask matrix with True for indexes representing pixels inside 
+predefined divertor area. Size and shape is obtained from <code class="xref py py-attr docutils literal notranslate"><span class="pre">grid</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
+<p><strong>boundary</strong> : numpy.ndarray, optional</p>
+<blockquote>
+<div><p>Boundary matrix with same shape as grid</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>Bool mask matrix for determining divertor pixels with shape ny, nx</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.tokamaks.Tokamak.get_divertor_chnls">
+<code class="descname">get_divertor_chnls</code><span class="sig-paren">(</span><em>gmat</em>, <em>grid</em>, <em>boundary=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.tokamaks.Tokamak.get_divertor_chnls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds channels of geometry matrix that have contributions in divertor area.
+Uses dot product of geometry and divertor area matrices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>gmat</strong> : csr_matrix</p>
+<p><strong>grid</strong> : RegularGrid</p>
+<p><strong>boundary</strong> : numpy.ndarray, optional</p>
+<blockquote>
+<div><p>Boundary matrix with same shape as grid</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mask</strong> : numpy.ndarray of bool</p>
+<blockquote class="last">
+<div><p>mask array with True on channels interfering with predefined divertor area</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="tomotok.core.io.tokamaks.Tokamak.interpolate_mag_field">
+<em class="property">static </em><code class="descname">interpolate_mag_field</code><span class="sig-paren">(</span><em>magfield</em>, <em>grid</em>, <em>tvec=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.tokamaks.Tokamak.interpolate_mag_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interpolates given magnetic field to provided grid using rectangular bivariate spline.</p>
+<p>If tvec is provided, only one nearest time slice of magnetic field is interpolated for each value in tvec.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>magfield</strong> : dict</p>
+<p><strong>grid</strong> : RegularGrid</p>
+<p><strong>tvec</strong> : int, float, list, tuple, np.ndarray, optional</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="tomotok.core.io.tokamaks.Tokamak.load_mag_field">
+<code class="descname">load_mag_field</code><span class="sig-paren">(</span><em>loc</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.tokamaks.Tokamak.load_mag_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads magnetic field from hdf file saved at loc</p>
+<p>If loc is path to a directory, default data file name from property mag_name is assumed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>loc</strong> : str or Path</p>
+<blockquote>
+<div><p>location of hdf file containing magnetic field</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict</p>
+<blockquote class="last">
+<div><p>Psi normalized stored in dict with keys (values, time, z, R)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="tomotok.core.io.tokamaks.Tokamak.mag_name">
+<code class="descname">mag_name</code><a class="headerlink" href="#tomotok.core.io.tokamaks.Tokamak.mag_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="tomotok.core.io.tokamaks.Tokamak.save_mag_field">
+<em class="property">static </em><code class="descname">save_mag_field</code><span class="sig-paren">(</span><em>loc</em>, <em>mag_field</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.io.tokamaks.Tokamak.save_mag_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves magnetic field into hdf file.</p>
+<p>Expects to have name included to mag_loc if magname is omitted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>loc</strong> : str or pathlib.Path</p>
+<blockquote>
+<div><p>Path to file</p>
+</div></blockquote>
+<p><strong>mag_field</strong> : dict, optional</p>
+<blockquote class="last">
+<div><p>DataArray with magnetic field</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tomotok.core.inversions.html" class="btn btn-neutral float-left" title="tomotok.core.inversions package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tomotok.core.tools.html" class="btn btn-neutral float-right" title="tomotok.core.tools package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Tomotok team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phantoms &mdash; tomotok 1.0rc5 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> tomotok
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">1. Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licence.html">2. Licence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../inversions/inversions.html">4. Inversions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auxilia.html">5. Auxiliary functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gui/gui.html">6. Graphical User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">7. Glossary</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Api Doc</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.core.html">tomotok.core package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">tomotok.gui package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">tomotok</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Phantoms</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/auxilia/phantoms.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="phantoms">
+<h1>Phantoms<a class="headerlink" href="#phantoms" title="Permalink to this headline">¶</a></h1>
+<p>This module contains simple artificial data generation methods. These data can be isotropic or based on provided magnetics data. Method for creation of artificial magnetic data similar to circular or elliptic plasma is included.</p>
+<p>Contains functions that can create emissivity phantoms.</p>
+<p>Both isotropic one or based on the shape of flux surfaces.</p>
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.phantoms.</code><code class="descname">gauss</code><span class="sig-paren">(</span><em>x</em>, <em>w=0.1</em>, <em>lim=1</em>, <em>amp=1</em>, <em>cen=0.0</em><span class="sig-paren">)</span></dt>
+<dd><p>Creates anisotropic gaussian artificial emissivity by 1D transform of x</p>
+<div class="math notranslate nohighlight">
+\[f = amp \left( \mathrm{e}^{-(x-cen)^2 / w } - \mathrm{e}^{-(lim-cen)^2 / w)} \right)\]</div>
+<p>Can be used on np.ndarray. Lim should be greater than cen.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> : float, array, np.ndarray</p>
+<blockquote>
+<div><p>Contains values to be transformed, usually psi</p>
+</div></blockquote>
+<p><strong>w</strong> : float, optional</p>
+<blockquote>
+<div><p>width of gaussian profile</p>
+</div></blockquote>
+<p><strong>lim</strong> : float, optional</p>
+<blockquote>
+<div><p>minimal value of x where transform gives zero
+if x &gt; lim emissivity is set to zero</p>
+</div></blockquote>
+<p><strong>amp</strong> : float, optional</p>
+<blockquote>
+<div><p>amplitude of gaussian profile,</p>
+</div></blockquote>
+<p><strong>cen</strong> : float, optional</p>
+<blockquote>
+<div><p>center of gaussian profile
+allows hollow profile generation when mapped on psi</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>Transformed values of x with same dimensions</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.phantoms.</code><code class="descname">gauss_iso</code><span class="sig-paren">(</span><em>nx</em>, <em>ny</em>, <em>span=1.2</em>, <em>w=0.1</em>, <em>lim=1</em>, <em>amp=1</em>, <em>cen=0</em><span class="sig-paren">)</span></dt>
+<dd><p>Creates isotropic gaussian distribution.
+See references for iso_psi and gauss</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.phantoms.</code><code class="descname">islands</code><span class="sig-paren">(</span><em>psi</em>, <em>w=0.01</em>, <em>lim=1</em>, <em>amp=1</em>, <em>cen=0.4</em>, <em>num=3</em>, <em>shift=0</em><span class="sig-paren">)</span></dt>
+<dd><p>Creates island like phantom from given psi profile. See references for gauss and polar_phase.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.phantoms.</code><code class="descname">iso_psi</code><span class="sig-paren">(</span><em>nx</em>, <em>ny</em>, <em>span=1.5</em><span class="sig-paren">)</span></dt>
+<dd><p>Creates matrix of artificial isotropic psi profile with border values for
+each axis equal to span.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>nx</strong> : int</p>
+<blockquote>
+<div><p>Number of pixels on x axis</p>
+</div></blockquote>
+<p><strong>ny</strong> : int</p>
+<blockquote>
+<div><p>Number of pixels on y axis</p>
+</div></blockquote>
+<p><strong>span</strong> : float, optional</p>
+<blockquote>
+<div><p>Value of result on the center of border</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>Matrix with generated profile</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.phantoms.</code><code class="descname">polar_phase</code><span class="sig-paren">(</span><em>x</em>, <em>num=3</em>, <em>shift=0</em><span class="sig-paren">)</span></dt>
+<dd><p>Applies sine phase in radial angle direction to given profile x.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Profile for application of polar phase.</p>
+</div></blockquote>
+<p><strong>num</strong> : int, optional</p>
+<blockquote>
+<div><p>number of periods per one rotation</p>
+</div></blockquote>
+<p><strong>shift</strong> : float, optional</p>
+<blockquote>
+<div><p>initial phase shift</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>Matrix with applied polar phase</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Tomotok team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

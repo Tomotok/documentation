@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.3. BiOrthogonal Basis Decomposition &mdash; tomotok 1.0rc5 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Auxiliary functions" href="../auxilia/auxilia.html" />
+    <link rel="prev" title="4.2. Linear Algebraic Methods" href="lame.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> tomotok
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">1. Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../licence.html">2. Licence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="inversions.html">4. Inversions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mfr.html">4.1. Minimum Fisher Regularization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lame.html">4.2. Linear Algebraic Methods</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.3. BiOrthogonal Basis Decomposition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#implementation">4.3.1. Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">4.3.2. References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../auxilia/auxilia.html">5. Auxiliary functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gui/gui.html">6. Graphical User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">7. Glossary</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Api Doc</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.core.html">tomotok.core package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">tomotok.gui package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">tomotok</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="inversions.html">4. Inversions</a> &raquo;</li>
+      <li>4.3. BiOrthogonal Basis Decomposition</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/inversions/bob.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="biorthogonal-basis-decomposition">
+<h1>4.3. BiOrthogonal Basis Decomposition<a class="headerlink" href="#biorthogonal-basis-decomposition" title="Permalink to this headline">¶</a></h1>
+<p>This method is based on a wavelet-vaguelette algorithm <a class="reference internal" href="#b1" id="id1">[B1]</a> and on a modified version that was used for plasma edge observation and described in <a class="reference internal" href="#b2" id="id2">[B2]</a> .</p>
+<p>This method is unregularised and therefore it requires the number of channels to be larger (or equal) than the number of nodes (see chapter 5 of <a class="reference internal" href="#b3" id="id3">[B3]</a> ) i.e. the task  has to be over determined. It is therefore not suitable for systems consisting of linear detectors where the number of channels is usually significantly lower, but it suits well matrix camera based systems.</p>
+<p>The main advantage of this approach is that once the decomposition matrix is computed it stays the same for given reconstruction grid and geometry setup. The results are then obtained simply by using matrix multiplication.</p>
+<p>Another convenient feature is thresholding. This methods selects only the contributions with the greatest norm to isolate only the most prominent features in the reconstruction plane.</p>
+<p>The main principle relies on using a biorthogonal dual basis set in the image space. Using the properties of adjugated matrices and biorthogonal transform a relation between the observed image and the reconstruction space can be determined.
+Assuming that the adjugated matrix <span class="math notranslate nohighlight">\(\mathbf{T}^*\)</span> of the matrix <span class="math notranslate nohighlight">\(\mathbf{T}\)</span> exists, it is possible to write the following system <a class="reference internal" href="#b1" id="id4">[B1]</a></p>
+<div class="math notranslate nohighlight">
+\[\mathbf{T} \cdot \mathbf{b}_{i} = \kappa_{i} \mathbf{e}_{i} \,, \qquad
+\mathbf{T}^{*} \cdot \hat{\mathbf{e}}_{i} = \kappa_{i} \mathbf{b}_i \,,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{b}_i\)</span> are basis vectors in the reconstruction space, <span class="math notranslate nohighlight">\(\mathbf{e}_i\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathbf{e}}_i\)</span> form a dual set of vectors in the image space built in such a way that it is biorthogonal and <span class="math notranslate nohighlight">\(\kappa_{i}\)</span> are normalisation factors for the set of basis vectors <span class="math notranslate nohighlight">\(\mathbf{e}_{i}\)</span> that serve for denoising purposes <a class="reference internal" href="#b1" id="id5">[B1]</a> .</p>
+<p>For any two vectors and matrix with its adjoint, following relation is valid</p>
+<div class="math notranslate nohighlight">
+\[( \mathbf{T} \cdot \mathbf{x}) \cdot \mathbf{y} = \mathbf{x} \cdot (\mathbf{T}^{*} \cdot \mathbf{y} ).\]</div>
+<p>Using the above relations the resulting emissivity can be expressed in the basis <span class="math notranslate nohighlight">\(\mathbf{b}_{i}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{g} = \sum_i^{N_\mathrm{n}} \left( \mathbf{b}_{i} \cdot \mathbf{g} \right) \cdot \mathbf{b}_{i}
+ = \sum_i^{N_\mathrm{n}} \frac{1}{\kappa_{i}} \left( \hat{\mathbf{e}}_{i} \cdot \mathbf{f} \right) \cdot \mathbf{b}_{i} \,.\]</div>
+<p>This shows that the knowledge of the basis vectors <span class="math notranslate nohighlight">\(\hat{\mathbf{e}}_{i}\)</span> would allow to recover the emissivity <span class="math notranslate nohighlight">\(\mathbf{g}\)</span> from the captured image <span class="math notranslate nohighlight">\(\mathbf{f}\)</span>.
+The basis vectors <span class="math notranslate nohighlight">\(\hat{\mathbf{e}}_{i}\)</span> can be found by applying the biorthogonal condition of the dual set <span class="math notranslate nohighlight">\((\mathbf{e}_{i}, \hat{\mathbf{e}}_{i})\)</span> <a class="reference internal" href="#b2" id="id6">[B2]</a>. Note again that it is required that <span class="math notranslate nohighlight">\(N_\mathrm{n} \le N_\mathrm{c}\)</span>.</p>
+<div class="section" id="implementation">
+<h2>4.3.1. Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline">¶</a></h2>
+<p>Dense matrices only. No wavelet support implemented yet. Simple one node basis is used.</p>
+</div>
+<div class="section" id="references">
+<h2>4.3.2. References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<table class="docutils citation" frame="void" id="b1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[B1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id4">2</a>, <a class="fn-backref" href="#id5">3</a>)</em> <ol class="last upperalpha simple" start="18">
+<li>Nguyen Van Yen, N. Fedorczak, F. Brochard, G. Bonhomme, K. Schneider, M. Farge et al., Tomographic reconstruction of tokamak plasma light emission from single image using wavelet-vaguelette decomposition, Nucl. Fusion 52 (2011) 013005.</li>
+</ol>
+</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="b2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[B2]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id6">2</a>)</em> <ol class="last upperalpha simple" start="10">
+<li>Cavalier, N. Lemoine, F. Brochard, V. Weinzettl, J. Seidl, S. Silburn et al., Tomographic reconstruction of tokamak edge turbulence from single visible camera data and automatic turbulence structure tracking, Nucl. Fusion 59 (2019) 056025.</li>
+</ol>
+</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="b3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[B3]</a></td><td><ol class="first last upperalpha simple" start="19">
+<li>Mallat, A Wavelet Tour of Signal Processing - The Sparse Way. Elsevier, third ed., 2009.</li>
+</ol>
+</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lame.html" class="btn btn-neutral float-left" title="4.2. Linear Algebraic Methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../auxilia/auxilia.html" class="btn btn-neutral float-right" title="5. Auxiliary functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Tomotok team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
