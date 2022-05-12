@@ -5,7 +5,7 @@ Tomotok is available from python package index. It can be installed using pip by
 
     pip install tomotok
 
-If pip is not available it can be installed using files downloaded from a `github repository <https://github.com/Tomotok>`_::
+If pip is not available it can be installed using files downloaded from a `github repository <https://github.com/Tomotok>`_ by running command::
 
     python setup.py install
 
