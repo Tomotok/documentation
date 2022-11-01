@@ -1,72 +1,38 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>4.2. Linear Algebraic Methods &mdash; tomotok 1.1 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.2. Linear Algebraic Methods &mdash; tomotok 1.2.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4.3. BiOrthogonal Basis Decomposition" href="bob.html" />
     <link rel="prev" title="4.1. Minimum Fisher Regularization" href="mfr.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> tomotok
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
-                1.1
+                1.2.1
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -74,17 +40,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../welcome.html">1. Welcome</a></li>
@@ -112,85 +68,46 @@
 <li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">tomotok.gui package</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">tomotok</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="inversions.html">4. Inversions</a> &raquo;</li>
-        
-      <li>4.2. Linear Algebraic Methods</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="inversions.html"><span class="section-number">4. </span>Inversions</a> &raquo;</li>
+      <li><span class="section-number">4.2. </span>Linear Algebraic Methods</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/inversions/lame.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="linear-algebraic-methods">
-<h1>4.2. Linear Algebraic Methods<a class="headerlink" href="#linear-algebraic-methods" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="linear-algebraic-methods">
+<h1><span class="section-number">4.2. </span>Linear Algebraic Methods<a class="headerlink" href="#linear-algebraic-methods" title="Permalink to this headline"></a></h1>
 <p>These inversion algorithms are based on a decomposition of geometry matrix and emissivity independent regularisation matrix <span class="math notranslate nohighlight">\(\mathbf{H}\)</span>. This matrix can be computed using the following formula:</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{H} = \mathbf{D}^{T}_\mathrm{R} \cdot \mathbf{D}_\mathrm{R} + \mathbf{D}^{T}_\mathrm{z} \cdot \mathbf{D}_\mathrm{z} \,,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{D}_{R/z}\)</span> is the discrete derivation matrix normalised by the distance of node centers. Various numerical schemes can be used for computation of derivation matrices. The regularisation matrix computation is simplified compared to MFR and does not include the nonlinear term. This enables estimation of regularisation parameter directly from the decomposed matrices.</p>
-<p>All methods share the same baseline that is used by the Phillips-Tikhonov regularisation scheme. First a decomposition using SVD or GEV scheme is performed resulting in multiple matrices that can be modified to fit the pattern needed to solve the Phillips-Tikhonov scheme using series expansion as shown below. The resulting emissivity <span class="math notranslate nohighlight">\(\mathbf{g}(\alpha)\)</span> is dependent on the regularisation parameter and can be computed using the following formula for reconstruction of <span class="math notranslate nohighlight">\(N_\mathrm{n}\)</span> nodes and <span class="math notranslate nohighlight">\(N_\mathrm{c}\)</span> channels <a class="reference internal" href="#l1" id="id1">[L1]</a></p>
+<p>All methods share the same baseline that is used by the Phillips-Tikhonov regularisation scheme. First a decomposition using SVD or GEV scheme is performed resulting in multiple matrices that can be modified to fit the pattern needed to solve the Phillips-Tikhonov scheme using series expansion as shown below. The resulting emissivity <span class="math notranslate nohighlight">\(\mathbf{g}(\alpha)\)</span> is dependent on the regularisation parameter and can be computed using the following formula for reconstruction of <span class="math notranslate nohighlight">\(N_\mathrm{n}\)</span> nodes and <span class="math notranslate nohighlight">\(N_\mathrm{c}\)</span> channels <a class="reference internal" href="#l1" id="id1"><span>[L1]</span></a></p>
 <div class="math notranslate nohighlight" id="equation-series">
-<span class="eqno">(1)<a class="headerlink" href="#equation-series" title="Permalink to this equation">¶</a></span>\[\mathbf{g}(\alpha) = \sum_{i=1}^{N_\mathrm{c}} \frac{k_{i} (\alpha)}{S_{ii}} \left( \mathbf{U}^T \cdot \mathbf{f} \cdot \tilde{\mathbf{V}} \right) {}_{*i} \,,\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-series" title="Permalink to this equation"></a></span>\[\mathbf{g}(\alpha) = \sum_{i=1}^{N_\mathrm{c}} \frac{k_{i} (\alpha)}{S_{ii}} \left( \mathbf{U}^T \cdot \mathbf{f} \cdot \tilde{\mathbf{V}} \right) {}_{*i} \,,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{U} \in \mathbb{R}^{N_\mathrm{n},N_\mathrm{c}}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{S} \in \mathbb{R}^{N_\mathrm{c},N_\mathrm{c}}\)</span> is a diagonal matrix, <span class="math notranslate nohighlight">\(\tilde{\mathbf{V}} \in \mathbb{R}^{N_\mathrm{c}, N_\mathrm{c}}\)</span> and <span class="math notranslate nohighlight">\(k_{i}(\alpha)\)</span> are coefficients dependent on the value of the regularisation parameter computed by the following equation</p>
 <div class="math notranslate nohighlight">
 \[k_{i}(\alpha) = \left(1 + \frac{\alpha}{S_{ii}^2} \right)^{-1} \,.\]</div>
-<div class="section" id="singular-value-decomposition">
-<h2>4.2.1. Singular Value Decomposition<a class="headerlink" href="#singular-value-decomposition" title="Permalink to this headline">¶</a></h2>
-<p>Based on <a class="reference internal" href="#l1" id="id2">[L1]</a>. As the name suggest, this method uses singular value decomposition to obtain matrices used in equation <a class="reference internal" href="#equation-series">(1)</a>. The first step is to compute a Cholesky decomposition of derivative matrix <span class="math notranslate nohighlight">\(\mathbf{H}\)</span></p>
+<section id="singular-value-decomposition">
+<h2><span class="section-number">4.2.1. </span>Singular Value Decomposition<a class="headerlink" href="#singular-value-decomposition" title="Permalink to this headline"></a></h2>
+<p>Based on <a class="reference internal" href="#l1" id="id2"><span>[L1]</span></a>. As the name suggest, this method uses singular value decomposition to obtain matrices used in equation <a class="reference internal" href="#equation-series">(1)</a>. The first step is to compute a Cholesky decomposition of derivative matrix <span class="math notranslate nohighlight">\(\mathbf{H}\)</span></p>
 <div class="math notranslate nohighlight">
 \[\mathbf{H} = \mathbf{L} \cdot \mathbf{L}^T.\]</div>
 <p>A lower triangular matrix <span class="math notranslate nohighlight">\(\mathbf{L}\)</span> is obtained and an arbitrary matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is defined using it together with geometry matrix</p>
@@ -202,11 +119,11 @@
 <p>The decomposed matrix <span class="math notranslate nohighlight">\(\mathbf{V}\)</span> is then modified for use in the series expansion <a class="reference internal" href="#equation-series">(1)</a>.</p>
 <div class="math notranslate nohighlight">
 \[\tilde{\mathbf{V}} = {\mathbf{L}^{-1}}^{T} \cdot \mathbf{V}\]</div>
-</div>
-<div class="section" id="generalised-eigenvalue-decomposition">
-<h2>4.2.2. Generalised Eigenvalue Decomposition<a class="headerlink" href="#generalised-eigenvalue-decomposition" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="generalised-eigenvalue-decomposition">
+<h2><span class="section-number">4.2.2. </span>Generalised Eigenvalue Decomposition<a class="headerlink" href="#generalised-eigenvalue-decomposition" title="Permalink to this headline"></a></h2>
 <p>This method is an alternative to the SVD method described above. The computation of matrices to be used in equation <a class="reference internal" href="#equation-series">(1)</a> is based on generalised eigenvalue decomposition.</p>
-<p>Below an implementation based on <a class="reference internal" href="#l2" id="id3">[L2]</a> is described. First a symmetric geometry matrix <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> is defined as</p>
+<p>Below an implementation based on <a class="reference internal" href="#l2" id="id3"><span>[L2]</span></a> is described. First a symmetric geometry matrix <span class="math notranslate nohighlight">\(\mathbf{C}\)</span> is defined as</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{C} = \mathbf{T}^T \cdot \mathbf{T}.\]</div>
 <p>This matrix is then used as the matrix for investigation in eigenvalue problem. The diagonal matrix to be used in equation (ref{eq:lame-series}) is directly determined by solving generalised eigenvalue problem</p>
@@ -218,80 +135,57 @@
 \[\begin{split}\tilde{\mathbf{V}} &amp; = \mathbf{T} \cdot \mathbf{V} \cdot \mathbf{D}^{-\frac{1}{2}} \\
 \mathbf{U} &amp; = \mathbf{D}^{\frac{1}{2}} \cdot \mathbf{V} .\end{split}\]</div>
 <p>Exponent of matrix <span class="math notranslate nohighlight">\(\mathbf{D}\)</span> is used element wise.</p>
-</div>
-<div class="section" id="implementation">
-<h2>4.2.3. Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline">¶</a></h2>
-<p>Structure of classes is based on algorithms proposed by T. Odstrcil in <a class="reference internal" href="#l1" id="id4">[L1]</a>. However, they are currently implemented only for dense matrices without sparse optimization. If properly implemented using sparse matrices this class of algorithms can provide fast results with reasonable accuracy.</p>
+</section>
+<section id="implementation">
+<h2><span class="section-number">4.2.3. </span>Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline"></a></h2>
+<p>Structure of classes is based on algorithms proposed by T. Odstrcil in <a class="reference internal" href="#l1" id="id4"><span>[L1]</span></a>. However, they are currently implemented only for dense matrices without sparse optimization. If properly implemented using sparse matrices this class of algorithms can provide fast results with reasonable accuracy.</p>
 <p>Several decomposition schemes can be used, therefore, a base class for these algorithms called Algebraic was created. The regularisation parameter can be found using a variety of methods that can be simple or more complex. Currently. only fast estimation based on decompositions is implemented in a subclass FastAlgebraic.</p>
 <p>Singular value decomposition (SVD) and generalised eigenvalue decomposition (GEV) methods are subclasses of FastAlgebraic.</p>
-</div>
-<div class="section" id="references">
-<h2>4.2.4. References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<table class="docutils citation" frame="void" id="l1" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[L1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>, <a class="fn-backref" href="#id4">3</a>)</em> <ol class="last upperalpha simple" start="20">
-<li>Odstrcil et al., “Optimized tomography methods for plasma emissivity reconstruction at the ASDEX Upgrade tokamak,” Rev. Sci. Instrum., 87(12), 123505.</li>
+</section>
+<section id="references">
+<h2><span class="section-number">4.2.4. </span>References<a class="headerlink" href="#references" title="Permalink to this headline"></a></h2>
+<dl class="citation">
+<dt class="label" id="l1"><span class="brackets">L1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id4">3</a>)</span></dt>
+<dd><ol class="upperalpha simple" start="20">
+<li><p>Odstrcil et al., “Optimized tomography methods for plasma emissivity reconstruction at the ASDEX Upgrade tokamak,” Rev. Sci. Instrum., 87(12), 123505.</p></li>
 </ol>
-</td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="l2" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[L2]</a></td><td>L.C. Ingesson, “The Mathematics of Some Tomography Algorithms Used at JET,” JET Joint Undertaking (2000)</td></tr>
-</tbody>
-</table>
-</div>
-</div>
+</dd>
+<dt class="label" id="l2"><span class="brackets"><a class="fn-backref" href="#id3">L2</a></span></dt>
+<dd><p>L.C. Ingesson, “The Mathematics of Some Tomography Algorithms Used at JET,” JET Joint Undertaking (2000)</p>
+</dd>
+</dl>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="bob.html" class="btn btn-neutral float-right" title="4.3. BiOrthogonal Basis Decomposition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="mfr.html" class="btn btn-neutral float-left" title="4.1. Minimum Fisher Regularization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mfr.html" class="btn btn-neutral float-left" title="4.1. Minimum Fisher Regularization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bob.html" class="btn btn-neutral float-right" title="4.3. BiOrthogonal Basis Decomposition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2021, Institute of Plasma Physics of CAS
-
-    </p>
+    <p>&#169; Copyright 2021, Institute of Plasma Physics of CAS.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

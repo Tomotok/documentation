@@ -1,72 +1,37 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>tomotok.core.tools package &mdash; tomotok 1.1 documentation</title>
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tomotok.core.tools package &mdash; tomotok 1.2.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="tomotok.gui package" href="tomotok.gui.html" />
     <link rel="prev" title="tomotok.core.io package" href="tomotok.core.io.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html" class="icon icon-home"> tomotok
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
-                1.1
+                1.2.1
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -74,17 +39,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../welcome.html">1. Welcome</a></li>
@@ -106,7 +61,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-tomotok.core.tools.checkers">tomotok.core.tools.checkers module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-tomotok.core.tools.data">tomotok.core.tools.data module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tomotok-core-tools-gifmaker-module">tomotok.core.tools.gifmaker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-tomotok.core.tools.gifmaker">tomotok.core.tools.gifmaker module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-tomotok.core.tools.postproc">tomotok.core.tools.postproc module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-tomotok.core.tools.projection">tomotok.core.tools.projection module</a></li>
 </ul>
@@ -121,89 +76,50 @@
 <li class="toctree-l1"><a class="reference internal" href="tomotok.gui.html">tomotok.gui package</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">tomotok</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html">Docs</a> &raquo;</li>
-        
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="tomotok.core.html">tomotok.core package</a> &raquo;</li>
-        
       <li>tomotok.core.tools package</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="../_sources/api/tomotok.core.tools.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="module-tomotok.core.tools">
-<span id="tomotok-core-tools-package"></span><h1>tomotok.core.tools package<a class="headerlink" href="#module-tomotok.core.tools" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="module-tomotok.core.tools">
+<span id="tomotok-core-tools-package"></span><h1>tomotok.core.tools package<a class="headerlink" href="#module-tomotok.core.tools" title="Permalink to this headline"></a></h1>
 <p>Contains various tools to ease using the package.</p>
 <blockquote>
 <div><ul class="simple">
-<li>DataHandler class prototype</li>
-<li>projection space plot of a system</li>
+<li><p>DataHandler class prototype</p></li>
+<li><p>projection space plot of a system</p></li>
 </ul>
 </div></blockquote>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-tomotok.core.tools.checkers">
-<span id="tomotok-core-tools-checkers-module"></span><h2>tomotok.core.tools.checkers module<a class="headerlink" href="#module-tomotok.core.tools.checkers" title="Permalink to this headline">¶</a></h2>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-tomotok.core.tools.checkers">
+<span id="tomotok-core-tools-checkers-module"></span><h2>tomotok.core.tools.checkers module<a class="headerlink" href="#module-tomotok.core.tools.checkers" title="Permalink to this headline"></a></h2>
 <p>Contains classes and functions for user checking of some tomography algorithm parts</p>
-<div class="section" id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h3>
 <p>Checking anisotropic derivative matrix computed from DataArray with magnetic flux surfaces <cite>magnetic_flux</cite></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tomotok.core.io</span> <span class="k">import</span> <span class="n">Pixgrid</span><span class="p">,</span> <span class="n">Tokamak</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tomotok.core.io</span> <span class="kn">import</span> <span class="n">Pixgrid</span><span class="p">,</span> <span class="n">Tokamak</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">time</span> <span class="o">=</span> <span class="mf">1.2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">shot</span> <span class="o">=</span> <span class="mi">19925</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">coord</span> <span class="o">=</span> <span class="n">Pixgrid</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
@@ -214,383 +130,436 @@
 </div>
 <p># TODO
 Plotting geometry matrix stored at local drive</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tomotok.utils.gmat</span> <span class="k">import</span> <span class="n">load_function</span>  <span class="c1"># not implemented yet</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tomotok.utils.gmat</span> <span class="kn">import</span> <span class="n">load_function</span>  <span class="c1"># not implemented yet</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gmat</span> <span class="o">=</span> <span class="n">load_function</span><span class="p">(</span><span class="s1">&#39;path/to/gmat/file&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">check_gmat</span><span class="p">(</span><span class="n">gmat</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="class">
-<dt id="tomotok.core.tools.checkers.DerivMatChecker">
-<em class="property">class </em><code class="descclassname">tomotok.core.tools.checkers.</code><code class="descname">DerivMatChecker</code><span class="sig-paren">(</span><em>coord</em>, <em>magfield</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.checkers.DerivMatChecker" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="tomotok.core.tools.checkers.DerivMatChecker">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tomotok.core.tools.checkers.</span></span><span class="sig-name descname"><span class="pre">DerivMatChecker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magfield</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.checkers.DerivMatChecker" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Computes anisotropic matrix for a time slice from provided magnetic flux and plots its components.
 Supports interactive selection of matrix element using mouse.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>coord</strong> : Pixgrid</p>
-<p class="last"><strong>magfield</strong> : dict</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="7%" />
-<col width="93%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>fig</strong></td>
-<td>(matplotlib.figure) contains color mesh and countour plot of magnetic surfaces</td>
-</tr>
-<tr class="row-even"><td><strong>fig2</strong></td>
-<td>( matplotlib.figure) contains two subplots with parallel and perpendicular parts of derivative matrix</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>coord</strong><span class="classifier">Pixgrid</span></dt><dd></dd>
+<dt><strong>magfield</strong><span class="classifier">dict</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Attributes</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>fig</strong><span class="classifier">matplotlib.figure</span></dt><dd><p>contains color mesh and countour plot of magnetic surfaces</p>
+</dd>
+<dt><strong>fig2</strong><span class="classifier">matplotlib.figure</span></dt><dd><p>contains two subplots with parallel and perpendicular parts of derivative matrix</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
-<dl class="method">
-<dt id="tomotok.core.tools.checkers.DerivMatChecker.onclick">
-<code class="descname">onclick</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.checkers.DerivMatChecker.onclick" title="Permalink to this definition">¶</a></dt>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(time[, der_type])</p></td>
+<td><p>Call self as a function.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tomotok.core.tools.checkers.DerivMatChecker.onclick" title="tomotok.core.tools.checkers.DerivMatChecker.onclick"><code class="xref py py-obj docutils literal notranslate"><span class="pre">onclick</span></code></a>(event)</p></td>
+<td><p>Gets coordinate from the click on the main flux plot</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tomotok.core.tools.checkers.DerivMatChecker.update" title="tomotok.core.tools.checkers.DerivMatChecker.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>(x, y)</p></td>
+<td><p>Updates plots for current pixel coordinate</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.checkers.DerivMatChecker.onclick">
+<span class="sig-name descname"><span class="pre">onclick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.checkers.DerivMatChecker.onclick" title="Permalink to this definition"></a></dt>
 <dd><p>Gets coordinate from the click on the main flux plot</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.checkers.DerivMatChecker.update">
-<code class="descname">update</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.checkers.DerivMatChecker.update" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.checkers.DerivMatChecker.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.checkers.DerivMatChecker.update" title="Permalink to this definition"></a></dt>
 <dd><p>Updates plots for current pixel coordinate</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="function">
-<dt id="tomotok.core.tools.checkers.check_gmat">
-<code class="descclassname">tomotok.core.tools.checkers.</code><code class="descname">check_gmat</code><span class="sig-paren">(</span><em>gmat</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.checkers.check_gmat" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="tomotok.core.tools.checkers.check_gmat">
+<span class="sig-prename descclassname"><span class="pre">tomotok.core.tools.checkers.</span></span><span class="sig-name descname"><span class="pre">check_gmat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gmat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.checkers.check_gmat" title="Permalink to this definition"></a></dt>
 <dd><p>Checks geometry matrix by summing all channels and plotting.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gmat</strong> : dict</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>fig</strong> : matplotlib.pyplot.figure</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>gmat</strong><span class="classifier">dict</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>fig</strong><span class="classifier">matplotlib.pyplot.figure</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
-</div>
-</div>
-<div class="section" id="module-tomotok.core.tools.data">
-<span id="tomotok-core-tools-data-module"></span><h2>tomotok.core.tools.data module<a class="headerlink" href="#module-tomotok.core.tools.data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="module-tomotok.core.tools.data">
+<span id="tomotok-core-tools-data-module"></span><h2>tomotok.core.tools.data module<a class="headerlink" href="#module-tomotok.core.tools.data" title="Permalink to this headline"></a></h2>
 <p>WIP</p>
 <p>Contains class that does data filtering and stuff. It can also handle error estimation.</p>
-<dl class="class">
-<dt id="tomotok.core.tools.data.DataHandler">
-<em class="property">class </em><code class="descclassname">tomotok.core.tools.data.</code><code class="descname">DataHandler</code><span class="sig-paren">(</span><em>data</em>, <em>min_error=0</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tomotok.core.tools.data.</span></span><span class="sig-name descname"><span class="pre">DataHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Does filtering and stuff</p>
-<p class="rubric">Attributes</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="45%" />
-<col width="55%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>chnls</strong></td>
-<td>(np.ndarray)</td>
-</tr>
-<tr class="row-even"><td><strong>time</strong></td>
-<td>(np.ndarray)</td>
-</tr>
-<tr class="row-odd"><td><strong>data</strong></td>
-<td>(np.ndarray)</td>
-</tr>
-<tr class="row-even"><td><strong>errors</strong></td>
-<td>(np.ndarray)</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>chnls</strong><span class="classifier">np.ndarray</span></dt><dd></dd>
+<dt><strong>time</strong><span class="classifier">np.ndarray</span></dt><dd></dd>
+<dt><strong>data</strong><span class="classifier">np.ndarray</span></dt><dd></dd>
+<dt><strong>errors</strong><span class="classifier">np.ndarray</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.add_errors">
-<code class="descname">add_errors</code><span class="sig-paren">(</span><em>err</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.add_errors" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>err :</strong></td>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tomotok.core.tools.data.DataHandler.add_errors" title="tomotok.core.tools.data.DataHandler.add_errors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_errors</span></code></a>(err)</p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tomotok.core.tools.data.DataHandler.crop_data" title="tomotok.core.tools.data.DataHandler.crop_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">crop_data</span></code></a>(tlim[, extend_num])</p></td>
+<td><p>Cuts data to requested interval</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tomotok.core.tools.data.DataHandler.downsample" title="tomotok.core.tools.data.DataHandler.downsample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">downsample</span></code></a>(n[, average])</p></td>
+<td><p>Keeps only each n-th time slice of data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tomotok.core.tools.data.DataHandler.fourier" title="tomotok.core.tools.data.DataHandler.fourier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fourier</span></code></a>(freqs)</p></td>
+<td><p>Transforms data to frequency domain using fourier transform</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tomotok.core.tools.data.DataHandler.interpolate" title="tomotok.core.tools.data.DataHandler.interpolate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpolate</span></code></a>(tvec)</p></td>
+<td><p>Interpolates both data and errors to given time vector.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tomotok.core.tools.data.DataHandler.remove_below" title="tomotok.core.tools.data.DataHandler.remove_below"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_below</span></code></a>(threshold)</p></td>
+<td><p>Removes channels with average signal bellow given threshold</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tomotok.core.tools.data.DataHandler.remove_chnls" title="tomotok.core.tools.data.DataHandler.remove_chnls"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_chnls</span></code></a>(chnls)</p></td>
+<td><p>Removes specified channels from data</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#tomotok.core.tools.data.DataHandler.remove_nan_chnls" title="tomotok.core.tools.data.DataHandler.remove_nan_chnls"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_nan_chnls</span></code></a>()</p></td>
+<td><p>Removes channels that contain at least one Nan value.</p></td>
 </tr>
 </tbody>
 </table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 72%" />
+<col style="width: 28%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>average</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>butter_bandpass_filter</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>errors_scalar_multiply</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>median_filter</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>plot_chnls</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>plot_time</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>remove_zero_chnls</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>reset</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.add_errors">
+<span class="sig-name descname"><span class="pre">add_errors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">err</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.add_errors" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>err :</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.average">
-<code class="descname">average</code><span class="sig-paren">(</span><em>avg_num</em>, <em>tvec</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.average" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.average">
+<span class="sig-name descname"><span class="pre">average</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">avg_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tvec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.average" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.butter_bandpass_filter">
-<code class="descname">butter_bandpass_filter</code><span class="sig-paren">(</span><em>lowcut</em>, <em>highcut</em>, <em>fs</em>, <em>order=5</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.butter_bandpass_filter" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.butter_bandpass_filter">
+<span class="sig-name descname"><span class="pre">butter_bandpass_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lowcut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">highcut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.butter_bandpass_filter" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.crop_data">
-<code class="descname">crop_data</code><span class="sig-paren">(</span><em>tlim</em>, <em>extend_num=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.crop_data" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.crop_data">
+<span class="sig-name descname"><span class="pre">crop_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tlim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extend_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.crop_data" title="Permalink to this definition"></a></dt>
 <dd><p>Cuts data to requested interval</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>tlim</strong> : tuple</p>
-<blockquote>
-<div><p>contains limits of requested time axis</p>
-</div></blockquote>
-<p><strong>extend_num</strong> : int, optional</p>
-<blockquote class="last">
-<div><p>contains number of points outside tlim for filtering methods
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tlim</strong><span class="classifier">tuple</span></dt><dd><p>contains limits of requested time axis</p>
+</dd>
+<dt><strong>extend_num</strong><span class="classifier">int, optional</span></dt><dd><p>contains number of points outside tlim for filtering methods
 (default value is calculated to fit chosen filtering method) &lt;- should be determined by user</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.downsample">
-<code class="descname">downsample</code><span class="sig-paren">(</span><em>n</em>, <em>average=False</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.downsample" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.downsample">
+<span class="sig-name descname"><span class="pre">downsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">average</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.downsample" title="Permalink to this definition"></a></dt>
 <dd><p>Keeps only each n-th time slice of data.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>n</strong> : int</p>
-<p><strong>average</strong> : bool, optional</p>
-<blockquote class="last">
-<div><p>not implemented yet</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>n</strong><span class="classifier">int</span></dt><dd></dd>
+<dt><strong>average</strong><span class="classifier">bool, optional</span></dt><dd><p>not implemented yet</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.errors_scalar_multiply">
-<code class="descname">errors_scalar_multiply</code><span class="sig-paren">(</span><em>scalar</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.errors_scalar_multiply" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.errors_scalar_multiply">
+<span class="sig-name descname"><span class="pre">errors_scalar_multiply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scalar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.errors_scalar_multiply" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.fourier">
-<code class="descname">fourier</code><span class="sig-paren">(</span><em>freqs</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.fourier" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.fourier">
+<span class="sig-name descname"><span class="pre">fourier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freqs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.fourier" title="Permalink to this definition"></a></dt>
 <dd><p>Transforms data to frequency domain using fourier transform</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>freqs</strong> : list</p>
-<blockquote>
-<div><p>values of frequencies used for new <cite>time vector</cite></p>
-</div></blockquote>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">DataHandler</p>
-<blockquote class="last">
-<div><p>new instance of DataHandler with transformed data and errors</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>freqs</strong><span class="classifier">list</span></dt><dd><p>values of frequencies used for new <cite>time vector</cite></p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>DataHandler</dt><dd><p>new instance of DataHandler with transformed data and errors</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.interpolate">
-<code class="descname">interpolate</code><span class="sig-paren">(</span><em>tvec</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.interpolate" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.interpolate">
+<span class="sig-name descname"><span class="pre">interpolate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tvec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.interpolate" title="Permalink to this definition"></a></dt>
 <dd><p>Interpolates both data and errors to given time vector.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tvec</strong> : int, float, np.ndarray</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>data, err</strong> : ndarray</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>tvec</strong><span class="classifier">int, float, np.ndarray</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>data, err</strong><span class="classifier">ndarray</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.median_filter">
-<code class="descname">median_filter</code><span class="sig-paren">(</span><em>kernel_size=1</em>, <em>error_type='sem'</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.median_filter" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.median_filter">
+<span class="sig-name descname"><span class="pre">median_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sem'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.median_filter" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.plot_chnls">
-<code class="descname">plot_chnls</code><span class="sig-paren">(</span><em>chnls=None</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.plot_chnls" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.plot_chnls">
+<span class="sig-name descname"><span class="pre">plot_chnls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chnls</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.plot_chnls" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.plot_time">
-<code class="descname">plot_time</code><span class="sig-paren">(</span><em>time=0</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.plot_time" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.plot_time">
+<span class="sig-name descname"><span class="pre">plot_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.plot_time" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.remove_below">
-<code class="descname">remove_below</code><span class="sig-paren">(</span><em>threshold</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.remove_below" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.remove_below">
+<span class="sig-name descname"><span class="pre">remove_below</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.remove_below" title="Permalink to this definition"></a></dt>
 <dd><p>Removes channels with average signal bellow given threshold</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>threshold</strong> : float</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>threshold</strong><span class="classifier">float</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.remove_chnls">
-<code class="descname">remove_chnls</code><span class="sig-paren">(</span><em>chnls</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.remove_chnls" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.remove_chnls">
+<span class="sig-name descname"><span class="pre">remove_chnls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chnls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.remove_chnls" title="Permalink to this definition"></a></dt>
 <dd><p>Removes specified channels from data</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chnls</strong> : iterable of ints</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>chnls</strong><span class="classifier">iterable of ints</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.remove_nan_chnls">
-<code class="descname">remove_nan_chnls</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.remove_nan_chnls" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.remove_nan_chnls">
+<span class="sig-name descname"><span class="pre">remove_nan_chnls</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.remove_nan_chnls" title="Permalink to this definition"></a></dt>
 <dd><p>Removes channels that contain at least one Nan value.</p>
 </dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.remove_zero_chnls">
-<code class="descname">remove_zero_chnls</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.remove_zero_chnls" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.remove_zero_chnls">
+<span class="sig-name descname"><span class="pre">remove_zero_chnls</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.remove_zero_chnls" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="tomotok.core.tools.data.DataHandler.reset">
-<code class="descname">reset</code><span class="sig-paren">(</span><em>min_error=0</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.reset" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.tools.data.DataHandler.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.data.DataHandler.reset" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="tomotok-core-tools-gifmaker-module">
-<h2>tomotok.core.tools.gifmaker module<a class="headerlink" href="#tomotok-core-tools-gifmaker-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-tomotok.core.tools.postproc">
-<span id="tomotok-core-tools-postproc-module"></span><h2>tomotok.core.tools.postproc module<a class="headerlink" href="#module-tomotok.core.tools.postproc" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="tomotok.core.tools.postproc.compute_power">
-<code class="descclassname">tomotok.core.tools.postproc.</code><code class="descname">compute_power</code><span class="sig-paren">(</span><em>recs</em>, <em>grid</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.postproc.compute_power" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="module-tomotok.core.tools.gifmaker">
+<span id="tomotok-core-tools-gifmaker-module"></span><h2>tomotok.core.tools.gifmaker module<a class="headerlink" href="#module-tomotok.core.tools.gifmaker" title="Permalink to this headline"></a></h2>
+<p>Simple function used to generate gifs from a set of png images.</p>
+<p>Requires imageio library. To be replaced by matplotlib’s animation</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="tomotok.core.tools.gifmaker.gifmaker">
+<span class="sig-prename descclassname"><span class="pre">tomotok.core.tools.gifmaker.</span></span><span class="sig-name descname"><span class="pre">gifmaker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">what</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duration</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loops</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fldr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'../tomography/Graphs/all/'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.gifmaker.gifmaker" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>shot</strong><span class="classifier">int</span></dt><dd><p>checks file name if it contains required shot number</p>
+</dd>
+<dt><strong>what</strong><span class="classifier">str</span></dt><dd><p>a string required to be present in file name, e.g. ‘rectangles’</p>
+</dd>
+<dt><strong>duration</strong></dt><dd></dd>
+<dt><strong>loops</strong><span class="classifier">int</span></dt><dd></dd>
+<dt><strong>fldr</strong><span class="classifier">str</span></dt><dd><p>url of folder with pngs</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-tomotok.core.tools.postproc">
+<span id="tomotok-core-tools-postproc-module"></span><h2>tomotok.core.tools.postproc module<a class="headerlink" href="#module-tomotok.core.tools.postproc" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="tomotok.core.tools.postproc.compute_power">
+<span class="sig-prename descclassname"><span class="pre">tomotok.core.tools.postproc.</span></span><span class="sig-name descname"><span class="pre">compute_power</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">recs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.postproc.compute_power" title="Permalink to this definition"></a></dt>
 <dd><p>Computes total radiated power from whole reconstruction area.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
-<blockquote class="last">
-<div><p>Contains values of total radiated power for all time slices</p>
-</div></blockquote>
-</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>grid</strong><span class="classifier">RegularGrid</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>Contains values of total radiated power for all time slices</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="tomotok.core.tools.postproc.plot">
-<code class="descclassname">tomotok.core.tools.postproc.</code><code class="descname">plot</code><span class="sig-paren">(</span><em>recs</em>, <em>ts=0</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.postproc.plot" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="tomotok.core.tools.postproc.plot">
+<span class="sig-prename descclassname"><span class="pre">tomotok.core.tools.postproc.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">recs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.postproc.plot" title="Permalink to this definition"></a></dt>
 <dd><p>Moved from BaseMfr class</p>
 </dd></dl>
 
-</div>
-<div class="section" id="module-tomotok.core.tools.projection">
-<span id="tomotok-core-tools-projection-module"></span><h2>tomotok.core.tools.projection module<a class="headerlink" href="#module-tomotok.core.tools.projection" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="tomotok.core.tools.projection.projection_space">
-<code class="descclassname">tomotok.core.tools.projection.</code><code class="descname">projection_space</code><span class="sig-paren">(</span><em>chords</em>, <em>centre=(0</em>, <em>0)</em>, <em>magnetics=None</em>, <em>maglvl=1</em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.projection.projection_space" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>chords</strong> : tuple</p>
-<p><strong>centre</strong> : tuple of float</p>
-<p><strong>magnetics</strong> : dict</p>
-<p><strong>maglvl</strong> : float, list of float</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>fig</strong> : matplotlib.figure</p>
-</td>
-</tr>
-</tbody>
-</table>
+</section>
+<section id="module-tomotok.core.tools.projection">
+<span id="tomotok-core-tools-projection-module"></span><h2>tomotok.core.tools.projection module<a class="headerlink" href="#module-tomotok.core.tools.projection" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="tomotok.core.tools.projection.projection_space">
+<span class="sig-prename descclassname"><span class="pre">tomotok.core.tools.projection.</span></span><span class="sig-name descname"><span class="pre">projection_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centre</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magnetics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maglvl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.tools.projection.projection_space" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>chords</strong><span class="classifier">tuple</span></dt><dd></dd>
+<dt><strong>centre</strong><span class="classifier">tuple of float</span></dt><dd></dd>
+<dt><strong>magnetics</strong><span class="classifier">dict</span></dt><dd></dd>
+<dt><strong>maglvl</strong><span class="classifier">float, list of float</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>fig</strong><span class="classifier">matplotlib.figure</span></dt><dd></dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="tomotok.gui.html" class="btn btn-neutral float-right" title="tomotok.gui package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="tomotok.core.io.html" class="btn btn-neutral float-left" title="tomotok.core.io package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tomotok.core.io.html" class="btn btn-neutral float-left" title="tomotok.core.io package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tomotok.gui.html" class="btn btn-neutral float-right" title="tomotok.gui package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2021, Institute of Plasma Physics of CAS
-
-    </p>
+    <p>&#169; Copyright 2021, Institute of Plasma Physics of CAS.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
