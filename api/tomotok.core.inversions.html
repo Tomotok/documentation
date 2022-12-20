@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>tomotok.core.inversions package &mdash; tomotok 1.2.1 documentation</title>
+  <title>tomotok.core.inversions package &mdash; tomotok 1.2.2 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
             <a href="../index.html" class="icon icon-home"> tomotok
           </a>
               <div class="version">
-                1.2.1
+                1.2.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -116,14 +116,15 @@
 </section>
 <section id="module-tomotok.core.inversions.bob">
 <span id="tomotok-core-inversions-bob-module"></span><h2>tomotok.core.inversions.bob module<a class="headerlink" href="#module-tomotok.core.inversions.bob" title="Permalink to this headline"></a></h2>
-<p>Contains inversion class for Biorthogonal Basis Decomposition Algorithm <a class="reference internal" href="#rfa1be9bbc193-1" id="id1">[1]</a> derived from wavelet-vaguelette decomposition <a class="reference internal" href="#rfa1be9bbc193-2" id="id2">[2]</a></p>
+<p>Contains inversion class for Biorthogonal Basis Decomposition Algorithm proposed by J. Cavlier. 
+It is a simplified form of wavelet-vaguelette decomposition algorithm by R. Nguyen van Yen</p>
 <dl class="citation">
-<dt class="label" id="rfa1be9bbc193-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Jordan Cavalier et al 2019 Nucl. Fusion 59 056025</p>
+<dt class="label" id="rfa1be9bbc193-bob1"><span class="brackets">BOB1</span></dt>
+<dd><p>Jordan Cavalier et al., Nucl. Fusion 59 (2019): 056025</p>
 </dd>
-<dt class="label" id="rfa1be9bbc193-2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dt class="label" id="rfa1be9bbc193-bob2"><span class="brackets">BOB2</span></dt>
 <dd><ol class="upperalpha simple" start="18">
-<li><p>Nguyen van yen et al 2011 Nucl. Fusion 52 013005</p></li>
+<li><p>Nguyen van Yen et al., Nucl. Fusion 52 (2011): 013005</p></li>
 </ol>
 </dd>
 </dl>
@@ -151,7 +152,7 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(data[, gmat, thresholding])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tomotok.core.inversions.bob.Bob.__call__" title="tomotok.core.inversions.bob.Bob.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(data[, gmat, thresholding])</p></td>
 <td><p>Decomposes geometry matrix and projects images</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tomotok.core.inversions.bob.Bob.decompose" title="tomotok.core.inversions.bob.Bob.decompose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decompose</span></code></a>(gmat, basis[, reg_factor, solver_kw])</p></td>
@@ -168,6 +169,30 @@
 </tr>
 </tbody>
 </table>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.inversions.bob.Bob.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gmat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresholding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.inversions.bob.Bob.__call__" title="Permalink to this definition"></a></dt>
+<dd><p>Decomposes geometry matrix and projects images</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>contains signals with shape (# channels, # time slices)</p>
+</dd>
+<dt><strong>gmat</strong><span class="classifier">scipy.sparse.csr_matrix</span></dt><dd><p>geometry matrix</p>
+</dd>
+<dt><strong>thresholding</strong><span class="classifier">float, optional</span></dt><dd><p>not implemented</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>inversion results with shape (# nodes, # time slices)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="tomotok.core.inversions.bob.Bob.decompose">
 <span class="sig-name descname"><span class="pre">decompose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_kw</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><span class="pre">dict</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.inversions.bob.Bob.decompose" title="Permalink to this definition"></a></dt>
@@ -443,7 +468,7 @@ ASDEX Upgrade tokamak,” Rev. Sci. Instrum., 87(12), 123505.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(data, gmat, derivatives, errors[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tomotok.core.inversions.lame.Algebraic.__call__" title="tomotok.core.inversions.lame.Algebraic.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(data, gmat, derivatives, errors[, …])</p></td>
 <td><p>Iterates all time slices in data and computes inversion using one of linear algebraic methods.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tomotok.core.inversions.lame.Algebraic.decompose" title="tomotok.core.inversions.lame.Algebraic.decompose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decompose</span></code></a>(gmat, regularisation)</p></td>
@@ -458,25 +483,52 @@ ASDEX Upgrade tokamak,” Rev. Sci. Instrum., 87(12), 123505.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tomotok.core.inversions.lame.Algebraic.normalize_gmat" title="tomotok.core.inversions.lame.Algebraic.normalize_gmat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_gmat</span></code></a>(gmat, errors)</p></td>
 <td><p>Normalizes gmat using estimated errors</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tomotok.core.inversions.lame.Algebraic.regularisation_matrix" title="tomotok.core.inversions.lame.Algebraic.regularisation_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">regularisation_matrix</span></code></a>(derivatives[, aniso])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tomotok.core.inversions.lame.Algebraic.presolve" title="tomotok.core.inversions.lame.Algebraic.presolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">presolve</span></code></a>(gmat, deriv)</p></td>
+<td><p><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1.</span></p>
+</div>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tomotok.core.inversions.lame.Algebraic.regularisation_matrix" title="tomotok.core.inversions.lame.Algebraic.regularisation_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">regularisation_matrix</span></code></a>(derivatives[, aniso])</p></td>
 <td><p>Computes regularisation matrix from derivatives matrices.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#tomotok.core.inversions.lame.Algebraic.series_expansion" title="tomotok.core.inversions.lame.Algebraic.series_expansion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">series_expansion</span></code></a>(alpha, signal[, num])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tomotok.core.inversions.lame.Algebraic.series_expansion" title="tomotok.core.inversions.lame.Algebraic.series_expansion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">series_expansion</span></code></a>(alpha, signal[, num])</p></td>
 <td><p>Computes emissivity <span class="math notranslate nohighlight">\(g\)</span> from decomposed vectors using</p></td>
 </tr>
 </tbody>
 </table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>presolve</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.inversions.lame.Algebraic.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derivatives</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aniso</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.inversions.lame.Algebraic.__call__" title="Permalink to this definition"></a></dt>
+<dd><p>Iterates all time slices in data and computes inversion using one of linear algebraic methods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>signal with shape (#time slices, #chnls)</p>
+</dd>
+<dt><strong>gmat</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>geometry matrix with shape (#chnls, #nodes)</p>
+</dd>
+<dt><strong>derivatives</strong><span class="classifier">list</span></dt><dd><p>list of tuples with derivative matrix pairs</p>
+</dd>
+<dt><strong>errors</strong><span class="classifier">int, float or numpy.ndarray</span></dt><dd><p>expected errors used to normalize data, with shape (#slices,), (#chnls,) or (#time slices, #chnls)</p>
+</dd>
+<dt><strong>aniso</strong><span class="classifier">float, optional</span></dt><dd><p>anisotropic factor making the first</p>
+</dd>
+<dt><strong>method</strong><span class="classifier">str, optional</span></dt><dd><p>specifies method used for regularization parameter computation, see method find_alpha</p>
+</dd>
+<dt><strong>num</strong><span class="classifier">int, optional</span></dt><dd><p>sets number of largest vectors summed in the series expansion</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>results of inversion with shape (#timeslices, ny, nx)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="tomotok.core.inversions.lame.Algebraic.decompose">
 <span class="sig-name descname"><span class="pre">decompose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regularisation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.inversions.lame.Algebraic.decompose" title="Permalink to this definition"></a></dt>
@@ -563,7 +615,10 @@ The inversion comprises of three stages:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tomotok.core.inversions.lame.Algebraic.presolve">
 <span class="sig-name descname"><span class="pre">presolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deriv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.inversions.lame.Algebraic.presolve" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1: </span>Use <a class="reference internal" href="#tomotok.core.inversions.lame.Algebraic.decompose" title="tomotok.core.inversions.lame.Algebraic.decompose"><code class="xref py py-meth docutils literal notranslate"><span class="pre">decompose()</span></code></a>  </p>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="tomotok.core.inversions.lame.Algebraic.regularisation_matrix">
@@ -647,22 +702,17 @@ The inversion comprises of three stages:</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_gmat</span></code>(gmat, errors)</p></td>
 <td><p>Normalizes gmat using estimated errors</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">regularisation_matrix</span></code>(derivatives[, aniso])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">presolve</span></code>(gmat, deriv)</p></td>
+<td><p><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1.</span></p>
+</div>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">regularisation_matrix</span></code>(derivatives[, aniso])</p></td>
 <td><p>Computes regularisation matrix from derivatives matrices.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">series_expansion</span></code>(alpha, signal[, num])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">series_expansion</span></code>(alpha, signal[, num])</p></td>
 <td><p>Computes emissivity <span class="math notranslate nohighlight">\(g\)</span> from decomposed vectors using</p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>presolve</strong></p></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -727,22 +777,17 @@ The inversion comprises of three stages:</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_gmat</span></code>(gmat, errors)</p></td>
 <td><p>Normalizes gmat using estimated errors</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">regularisation_matrix</span></code>(derivatives[, aniso])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">presolve</span></code>(gmat, deriv)</p></td>
+<td><p><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1.</span></p>
+</div>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">regularisation_matrix</span></code>(derivatives[, aniso])</p></td>
 <td><p>Computes regularisation matrix from derivatives matrices.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">series_expansion</span></code>(alpha, signal[, num])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">series_expansion</span></code>(alpha, signal[, num])</p></td>
 <td><p>Computes emissivity <span class="math notranslate nohighlight">\(g\)</span> from decomposed vectors using</p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>presolve</strong></p></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -750,7 +795,7 @@ The inversion comprises of three stages:</p>
 <dt class="sig sig-object py" id="tomotok.core.inversions.lame.GevFastAlgebraic.decompose">
 <span class="sig-name descname"><span class="pre">decompose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regularisation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.inversions.lame.GevFastAlgebraic.decompose" title="Permalink to this definition"></a></dt>
 <dd><p>Decomposes geometry and regularisation matrices to form suitable for series expansion.</p>
-<p>Uses generalised eigenvalue decomposition scheme described in <a class="reference internal" href="#r8f1b88ef4e05-1" id="id3">[1]</a></p>
+<p>Uses generalised eigenvalue decomposition scheme described by L. C. Ingesson in <a class="reference internal" href="#r8f1b88ef4e05-gev" id="id1">[GEV]</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -767,7 +812,7 @@ The inversion comprises of three stages:</p>
 </dl>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r8f1b88ef4e05-1"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dt class="label" id="r8f1b88ef4e05-gev"><span class="brackets"><a class="fn-backref" href="#id1">GEV</a></span></dt>
 <dd><p>L.C. Ingesson, “The Mathematics of Some Tomography Algorithms Used at JET,” JET Joint Undertaking, 2000</p>
 </dd>
 </dl>
@@ -801,22 +846,17 @@ The inversion comprises of three stages:</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_gmat</span></code>(gmat, errors)</p></td>
 <td><p>Normalizes gmat using estimated errors</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">regularisation_matrix</span></code>(derivatives[, aniso])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">presolve</span></code>(gmat, deriv)</p></td>
+<td><p><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1.</span></p>
+</div>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">regularisation_matrix</span></code>(derivatives[, aniso])</p></td>
 <td><p>Computes regularisation matrix from derivatives matrices.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">series_expansion</span></code>(alpha, signal[, num])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">series_expansion</span></code>(alpha, signal[, num])</p></td>
 <td><p>Computes emissivity <span class="math notranslate nohighlight">\(g\)</span> from decomposed vectors using</p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>presolve</strong></p></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -861,22 +901,17 @@ The inversion comprises of three stages:</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_gmat</span></code>(gmat, errors)</p></td>
 <td><p>Normalizes gmat using estimated errors</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">regularisation_matrix</span></code>(derivatives[, aniso])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">presolve</span></code>(gmat, deriv)</p></td>
+<td><p><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1.</span></p>
+</div>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">regularisation_matrix</span></code>(derivatives[, aniso])</p></td>
 <td><p>Computes regularisation matrix from derivatives matrices.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">series_expansion</span></code>(alpha, signal[, num])</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">series_expansion</span></code>(alpha, signal[, num])</p></td>
 <td><p>Computes emissivity <span class="math notranslate nohighlight">\(g\)</span> from decomposed vectors using</p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>presolve</strong></p></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -898,19 +933,26 @@ The inversion comprises of three stages:</p>
 </section>
 <section id="module-tomotok.core.inversions.mfr">
 <span id="tomotok-core-inversions-mfr-module"></span><h2>tomotok.core.inversions.mfr module<a class="headerlink" href="#module-tomotok.core.inversions.mfr" title="Permalink to this headline"></a></h2>
-<p>Minimum Fisher Regularisation implemented based on M. Anton and J. Mlynar</p>
-<ol class="upperalpha simple" start="13">
+<p>Minimum Fisher Regularisation implemented based on articles by M. Anton and J. Mlynar</p>
+<dl class="citation">
+<dt class="label" id="r8548f51ffcd3-mfr1"><span class="brackets">MFR1</span></dt>
+<dd><ol class="upperalpha simple" start="13">
 <li><p>Anton et al., “X-ray tomography on the TCV tokamak.”, Plasma Phys. Control. Fusion  38.11 (1996): 1849.</p></li>
 </ol>
-<ol class="upperalpha simple" start="10">
+</dd>
+<dt class="label" id="r8548f51ffcd3-mfr2"><span class="brackets">MFR2</span></dt>
+<dd><ol class="upperalpha simple" start="10">
 <li><p>Mlynar et al., “Current research into applications of tomography for fusion diagnostics.” J. Fusion Energy 38.3 (2019): 458-466</p></li>
 </ol>
+</dd>
+</dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="tomotok.core.inversions.mfr.CholmodMfr">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tomotok.core.inversions.mfr.</span></span><span class="sig-name descname"><span class="pre">CholmodMfr</span></span><a class="headerlink" href="#tomotok.core.inversions.mfr.CholmodMfr" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tomotok.core.inversions.mfr.Mfr" title="tomotok.core.inversions.mfr.Mfr"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.core.inversions.mfr.Mfr</span></code></a></p>
-<p>Implementation of sparse cholesky decomposition as solve method for standard MFR algorithm.</p>
-<p>Uses scikit.sparse package imported in init to solve the regularised task.</p>
+<p>Uses sparse cholesky decomposition for solving the parameter optimisation task in MFI loop.
+Requires scikit sparse to be installed in order to initialize properly.</p>
+<p>Uses sksparse.cholmod.cholesky to solve the regularised task in parameter optimisation.</p>
 <p class="rubric">Methods</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -927,19 +969,14 @@ The inversion comprises of three stages:</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">regularisation_matrix</span></code>(derivatives, w[, aniso])</p></td>
 <td><p>Computes nonlinear regularisation matrix from provided derivative matrices and node weight factors  determined by emissivity from previous iteration of the inversion loop.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tomotok.core.inversions.mfr.CholmodMfr.solve" title="tomotok.core.inversions.mfr.CholmodMfr.solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code></a>(a, b)</p></td>
-<td><p>Finds solution of <span class="math notranslate nohighlight">\(\mathbf{Ax}=\mathbf{b}\)</span> using sksparse.cholmod.cholesky</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">smoothing_mat</span></code>(w, derivatives, danis)</p></td>
+<td><p><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1.</span></p>
+</div>
+</p></td>
 </tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 63%" />
-<col style="width: 37%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>smoothing_mat</strong></p></td>
-<td></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tomotok.core.inversions.mfr.CholmodMfr.solve" title="tomotok.core.inversions.mfr.CholmodMfr.solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code></a>(a, b)</p></td>
+<td><p>Finds solution of <span class="math notranslate nohighlight">\(\mathbf{Ax}=\mathbf{b}\)</span> using sksparse.cholmod.cholesky</p></td>
 </tr>
 </tbody>
 </table>
@@ -990,7 +1027,7 @@ The inversion comprises of three stages:</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code>(data, gmat, derivatives, errors, …)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tomotok.core.inversions.mfr.Mfr.__call__" title="tomotok.core.inversions.mfr.Mfr.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(data, gmat, derivatives, errors, …)</p></td>
 <td><p>Normalises signal and geometry matrix using estimated errors of measurement and then executes a sequence of MFR reconstructions.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tomotok.core.inversions.mfr.Mfr.invert" title="tomotok.core.inversions.mfr.Mfr.invert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">invert</span></code></a>(signals, gmat, derivatives[, …])</p></td>
@@ -999,22 +1036,54 @@ The inversion comprises of three stages:</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tomotok.core.inversions.mfr.Mfr.regularisation_matrix" title="tomotok.core.inversions.mfr.Mfr.regularisation_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">regularisation_matrix</span></code></a>(derivatives, w[, aniso])</p></td>
 <td><p>Computes nonlinear regularisation matrix from provided derivative matrices and node weight factors  determined by emissivity from previous iteration of the inversion loop.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#tomotok.core.inversions.mfr.Mfr.solve" title="tomotok.core.inversions.mfr.Mfr.solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code></a>(a, b)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#tomotok.core.inversions.mfr.Mfr.smoothing_mat" title="tomotok.core.inversions.mfr.Mfr.smoothing_mat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">smoothing_mat</span></code></a>(w, derivatives, danis)</p></td>
+<td><p><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1.</span></p>
+</div>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#tomotok.core.inversions.mfr.Mfr.solve" title="tomotok.core.inversions.mfr.Mfr.solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code></a>(a, b)</p></td>
 <td><p>Finds solution of <span class="math notranslate nohighlight">\(\mathbf{Ax}=\mathbf{b}\)</span> using scipy.sparse.linalg.spsolve</p></td>
 </tr>
 </tbody>
 </table>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 63%" />
-<col style="width: 37%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><strong>smoothing_mat</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="tomotok.core.inversions.mfr.Mfr.__call__">
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derivatives</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.inversions.mfr.Mfr.__call__" title="Permalink to this definition"></a></dt>
+<dd><p>Normalises signal and geometry matrix using estimated errors of measurement and
+then executes a sequence of MFR reconstructions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>input to be inverted with shape (#channels,), (#time slices, #channels)</p>
+</dd>
+<dt><strong>gmat</strong><span class="classifier">sparse.csr_matrix</span></dt><dd><p>shape (#channels, #nodes)</p>
+</dd>
+<dt><strong>derivatives</strong><span class="classifier">list</span></dt><dd><p>list of tuples with derivative matrix pairs</p>
+</dd>
+<dt><strong>errors</strong><span class="classifier">int, float or np.ndarray</span></dt><dd><p>Can have shapes (#channels, ), (#time slices,) or (#time slices, #channels)</p>
+</dd>
+<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>keywords passed to invert method</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>res</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>tomographic reconstruction, with shape (#time slices, #nodes)</p>
+</dd>
+<dt><strong>stats_list</strong><span class="classifier">list of dicts</span></dt><dd><p>contains dicts with inversion statistics returned by invert method</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#tomotok.core.inversions.mfr.Mfr.invert" title="tomotok.core.inversions.mfr.Mfr.invert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">invert</span></code></a></dt><dd></dd>
+</dl>
+</div>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="tomotok.core.inversions.mfr.Mfr.invert">
 <span class="sig-name descname"><span class="pre">invert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derivatives</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mfi_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(-</span> <span class="pre">15,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iter_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aniso</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.inversions.mfr.Mfr.invert" title="Permalink to this definition"></a></dt>
@@ -1103,7 +1172,10 @@ contain derivatives in each locally orthogonal direction.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tomotok.core.inversions.mfr.Mfr.smoothing_mat">
 <span class="sig-name descname"><span class="pre">smoothing_mat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derivatives</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">danis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tomotok.core.inversions.mfr.Mfr.smoothing_mat" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1: </span>Use <a class="reference internal" href="#tomotok.core.inversions.mfr.Mfr.regularisation_matrix" title="tomotok.core.inversions.mfr.Mfr.regularisation_matrix"><code class="xref py py-meth docutils literal notranslate"><span class="pre">regularisation_matrix()</span></code></a>  </p>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="tomotok.core.inversions.mfr.Mfr.solve">
