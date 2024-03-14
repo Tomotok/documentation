@@ -1,35 +1,78 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Derivative matrix &mdash; tomotok 1.2.2 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.3. Derivative matrix &mdash; tomotok 1.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="tomotok 1.3 documentation" href="../index.html"/>
+        <link rel="up" title="5. Auxiliary functions" href="auxilia.html"/>
+        <link rel="next" title="5.4. Phantoms" href="phantoms.html"/>
+        <link rel="prev" title="5.2. Database access (IO)" href="io.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav" role="document">
+
+   
   <div class="wy-grid-for-nav">
+
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
+          
+
+          
             <a href="../index.html" class="icon icon-home"> tomotok
+          
+
+          
           </a>
+
+          
+            
+            
               <div class="version">
-                1.2.2
+                1.3
               </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -37,82 +80,483 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../welcome.html">1. Welcome</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../licence.html">2. Licence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../inversions/inversions.html">4. Inversions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="auxilia.html">5. Auxiliary functions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="auxilia.html">5. Auxiliary functions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="geometry.html">5.1. Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html">5.2. Database access (IO)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.3. Derivative matrix</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#implementation">5.3.1. Implementation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="phantoms.html">5.4. Phantoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html">5.5. Tools</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../gui/gui.html">6. Graphical User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">7. Glossary</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Api Doc</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.core.html">tomotok.core package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">tomotok.gui package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.core.html">1. tomotok.core package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">2. tomotok.gui package</a></li>
 </ul>
 
+            
+          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">tomotok</a>
+        
       </nav>
 
+
+      
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Derivative matrix</li>
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="auxilia.html">5. Auxiliary functions</a> &raquo;</li>
+        
+      <li>5.3. Derivative matrix</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+            
             <a href="../_sources/auxilia/derivative.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="derivative-matrix">
-<h1>Derivative matrix<a class="headerlink" href="#derivative-matrix" title="Permalink to this headline"></a></h1>
+            
+  <div class="section" id="derivative-matrix">
+<h1>5.3. Derivative matrix<a class="headerlink" href="#derivative-matrix" title="Permalink to this headline">¶</a></h1>
 <p>Used in regularised inversion methods MFR and LAME. Various schemes for computation are used. Anisotropic derivatives can be computed using magnetics data.</p>
-<section id="implementation">
-<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline"></a></h2>
+<div class="section" id="implementation">
+<h2>5.3.1. Implementation<a class="headerlink" href="#implementation" title="Permalink to this headline">¶</a></h2>
 <p>Convenience functions for computation return list of tuples holding a pair of sparse matrices.</p>
-</section>
-</section>
+<p>Contains functions for derivative matrix computation.</p>
+<blockquote>
+<div><ul class="simple">
+<li>new functions (isotropic) derivative_matrix and laplace_matrix</li>
+<li>compute_aniso_dmats and compute_iso_dmats takes care of obtaining
+flux dependent or flux independent derivative matrices,</li>
+<li>prepare_mag_data is an auxiliary function to calculate magnetic flux gradients and</li>
+<li>px_norm is a simple auxiliary function to calculate norms for coefficients</li>
+</ul>
+</div></blockquote>
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.derivative.</code><code class="descname">compute_aniso_dmats</code><span class="sig-paren">(</span><em>grid</em>, <em>magflux</em>, <em>derivative=4</em>, <em>mask=None</em><span class="sig-paren">)</span></dt>
+<dd><p>Prepares matrix of finite differences, magnetic configuration dependent or
+fixed simple differences. First or second derivative can be used</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
+<blockquote>
+<div><p>A reconstruction grid</p>
+</div></blockquote>
+<p><strong>magflux</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>values of psi normalized mapped to grid</p>
+</div></blockquote>
+<p><strong>mask</strong> : numpy.ndarray, optional</p>
+<blockquote>
+<div><p>bool mask</p>
+</div></blockquote>
+<p><strong>derivative</strong> : int in {1,2,3,4}</p>
+<blockquote>
+<div><p>specifies type of derivative scheme, default is 4</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">tuple of scipy.sparse.csrmatrix pairs</p>
+<blockquote class="last">
+<div><p>derivative matrix</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.derivative.</code><code class="descname">compute_iso_dmats</code><span class="sig-paren">(</span><em>grid, derivatives=[1, 2], mask=None</em><span class="sig-paren">)</span></dt>
+<dd><p>Computes isotropic derivative matrix pairs for given differential schemes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
+<p><strong>mask</strong> : np.ndarray, optional</p>
+<p><strong>derivatives</strong> : list of int/str, optional</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of dmat pairs</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.derivative.</code><code class="descname">derivative_matrix</code><span class="sig-paren">(</span><em>grid: tomotok.core.geometry.grids.RegularGrid</em>, <em>direction: str</em>, <em>scheme: str = ‘forward’</em>, <em>mask: numpy.ndarray = None</em>, <em>compensate_edges=False</em><span class="sig-paren">)</span></dt>
+<dd><p>Creates a derivative matrix using numerical differences</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
+<p><strong>direction</strong> : str</p>
+<blockquote>
+<div><p>Determines one of the 8 possible directions that can be used.
+Specified using the over edge neighbor ‘right’, ‘top’, ‘left’, ‘bottom’ or
+combination over corner directions like ‘top-left’</p>
+</div></blockquote>
+<p><strong>scheme</strong> : str, optional</p>
+<blockquote>
+<div><p>Selects numerical scheme to be used. Can be ‘forward’, ‘backward’, ‘central’, ‘second’.
+The default value is ‘forward’.</p>
+</div></blockquote>
+<p><strong>mask</strong> : numpy.ndarray, optional</p>
+<blockquote>
+<div><p>A bool mask determining nodes of regular grid to keep, by default None.
+Rows and columns representing False nodes are removed from derivative matrix.
+If mask is None, all rows and columns are returned.</p>
+</div></blockquote>
+<p><strong>compensate_edges</strong> : bool, optional</p>
+<blockquote>
+<div><p>Subtracts from diagonal so that sum of each row is zero, by default False.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">scipy.sparse.csc_matrix</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.derivative.</code><code class="descname">generate_anizo_matrix</code><span class="sig-paren">(</span><em>grid</em>, <em>atan2</em>, <em>derivative</em><span class="sig-paren">)</span></dt>
+<dd><p>Write prepared directions atan2 into the derivative matrix.
+Main magic of this algorithm. Rewrite arctan into the directions
+and decompose directions to parallel and oblique direction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
+<blockquote>
+<div><p>Object with pixel grid gridinates</p>
+</div></blockquote>
+<p><strong>atan2</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>3D array of arcus tangents of Psi(R,z) evolution</p>
+</div></blockquote>
+<p><strong>derivative</strong> : int</p>
+<blockquote>
+<div><p>derivative type identificator</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>bper</strong> : scipy.sparse</p>
+<blockquote>
+<div><p>sparse matrix with perpendicular derivatives</p>
+</div></blockquote>
+<p><strong>bpar</strong> : scipy.sparse</p>
+<blockquote>
+<div><p>sparse matrix with parallel derivatives</p>
+</div></blockquote>
+<p>bpar_tmp: numpy.array</p>
+<blockquote>
+<div><p>(optional) dense matrix with parallel derivatives</p>
+</div></blockquote>
+<p>bper_tmp: numpy.array</p>
+<blockquote class="last">
+<div><p>(optional) dense matrix with perpendicular derivatives</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.derivative.</code><code class="descname">generate_iso_dmat</code><span class="sig-paren">(</span><em>grid: tomotok.core.geometry.grids.RegularGrid</em>, <em>derivative=4</em><span class="sig-paren">)</span></dt>
+<dd><p>Computes isotropic derivative matrix.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
+<p><strong>derivative</strong> : list of int</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">scipy.sparse.csc_matrix, scipy.sparse.csc_matrix</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.derivative.</code><code class="descname">get_index_shift</code><span class="sig-paren">(</span><em>col_num: int</em>, <em>direction: str</em>, <em>distance: int = 1</em><span class="sig-paren">)</span> &#x2192; int</dt>
+<dd><p>Computes the index difference of a node neighbor on a flatten grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>col_num</strong> : int</p>
+<blockquote>
+<div><p>number of columns in reconstruction grid</p>
+</div></blockquote>
+<p><strong>direction</strong> : str</p>
+<blockquote>
+<div><p>Determines one of the 8 possible directions that can be used.
+Specified using the over edge neighbor ‘right’, ‘top’, ‘left’, ‘bottom’ or
+combination over corner directions like ‘top-left’</p>
+</div></blockquote>
+<p><strong>distance</strong> : int, optional</p>
+<blockquote>
+<div><p>expressed in number of nodes, by default 1</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">int</p>
+<blockquote class="last">
+<div><p>relative index of neighbor in flattened grid</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.derivative.</code><code class="descname">laplace_matrix</code><span class="sig-paren">(</span><em>grid: tomotok.core.geometry.grids.RegularGrid</em>, <em>mask=None</em>, <em>compensate_edge=False</em>, <em>diagonals=True</em><span class="sig-paren">)</span></dt>
+<dd><p>Creates sparse laplace matrix.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
+<p><strong>mask</strong> : numpy.ndarray, optional</p>
+<blockquote>
+<div><p>A bool mask determining nodes of regular grid to keep, by default None.
+Rows and columns representing False nodes are removed from derivative matrix.
+If mask is None, all rows and columns are returned.</p>
+</div></blockquote>
+<p><strong>compensate_edges</strong> : bool, optional</p>
+<blockquote>
+<div><p>Subtracts from diagonal so that sum of each row is zero, by default False.</p>
+</div></blockquote>
+<p><strong>diagonals</strong> : bool, optional</p>
+<blockquote>
+<div><p>Selects whether to use diagonal neighbors in matrix, by default True.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">scipy.sparse.csc_matrix</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.derivative.</code><code class="descname">prepare_mag_data</code><span class="sig-paren">(</span><em>flux</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculates gradient map of magnetic flux function Psi(R,z) and returns
+arcus tangens of dPsi_y/-dPsi_x that is a suitable funciton for anizotropic
+diffusion matrix calculation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>flux</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>array of Psi(R,z) evolution, with axes (z, R, t)</p>
+</div></blockquote>
+<p><strong>Returns</strong></p>
+<p><strong>——</strong></p>
+<p><strong>numpy.ndarray</strong></p>
+<blockquote class="last">
+<div><p>arcus tangens of Psi gradient</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.derivative.</code><code class="descname">px_norm</code><span class="sig-paren">(</span><em>direc</em><span class="sig-paren">)</span></dt>
+<dd><p>Computed (normalised?) distance between centers of nodes.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.derivative.</code><code class="descname">reduce_dmats</code><span class="sig-paren">(</span><em>dmats</em>, <em>idx</em><span class="sig-paren">)</span></dt>
+<dd><p>Creates reduced derivative matrices by cutting out rows and columns representing unwanted nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>dmats</strong> : tuples of scipy.sparse.csr_matrix</p>
+<blockquote>
+<div><p>tuple containing full derivative matrices</p>
+</div></blockquote>
+<p><strong>idx</strong> : numpy.ndarray of bool</p>
+<blockquote>
+<div><p>array or mask array to select desired nodes</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">list of scipy.sparse.csr_matrix pairs</p>
+<blockquote class="last">
+<div><p>derivative matrices with removed rows and columns representing nodes outside the bdr polygon (vacuum vessel)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="phantoms.html" class="btn btn-neutral float-right" title="5.4. Phantoms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="io.html" class="btn btn-neutral" title="5.2. Database access (IO)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Institute of Plasma Physics of CAS.</p>
-  </div>
+    <p>
+        &copy; Copyright 2021, Institute of Plasma Physics of CAS.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.StickyNav.enable();
       });
-  </script> 
+  </script>
+   
 
 </body>
 </html>

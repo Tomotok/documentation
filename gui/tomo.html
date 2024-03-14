@@ -1,35 +1,78 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tomography widgets &mdash; tomotok 1.2.2 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6.2. Tomography widgets &mdash; tomotok 1.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="tomotok 1.3 documentation" href="../index.html"/>
+        <link rel="up" title="6. Graphical User Interface" href="gui.html"/>
+        <link rel="next" title="6.3. Common GUI widgets" href="common.html"/>
+        <link rel="prev" title="6.1. Applications" href="apps.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav" role="document">
+
+   
   <div class="wy-grid-for-nav">
+
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
+          
+
+          
             <a href="../index.html" class="icon icon-home"> tomotok
+          
+
+          
           </a>
+
+          
+            
+            
               <div class="version">
-                1.2.2
+                1.3
               </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -37,506 +80,860 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../welcome.html">1. Welcome</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../licence.html">2. Licence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../inversions/inversions.html">4. Inversions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../auxilia/auxilia.html">5. Auxiliary functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gui.html">6. Graphical User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="gui.html">6. Graphical User Interface</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="apps.html">6.1. Applications</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.2. Tomography widgets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#displaying">6.2.1. Displaying</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#processing">6.2.2. Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="common.html">6.3. Common GUI widgets</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">7. Glossary</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Api Doc</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.core.html">tomotok.core package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">tomotok.gui package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.core.html">1. tomotok.core package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">2. tomotok.gui package</a></li>
 </ul>
 
+            
+          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">tomotok</a>
+        
       </nav>
 
+
+      
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Tomography widgets</li>
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="gui.html">6. Graphical User Interface</a> &raquo;</li>
+        
+      <li>6.2. Tomography widgets</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+            
             <a href="../_sources/gui/tomo.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="tomography-widgets">
-<h1>Tomography widgets<a class="headerlink" href="#tomography-widgets" title="Permalink to this headline"></a></h1>
-<p>Used for displaying or processing results <a class="reference internal" href="#g1" id="id1"><span>[G1]</span></a>.</p>
-<dl class="citation">
-<dt class="label" id="g1"><span class="brackets"><a class="fn-backref" href="#id1">G1</a></span></dt>
-<dd><ol class="upperalpha simple" start="10">
-<li><p>Svoboda, et al. “Comparative analysis and new post-processing methods for plasma tomography at tokamaks.” Journal of Instrumentation 14.11 (2019): C11001.</p></li>
-</ol>
-</dd>
-</dl>
-<section id="displaying">
-<h2>Displaying<a class="headerlink" href="#displaying" title="Permalink to this headline"></a></h2>
+            
+  <div class="section" id="tomography-widgets">
+<h1>6.2. Tomography widgets<a class="headerlink" href="#tomography-widgets" title="Permalink to this headline">¶</a></h1>
+<p>Used for displaying or processing results <a class="reference internal" href="gui.html#g1" id="id1">[G1]</a>.</p>
+<div class="section" id="displaying">
+<h2>6.2.1. Displaying<a class="headerlink" href="#displaying" title="Permalink to this headline">¶</a></h2>
 <p>A basic window capable of displaying a single reconstruction DiagGraphWindow. Can load a sequence of reconstructions and be synchronized with other windows.</p>
-</section>
-<section id="processing">
-<h2>Processing<a class="headerlink" href="#processing" title="Permalink to this headline"></a></h2>
-<p>Region of interest analysis widgets</p>
-<dl class="py class">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tomotok.gui.roi.</span></span><span class="sig-name descname"><span class="pre">GraphContours</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <a class="reference internal" href="../api/tomotok.gui.html#tomotok.gui.widgets_tomo.GraphRgb" title="tomotok.gui.widgets_tomo.GraphRgb"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.gui.widgets_tomo.GraphRgb</span></code></a></p>
-<p>Based on GraphRgb class. Usefull for observing power in specified areas.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>parent</strong><span class="classifier">TKInter class parent</span></dt><dd><p>Default is None.</p>
+<p>Module with tkinter widgets for basic tomography analysis.</p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">tomotok.gui.widgets_tomo.</code><code class="descname">DiagGraphWindow</code><span class="sig-paren">(</span><em>parent=None</em>, <em>data=None</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <a class="reference internal" href="../api/tomotok.gui.html#tomotok.gui.widgets.GraphWindow" title="tomotok.gui.widgets.GraphWindow"><code class="xref py py-class docutils literal"><span class="pre">tomotok.gui.widgets.GraphWindow</span></code></a></p>
+<p>Based on GraphWindow class from widgets.py
+Used for displaying results of single diagnostic tomography</p>
+<p>See documentation of GraphWindow for information about other keyword arguments.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter widget</p>
+<blockquote>
+<div><p>Default is None. Used in GUI interface to specify hierarchy.</p>
+</div></blockquote>
+<p><strong>data</strong> : dict</p>
+<blockquote>
+<div><p>Contains data, default is empty dict.</p>
+</div></blockquote>
+<p><strong>**kw</strong></p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>title <span class="classifier-delimiter">:</span> <span class="classifier">str {‘Bolometry’, ‘Neutrons’, ‘SXR’}</span></dt>
+<dd><p class="first last">Name of graph window. If dname is not specified, title is used to 
+determin what key from provided data to load.</p>
 </dd>
-<dt><strong>data</strong><span class="classifier">dict</span></dt><dd><p>Contains data, default is empty dict.</p>
+<dt>dname <span class="classifier-delimiter">:</span> <span class="classifier">str {‘bol’, ‘ntr’, ‘sxr’}</span></dt>
+<dd><p class="first last">Shorter string to specify diagnostic for graph window. Though not recommended, both title and dname can be used.
+If so, dname and title should always match to avoid inconsistency of title and data.</p>
 </dd>
 </dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">add_patch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contours</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Adds collections created by contours to axes</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><code class="xref py py-obj docutils literal"><span class="pre">GraphWindow</span></code></p>
+</div>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt>
+<code class="descname">get_mval</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span></dt>
+<dd><p>Returns index for ploting magnetic data from index of reconstrution.
+Should not be called if magnetics data are not loaded.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>val</strong> : int</p>
+<blockquote class="last">
+<div><p>Index of reconstrition.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">clear_patch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contours</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Removes collections representing given cotnours from axes.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>val</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">decrease_pcount</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><p>Variable pcount represents total number of patches.
-Should be called after removing a new patch.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_levels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pnum</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Gets levels from contour object. If length of levels is one,
-returns array with zero as minimum.</p>
-<dl class="simple">
-<dt>pnum<span class="classifier">int</span></dt><dd><p>Number of patch</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>limits</strong><span class="classifier">np.ndarray</span></dt><dd><p>Array with minimum and maximum limited by given contours.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_pnum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><p>Variable pnum represents selected contours, starts from 1.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">int</span></dt><dd><p>Number of selected contours pair starting from 0.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_predef</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><p>Returns predefined contours. Used for initalization of wondow.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">dict</span></dt><dd><p>Contains coordinates of predefined rectangles</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">make_patch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pnum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Creates new contours and adds collections to axes.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">move_limits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">save</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>num</strong></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">pselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Changes spinbox values to selected contours when selection changes.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">raise_pcount</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><p>Variable pcount represents total number of patches.
-Should be called after adding a new patch.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">remove_patch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><p>Removes last patch from computing and from axes.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">save_nth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><p>Saves every nth slice, where n is defined by snvar tk.Stringvar
-asociated with snsbox tk.Spinbox widget.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">update_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndata</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
 <dd><p>Loads new data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>ndata</strong><span class="classifier">dict</span></dt><dd><p>New data to be loaded to Graph window.</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ndata</strong> : dict</p>
+<blockquote class="last">
+<div><p>New data to be loaded to Graph window.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="py class">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tomotok.gui.roi.</span></span><span class="sig-name descname"><span class="pre">GraphRectangles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <a class="reference internal" href="../api/tomotok.gui.html#tomotok.gui.widgets_tomo.GraphRgb" title="tomotok.gui.widgets_tomo.GraphRgb"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.gui.widgets_tomo.GraphRgb</span></code></a></p>
-<p>Based on GraphRgb class. Usefull for observing power in specified areas.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>parent</strong><span class="classifier">TKInter class parent</span></dt><dd><p>Default is None.</p>
-</dd>
-<dt><strong>data</strong><span class="classifier">dict</span></dt><dd><p>Contains data, default is empty dict.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">tomotok.gui.widgets_tomo.</code><code class="descname">GraphPower</code><span class="sig-paren">(</span><em>parent=None</em>, <em>data=None</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <a class="reference internal" href="../api/tomotok.gui.html#tomotok.gui.widgets.GraphWindow" title="tomotok.gui.widgets.GraphWindow"><code class="xref py py-class docutils literal"><span class="pre">tomotok.gui.widgets.GraphWindow</span></code></a></p>
+<p>Based on GraphWindow class from widgets.py
+Vals are not time steps for this class but types of diagnotics to plot 
+power emitted or to show correlations of these.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter class parent, optional</p>
+<blockquote>
+<div><p>Default is None.</p>
+</div></blockquote>
+<p><strong>data</strong> : dict, optional</p>
+<blockquote class="last">
+<div><p>Contains data, default is empty dict.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt>
+<code class="descname">normalize</code><span class="sig-paren">(</span><em>*args</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Switches data to normalized or standard, depending on norvar state.
+Normalizes data and if no normalized data are available.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>val</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Prepares data for matplotlib and draws them onto canvas</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>val</strong> : int</p>
+<blockquote class="last">
+<div><p>number of slice in this case meaning type of analysis</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_pnum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>**kwargs</em><span class="sig-paren">)</span></dt>
+<dd><p>Updates class data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ndata</strong> : dict</p>
+<blockquote class="last">
+<div><p>Dictionary containign new data under keys ‘bol’, ‘ntr’, ‘sxr’.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">tomotok.gui.widgets_tomo.</code><code class="descname">GraphRgb</code><span class="sig-paren">(</span><em>parent=None</em>, <em>data=None</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <a class="reference internal" href="../api/tomotok.gui.html#tomotok.gui.widgets.GraphWindow" title="tomotok.gui.widgets.GraphWindow"><code class="xref py py-class docutils literal"><span class="pre">tomotok.gui.widgets.GraphWindow</span></code></a></p>
+<p>Based on GraphWindow class from widgets.py. Usefull for comparing
+tomography results from different diagnostics simultaneously.</p>
+<p>See documentation of Graf_window for information about other keyword arguments.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter class parent</p>
+<blockquote>
+<div><p>Default is None.</p>
+</div></blockquote>
+<p><strong>data</strong> : dict</p>
+<blockquote>
+<div><p>Contains data, default is empty dict.</p>
+</div></blockquote>
+<p><strong>title</strong> : str, optional</p>
+<blockquote class="last">
+<div><p>Name of graph window. Is used for saving. Default is ‘RGB plot’</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt>
+<code class="descname">get_mval</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span></dt>
+<dd><p>Returns index for ploting magnetic data from index of reconstrution.
+Should not be called if magnetics data are not loaded.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>val</strong> : int</p>
+<blockquote class="last">
+<div><p>Index of reconstrition.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">get_rgbval</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span></dt>
+<dd><p>Gets indexes for given timeslices. Independent on provided diagnostics.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray of ints</p>
+<blockquote class="last">
+<div><p>Contains indexes of nearest tim vector values
+to reference diagnostic.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>val</em>, <em>*args</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Loads new data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ndata</strong> : dict</p>
+<blockquote class="last">
+<div><p>New data to be loaded to Graph window.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="processing">
+<h2>6.2.2. Processing<a class="headerlink" href="#processing" title="Permalink to this headline">¶</a></h2>
+<p>Region of interest analysis widgets</p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">tomotok.gui.roi.</code><code class="descname">GraphRectangles</code><span class="sig-paren">(</span><em>parent=None</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <a class="reference internal" href="../api/tomotok.gui.html#tomotok.gui.widgets_tomo.GraphRgb" title="tomotok.gui.widgets_tomo.GraphRgb"><code class="xref py py-class docutils literal"><span class="pre">tomotok.gui.widgets_tomo.GraphRgb</span></code></a></p>
+<p>Based on GraphRgb class. Usefull for observing power in specified areas.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter class parent</p>
+<blockquote>
+<div><p>Default is None.</p>
+</div></blockquote>
+<p><strong>data</strong> : dict</p>
+<blockquote>
+<div><p>Contains data, default is empty dict.</p>
+</div></blockquote>
+<p><strong>title</strong> : str, optional</p>
+<blockquote class="last">
+<div><p>Name of window.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt>
+<code class="descname">compute</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">get_pnum</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>Variable pnum represents selected patch, starts from 1.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">int</span></dt><dd><p>Number of selected patch (rectangle) starting from 0. Can be used
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>Number of selected patch (rectangle) starting from 0. Can be used
 as idices for Axes.patches array.</p>
-</dd>
-</dl>
-</dd>
-</dl>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_predef</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">get_predef</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>Predefined rectangles in interesting areas are defined here.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>dict</dt><dd><p>Contains coordinates of predefined rectangles</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict</p>
+<blockquote class="last">
+<div><p>Contains coordinates of predefined rectangles</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">lower_pcount</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">lower_pcount</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>Variable pcount represents total number of patches.
 Should be called after removing a new patch.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">make_patch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">make_patch</code><span class="sig-paren">(</span><em>x=-1</em>, <em>y=-1</em>, <em>w=-1</em>, <em>h=-1</em><span class="sig-paren">)</span></dt>
 <dd><p>Creates new patch and adds it to axes.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">moveh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">moveh</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">movew</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">movew</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">movex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">movex</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">movey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">movey</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>num</strong></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
+<dl class="method">
+<dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>val</em>, <em>*args</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">pselect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">pselect</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
 <dd><p>Changes spinbox values to selected patch when selection changes.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">raise_pcount</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">raise_pcount</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>Variable pcount represents total number of patches.
 Should be called after adding a new patch.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">remove_patch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">remove_patch</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>Removes last patch from computing and from axes.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Graphs/'</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">save</code><span class="sig-paren">(</span><em>fname=’Graphs/’</em><span class="sig-paren">)</span></dt>
 <dd></dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">save_nth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">save_nth</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>Saves every nth slice, where n is defined by snvar Stringvar asociated
 with snsbox Spinbox widget.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">update_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndata</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Loads new data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>ndata</strong><span class="classifier">dict</span></dt><dd><p>New data to be loaded to Graph window.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
+<dl class="method">
+<dt>
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
-<p>Averaging of emissivity in bins shaped according to magnetic flux reconstruction</p>
-<dl class="py class">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tomotok.gui.profiler.</span></span><span class="sig-name descname"><span class="pre">GraphProfiler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <a class="reference internal" href="../api/tomotok.gui.html#tomotok.gui.widgets_tomo.GraphRgb" title="tomotok.gui.widgets_tomo.GraphRgb"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.gui.widgets_tomo.GraphRgb</span></code></a></p>
-<p>Based on GraphRgb class. Usefull for observing power profile in respect to
-magentic flux surfaces.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>parent</strong><span class="classifier">TKInter class parent</span></dt><dd><p>Default is None.</p>
-</dd>
-<dt><strong>data</strong><span class="classifier">dict</span></dt><dd><p>Contains data, default is empty dict.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">compute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Computes radiated power in given regions.</p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">tomotok.gui.roi.</code><code class="descname">GraphContours</code><span class="sig-paren">(</span><em>parent=None</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <a class="reference internal" href="../api/tomotok.gui.html#tomotok.gui.widgets_tomo.GraphRgb" title="tomotok.gui.widgets_tomo.GraphRgb"><code class="xref py py-class docutils literal"><span class="pre">tomotok.gui.widgets_tomo.GraphRgb</span></code></a></p>
+<p>Based on GraphRgb class. Usefull for observing power in specified areas.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter class parent</p>
+<blockquote>
+<div><p>Default is None.</p>
+</div></blockquote>
+<p><strong>data</strong> : dict</p>
+<blockquote>
+<div><p>Contains data, default is empty dict.</p>
+</div></blockquote>
+<p><strong>title</strong> : str, optional</p>
+<blockquote class="last">
+<div><p>Name of window.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt>
+<code class="descname">add_patch</code><span class="sig-paren">(</span><em>contours</em><span class="sig-paren">)</span></dt>
+<dd><p>Adds collections created by contours to axes</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_levels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Gets levels from widgets for plotting contours</p>
+<dl class="method">
+<dt>
+<code class="descname">clear_patch</code><span class="sig-paren">(</span><em>contours</em><span class="sig-paren">)</span></dt>
+<dd><p>Removes collections representing given cotnours from axes.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>num</strong></dt><dd></dd>
-</dl>
-</dd>
-</dl>
+<dl class="method">
+<dt>
+<code class="descname">compute</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">decrease_pcount</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Variable pcount represents total number of patches.
+Should be called after removing a new patch.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">plot_contour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Plots contours to highlight flux locations separating profiled regions.</p>
+<dl class="method">
+<dt>
+<code class="descname">get_levels</code><span class="sig-paren">(</span><em>pnum</em><span class="sig-paren">)</span></dt>
+<dd><p>Gets levels from contour object. If length of levels is one,
+returns array with zero as minimum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pnum</strong> : int</p>
+<blockquote>
+<div><p>Number of patch</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>limits</strong> : np.ndarray</p>
+<blockquote class="last">
+<div><p>Array with minimum and maximum limited by given contours.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">save_nth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">get_pnum</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Variable pnum represents selected contours, starts from 1.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : int</p>
+<blockquote class="last">
+<div><p>Number of selected contours pair starting from 0.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">get_predef</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Returns predefined contours. Used for initalization of wondow.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>Contains coordinates of predefined rectangles</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">make_patch</code><span class="sig-paren">(</span><em>min_=0.5</em>, <em>max_=1</em>, <em>pnum=None</em><span class="sig-paren">)</span></dt>
+<dd><p>Creates new contours and adds collections to axes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">move_limits</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">plot</code><span class="sig-paren">(</span><em>val</em>, <em>*args</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">pselect</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
+<dd><p>Changes spinbox values to selected contours when selection changes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">raise_pcount</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Variable pcount represents total number of patches.
+Should be called after adding a new patch.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">remove_patch</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Removes last patch from computing and from axes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">save</code><span class="sig-paren">(</span><em>fname=None</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">save_nth</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>Saves every nth slice, where n is defined by snvar tk.Stringvar
 asociated with snsbox tk.Spinbox widget.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">update_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndata</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Loads new data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>ndata</strong><span class="classifier">dict</span></dt><dd><p>New data to be loaded to Graph window.</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<dl class="method">
+<dt>
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<p>Averaging of emissivity in bins shaped according to magnetic flux reconstruction</p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">tomotok.gui.profiler.</code><code class="descname">GraphProfiler</code><span class="sig-paren">(</span><em>parent=None</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <a class="reference internal" href="../api/tomotok.gui.html#tomotok.gui.widgets_tomo.GraphRgb" title="tomotok.gui.widgets_tomo.GraphRgb"><code class="xref py py-class docutils literal"><span class="pre">tomotok.gui.widgets_tomo.GraphRgb</span></code></a></p>
+<p>A window that can calculate power profile in respect to magnetic flux surfaces.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter class parent</p>
+<blockquote>
+<div><p>Default is None.</p>
+</div></blockquote>
+<p><strong>data</strong> : dict</p>
+<blockquote>
+<div><p>Contains data, default is empty dict.</p>
+</div></blockquote>
+<p><strong>title</strong> : str, optional</p>
+<blockquote class="last">
+<div><p>Name of window.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt>
+<code class="descname">compute</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
+<dd><p>Computes radiated power in given regions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">get_levels</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
+<dd><p>Gets levels from widgets for plotting contours</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">plot_contour</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
+<dd><p>Plots contours to highlight flux locations separating profiled regions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">save_nth</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Saves every nth slice, where n is defined by snvar tk.Stringvar
+asociated with snsbox tk.Spinbox widget.</p>
 </dd></dl>
 
 </dd></dl>
 
 <p>MEasured vs RetroFit comparator graphical window widget</p>
-<dl class="py class">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tomotok.gui.merfer.</span></span><span class="sig-name descname"><span class="pre">GraphMerfer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <a class="reference internal" href="../api/tomotok.gui.html#tomotok.gui.widgets.GraphWindow" title="tomotok.gui.widgets.GraphWindow"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.gui.widgets.GraphWindow</span></code></a></p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">tomotok.gui.merfer.</code><code class="descname">GraphMerfer</code><span class="sig-paren">(</span><em>parent=None</em>, <em>data=None</em>, <em>errors=None</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <a class="reference internal" href="../api/tomotok.gui.html#tomotok.gui.widgets.GraphWindow" title="tomotok.gui.widgets.GraphWindow"><code class="xref py py-class docutils literal"><span class="pre">tomotok.gui.widgets.GraphWindow</span></code></a></p>
 <p>Widgets for comparing MEasured data with RetroFit</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>parent</strong><span class="classifier">TKInter widget</span></dt><dd><p>Default is None.</p>
-</dd>
-<dt><strong>data</strong><span class="classifier">dict</span></dt><dd><p>Contains data, default is empty dict.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>num</strong></dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">update_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">err</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span></dt>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>parent</strong> : TKInter widget</p>
+<blockquote>
+<div><p>Default is None.</p>
+</div></blockquote>
+<p><strong>data</strong> : dict</p>
+<blockquote class="last">
+<div><p>Contains data, default is empty dict.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt>
+<code class="descname">update_data</code><span class="sig-paren">(</span><em>ndata</em>, <em>err=None</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
 <dd><p>Loads new data.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>ndata</strong><span class="classifier">dict</span></dt><dd><p>New data to be loaded to Graph window</p>
-</dd>
-<dt><strong>err</strong><span class="classifier">np.ndarray</span></dt><dd><p>contains errors of measured data with shape (#chnl, #tslices)</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>ndata</strong> : dict</p>
+<blockquote>
+<div><p>New data to be loaded to Graph window</p>
+</div></blockquote>
+<p><strong>err</strong> : np.ndarray</p>
+<blockquote class="last">
+<div><p>contains errors of measured data with shape (#chnl, #tslices)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="common.html" class="btn btn-neutral float-right" title="6.3. Common GUI widgets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="apps.html" class="btn btn-neutral" title="6.1. Applications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Institute of Plasma Physics of CAS.</p>
-  </div>
+    <p>
+        &copy; Copyright 2021, Institute of Plasma Physics of CAS.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.StickyNav.enable();
       });
-  </script> 
+  </script>
+   
 
 </body>
 </html>

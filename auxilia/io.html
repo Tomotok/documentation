@@ -1,35 +1,78 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Database access (IO) &mdash; tomotok 1.2.2 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.2. Database access (IO) &mdash; tomotok 1.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="tomotok 1.3 documentation" href="../index.html"/>
+        <link rel="up" title="5. Auxiliary functions" href="auxilia.html"/>
+        <link rel="next" title="5.3. Derivative matrix" href="derivative.html"/>
+        <link rel="prev" title="5.1. Geometry" href="geometry.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav" role="document">
+
+   
   <div class="wy-grid-for-nav">
+
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
+          
+
+          
             <a href="../index.html" class="icon icon-home"> tomotok
+          
+
+          
           </a>
+
+          
+            
+            
               <div class="version">
-                1.2.2
+                1.3
               </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -37,628 +80,726 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../welcome.html">1. Welcome</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../licence.html">2. Licence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../inversions/inversions.html">4. Inversions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="auxilia.html">5. Auxiliary functions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="auxilia.html">5. Auxiliary functions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="geometry.html">5.1. Geometry</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.2. Database access (IO)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#diagnostic-system">5.2.1. Diagnostic system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tokamak">5.2.2. Tokamak</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="derivative.html">5.3. Derivative matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phantoms.html">5.4. Phantoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html">5.5. Tools</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../gui/gui.html">6. Graphical User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">7. Glossary</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Api Doc</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.core.html">tomotok.core package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">tomotok.gui package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.core.html">1. tomotok.core package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">2. tomotok.gui package</a></li>
 </ul>
 
+            
+          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">tomotok</a>
+        
       </nav>
 
+
+      
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Database access (IO)</li>
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="auxilia.html">5. Auxiliary functions</a> &raquo;</li>
+        
+      <li>5.2. Database access (IO)</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+            
             <a href="../_sources/auxilia/io.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="database-access-io">
-<h1>Database access (IO)<a class="headerlink" href="#database-access-io" title="Permalink to this headline"></a></h1>
-<p>This module contains classes for automatic database access and data preprocessing. The fundamental class is called Dsystem and describes geometry and database access for a given diagnostic system.</p>
-<p>Results saved in hdf files with coordinates in following orders (time, channel, node) or (time, channel, vertical node coordinate, horizontal node coordinate)</p>
-<p>for matrix cameras (time, vertical pixel coord, horizontal pixel coord, vertical node coordinate, horizontal node coordinate)</p>
-<p>Tokamak magnetics expect to be computed on regular grid. These are saved in npz with dict keys <cite>values</cite>, <cite>time</cite>, <cite>z</cite>, <cite>r</cite></p>
-<section id="diagnostic-system">
-<h2>Diagnostic system<a class="headerlink" href="#diagnostic-system" title="Permalink to this headline"></a></h2>
+            
+  <div class="section" id="database-access-io">
+<h1>5.2. Database access (IO)<a class="headerlink" href="#database-access-io" title="Permalink to this headline">¶</a></h1>
+<p>This module contains classes for automatic database access and data preprocessing. The fundamental class is called Dsystem and describes geometry and database access for a given diagnostic system. This presents the basic set of functions that can be expanded by sub-classing. A subclass Tokamak that can handle loading and interpolating magnetic data in a format usual for tokamaks is implemented.</p>
+<dl class="docutils">
+<dt>The convention for coordinates order is</dt>
+<dd><ul class="first last simple">
+<li>for reconstructions (time, channel, node) or (time, channel, vertical node coordinate, horizontal node coordinate)</li>
+<li>for matrix cameras (time, vertical pixel coord, horizontal pixel coord, vertical node coordinate, horizontal node coordinate)</li>
+</ul>
+</dd>
+</dl>
+<p>Tokamak magnetics are expected to be computed on regular grid. This is typical output of EFIT. Currently they are stored in dicts with keys <cite>values</cite>, <cite>time</cite>, <cite>z</cite>, <cite>r</cite>.</p>
+<div class="section" id="diagnostic-system">
+<h2>5.2.1. Diagnostic system<a class="headerlink" href="#diagnostic-system" title="Permalink to this headline">¶</a></h2>
 <p>Basic interface with detectors. Handles signals loading and calibrations, cameras geometries…</p>
-<dl class="py class">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tomotok.core.io.</span></span><span class="sig-name descname"><span class="pre">Dsystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometry_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">tomotok.core.io.</code><code class="descname">Dsystem</code><span class="sig-paren">(</span><em>shot</em>, <em>geometry_path=”</em>, <em>**kw</em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><code class="xref py py-class docutils literal"><span class="pre">object</span></code></a></p>
 <p>Contains basic information about diagnostic system</p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>chnl_index</strong><span class="classifier">dict</span></dt><dd><p>dict maping channel to detector</p>
-</dd>
-<dt><strong>geometry_path</strong><span class="classifier">pathlib.Path</span></dt><dd><p>path to location with saved geometrical data</p>
-</dd>
-<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>name of diagnostic system</p>
-</dd>
-<dt><strong>n_dets</strong><span class="classifier">int</span></dt><dd><p>number of cameras with separate calibration files, (to be removed)</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
+<col width="15%" />
+<col width="85%" />
 </colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_bd_mat</span></code>(grid[, loc])</p></td>
-<td><p>Simple generation of boundary matrix 1 inside rec area, 0 outside</p></td>
+<tbody valign="top">
+<tr class="row-odd"><td>chnl_index</td>
+<td>(dict) dict maping channel to detector</td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_data</span></code>(**kwargs)</p></td>
-<td><p>Downloads data from network/database using <cite>source</cite> method or database.</p></td>
+<tr class="row-even"><td>geometry_path</td>
+<td>(pathlib.Path) path to location with saved geometrical data</td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data</span></code>([data_path, source, save, force_dl])</p></td>
-<td><p>Loads data from data storage specified by data_path or downloads data from network storage.</p></td>
+<tr class="row-odd"><td>name</td>
+<td>(str) name of diagnostic system</td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_calb</span></code>()</p></td>
-<td><p>Loads preset calibrations for detectors, if not specified returns array of ones with length n_dets.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_chord_geometry</span></code>()</p></td>
-<td><p>Loads chord geometry from <cite>geometry_path</cite>.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_chord_widening</span></code>()</p></td>
-<td><p>Tries to load widening coefficients from file.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_pinholes</span></code>()</p></td>
-<td><p>Loads pinhole coordinates for each chord from <cite>pinholes.txt</cite> located in geometry folder.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_border</span></code>([loc])</p></td>
-<td><p>Load border coordinates from geometry path or from tokamak module.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_boundary_coord</span></code>()</p></td>
-<td><p>Load border coordinates from geometry path or from tokamak module.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_data</span></code>(loc)</p></td>
-<td><p>Loads hdf file containing data.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_los</span></code>([loc])</p></td>
-<td><p>Loads line of sights geometry from hdf file.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_data</span></code>(loc, data)</p></td>
-<td><p>Saves downloaded detector data to data_path</p></td>
+<tr class="row-even"><td>n_dets</td>
+<td>(int) number of cameras with separate calibration files, (to be removed)</td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">compute_bd_mat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt>
+<code class="descname">compute_bd_mat</code><span class="sig-paren">(</span><em>grid</em>, <em>loc=None</em><span class="sig-paren">)</span></dt>
 <dd><p>Simple generation of boundary matrix 1 inside rec area, 0 outside</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>grid</strong><span class="classifier">RegularGrid</span></dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>boundary_matrix</strong><span class="classifier">numpy.ndarray of bool</span></dt><dd><p>matrix with true inside border, false otherwise, with shape (grid.nz, grid.nr)</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 1.3.0.</span></p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>boundary_matrix</strong> : numpy.ndarray of bool</p>
+<blockquote class="last">
+<div><p>matrix with true inside border, false otherwise, with shape (grid.nz, grid.nr)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">data_name</span></span></dt>
+<dl class="attribute">
+<dt>
+<code class="descname">data_name</code></dt>
 <dd><p>Template data file name</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">download_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">download_data</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span></dt>
 <dd><p>Downloads data from network/database using <cite>source</cite> method or database.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>dict</dt><dd></dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">fetch_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_dl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">fetch_data</code><span class="sig-paren">(</span><em>data_path=”</em>, <em>source=None</em>, <em>save=False</em>, <em>force_dl=False</em><span class="sig-paren">)</span></dt>
 <dd><p>Loads data from data storage specified by data_path or downloads data
 from network storage.</p>
-<dl class="field-list">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
-<dt><strong>data_path</strong><span class="classifier">str or Path, optional</span></dt><dd><p>default is working directory</p>
-</dd>
-<dt><strong>source</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/string.html#module-string" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">string</span></code></a>, optional</span></dt><dd><p>specifies method for data download</p>
-</dd>
-<dt><strong>save</strong><span class="classifier">bool, optional</span></dt><dd><p>switches saving to local storage</p>
-</dd>
-<dt><strong>force_dl</strong><span class="classifier">bool, optional</span></dt><dd><p>forces download of data</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>dict</dt><dd></dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data_path</strong> : str or Path, optional</p>
+<blockquote>
+<div><p>default is working directory</p>
+</div></blockquote>
+<p><strong>source</strong> : <a class="reference external" href="https://docs.python.org/3/library/string.html#module-string" title="(in Python v3.12)"><code class="xref py py-obj docutils literal"><span class="pre">string</span></code></a>, optional</p>
+<blockquote>
+<div><p>specifies method for data download</p>
+</div></blockquote>
+<p><strong>save</strong> : bool, optional</p>
+<blockquote>
+<div><p>switches saving to local storage</p>
+</div></blockquote>
+<p><strong>force_dl</strong> : bool, optional</p>
+<blockquote>
+<div><p>forces download of data</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_calb</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">get_calb</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>Loads preset calibrations for detectors, if not specified returns array of ones with length n_dets.</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_chord_geometry</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">get_chord_geometry</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
 <dd><p>Loads chord geometry from <cite>geometry_path</cite>.</p>
 <p>Expected names of detectors are detector_[num]_[x,y].txt.
 Data for x and y coordinates are in separate files.
 Each row represents one detector.
 Number of rows and columns should be same in all files containing coordinates</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>xchords, ychords</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>arrays with coordinates of chord points with shape (#chords, #points)</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_chord_widening</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><p>Tries to load widening coefficients from file. Returns None if IOError</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>array-like or None</dt><dd><p>Contains widening coefficients for each channel</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_pinholes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><p>Loads pinhole coordinates for each chord from <cite>pinholes.txt</cite> located
-in geometry folder.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>ph</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>matrix containing pinhole x,y coordinates with shape (#chords, 2)</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">load_border</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Load border coordinates from geometry path or from tokamak module.
-Sets boundary_coord attribute to loaded coords.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>loc</strong><span class="classifier">str or Path</span></dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>contains (R, z) coordinates of vacuum vessel cross section, shape (#points, 2)</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">load_boundary_coord</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
-<dd><p>Load border coordinates from geometry path or from tokamak module.
-Sets boundary_coord attribute to loaded coords.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>contains (R, z) coordinates of vacuum vessel cross section points, should have shape (#points, 2)</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Loads hdf file containing data.</p>
-<p>If loc is path to a directory, default data file name from property data_name is assumed.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>loc</strong><span class="classifier">str or Path</span></dt><dd><p>Path to file with signal data. Can be full path or path to folder if default name is used.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>dict</dt><dd><p>keys values, chnl, time</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">load_los</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Loads line of sights geometry from hdf file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>loc</strong><span class="classifier">str or Path, optional</span></dt><dd><p>location of los file, by default geometry path is used</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>dict</dt><dd><p>with coordinates of los start and end points with shape (2, #chords, 3)</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">save_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Saves downloaded detector data to data_path</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>loc</strong><span class="classifier">str or pathlib.Path</span></dt><dd><p>saving path with file name</p>
-</dd>
-<dt><strong>data</strong><span class="classifier">dict</span></dt><dd><p>contains signal values, channel numbers and time stamps</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="tokamak">
-<h2>Tokamak<a class="headerlink" href="#tokamak" title="Permalink to this headline"></a></h2>
-<p>Adds methods for handling magnetics data in format used on tokamaks</p>
-<dl class="py class">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tomotok.core.io.</span></span><span class="sig-name descname"><span class="pre">Tokamak</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shot</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Bases: <a class="reference internal" href="../api/tomotok.core.io.html#tomotok.core.io.diag.Dsystem" title="tomotok.core.io.diag.Dsystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">tomotok.core.io.diag.Dsystem</span></code></a></p>
-<p>Handles magnetic field and divertor</p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name of tokamak</p>
-</dd>
-<dt><strong>params</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments provided to initialization</p>
-</dd>
-<dt><strong>divertor_coord</strong><span class="classifier">tuple of float</span></dt><dd><p>Contains bounds for divertor area. (x1, x2, y1, y2)</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_bd_mat</span></code>(grid[, loc])</p></td>
-<td><p>Simple generation of boundary matrix 1 inside rec area, 0 outside</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_weight_matrix</span></code>(grid[, diw, …])</p></td>
-<td><p>Computes weight matrix.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_data</span></code>(**kwargs)</p></td>
-<td><p>Downloads data from network/database using <cite>source</cite> method or database.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_mag_field</span></code>(shot[, tvec, source])</p></td>
-<td><p>Dowloads magnetic field data from network.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_data</span></code>([data_path, source, save, force_dl])</p></td>
-<td><p>Loads data from data storage specified by data_path or downloads data from network storage.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_mag_field</span></code>(shot, mag_path[, grid, …])</p></td>
-<td><p>Loads magnetic field from local storage or database and interpolates it if grid is provided.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_calb</span></code>()</p></td>
-<td><p>Loads preset calibrations for detectors, if not specified returns array of ones with length n_dets.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_chord_geometry</span></code>()</p></td>
-<td><p>Loads chord geometry from <cite>geometry_path</cite>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_chord_widening</span></code>()</p></td>
-<td><p>Tries to load widening coefficients from file.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_divertor_area</span></code>(grid[, boundary])</p></td>
-<td><p>Returns mask matrix with True for indexes representing pixels inside  predefined divertor area.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_divertor_chnls</span></code>(gmat, grid[, boundary])</p></td>
-<td><p>Finds channels of geometry matrix that have contributions in divertor area.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_pinholes</span></code>()</p></td>
-<td><p>Loads pinhole coordinates for each chord from <cite>pinholes.txt</cite> located in geometry folder.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpolate_mag_field</span></code>(magfield, grid[, tvec])</p></td>
-<td><p>Interpolates given magnetic field to provided grid using rectangular bivariate spline.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_border</span></code>([loc])</p></td>
-<td><p>Load border coordinates from geometry path or from tokamak module.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_boundary_coord</span></code>()</p></td>
-<td><p>Load border coordinates from geometry path or from tokamak module.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_data</span></code>(loc)</p></td>
-<td><p>Loads hdf file containing data.</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_los</span></code>([loc])</p></td>
-<td><p>Loads line of sights geometry from hdf file.</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_mag_field</span></code>(loc)</p></td>
-<td><p>Loads magnetic field from hdf file saved at loc</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_data</span></code>(loc, data)</p></td>
-<td><p>Saves downloaded detector data to data_path</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_mag_field</span></code>(loc, mag_field)</p></td>
-<td><p>Saves magnetic field into hdf file.</p></td>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>xchords, ychords</strong> : numpy.ndarray</p>
+<blockquote class="last">
+<div><p>arrays with coordinates of chord points with shape (#chords, #points)</p>
+</div></blockquote>
+</td>
 </tr>
 </tbody>
 </table>
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">compute_weight_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth_boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bdr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">get_chord_widening</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Tries to load widening coefficients from file. Returns None if IOError</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">array-like or None</p>
+<blockquote class="last">
+<div><p>Contains widening coefficients for each channel</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">get_pinholes</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Loads pinhole coordinates for each chord from <cite>pinholes.txt</cite> located
+in geometry folder.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ph</strong> : numpy.ndarray</p>
+<blockquote class="last">
+<div><p>matrix containing pinhole x,y coordinates with shape (#chords, 2)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">load_border</code><span class="sig-paren">(</span><em>loc=None</em><span class="sig-paren">)</span></dt>
+<dd><p>Load border coordinates from geometry path or from tokamak module.
+Sets boundary_coord attribute to loaded coords.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>loc</strong> : str or Path</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>contains (R, z) coordinates of vacuum vessel cross section, shape (#points, 2)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">load_boundary_coord</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Load border coordinates from geometry path or from tokamak module.
+Sets boundary_coord attribute to loaded coords.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>contains (R, z) coordinates of vacuum vessel cross section points, should have shape (#points, 2)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">load_data</code><span class="sig-paren">(</span><em>loc</em><span class="sig-paren">)</span></dt>
+<dd><p>Loads hdf file containing data.</p>
+<p>If loc is path to a directory, default data file name from property data_name is assumed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>loc</strong> : str or Path</p>
+<blockquote>
+<div><p>Path to file with signal data. Can be full path or path to folder if default name is used.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict</p>
+<blockquote class="last">
+<div><p>keys values, chnl, time</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">load_los</code><span class="sig-paren">(</span><em>loc=None</em><span class="sig-paren">)</span></dt>
+<dd><p>Loads line of sights geometry from hdf file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>loc</strong> : str or Path, optional</p>
+<blockquote>
+<div><p>location of los file, by default geometry path is used</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict</p>
+<blockquote class="last">
+<div><p>with coordinates of los start and end points with shape (2, #chords, 3)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><code class="descname">save_data</code><span class="sig-paren">(</span><em>loc</em>, <em>data</em><span class="sig-paren">)</span></dt>
+<dd><p>Saves downloaded detector data to data_path</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>loc</strong> : str or pathlib.Path</p>
+<blockquote>
+<div><p>saving path with file name</p>
+</div></blockquote>
+<p><strong>data</strong> : dict</p>
+<blockquote class="last">
+<div><p>contains signal values, channel numbers and time stamps</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="tokamak">
+<h2>5.2.2. Tokamak<a class="headerlink" href="#tokamak" title="Permalink to this headline">¶</a></h2>
+<p>Adds methods for handling magnetics data in format typical for tokamak equilibrium.</p>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">tomotok.core.io.</code><code class="descname">Tokamak</code><span class="sig-paren">(</span><em>shot</em>, <em>**kwargs</em><span class="sig-paren">)</span></dt>
+<dd><p>Bases: <a class="reference internal" href="../api/tomotok.core.io.html#tomotok.core.io.diag.Dsystem" title="tomotok.core.io.diag.Dsystem"><code class="xref py py-class docutils literal"><span class="pre">tomotok.core.io.diag.Dsystem</span></code></a></p>
+<p>Handles magnetic field and divertor</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>name</td>
+<td>(str) Name of tokamak</td>
+</tr>
+<tr class="row-even"><td>params</td>
+<td>(dict) Keyword arguments provided to initialization</td>
+</tr>
+<tr class="row-odd"><td>divertor_coord</td>
+<td>(tuple of float) Contains bounds for divertor area. (x1, x2, y1, y2)</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="method">
+<dt>
+<code class="descname">compute_weight_matrix</code><span class="sig-paren">(</span><em>grid</em>, <em>diw=0.4</em>, <em>smooth_boundary=None</em>, <em>bdr=None</em><span class="sig-paren">)</span></dt>
 <dd><p>Computes weight matrix. Supports different weight for pixels located in divertor area or those that are
 outside vacuum vessel.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>grid</strong><span class="classifier">RegularGrid</span></dt><dd></dd>
-<dt><strong>diw</strong><span class="classifier">float, optional</span></dt><dd><p>Specifies divertor pixels’ weight. Default value for divertor is 0.4 and standard weight of pixel is 1.
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
+<p><strong>diw</strong> : float, optional</p>
+<blockquote>
+<div><p>Specifies divertor pixels’ weight. Default value for divertor is 0.4 and standard weight of pixel is 1.
 If standard weight is used, the divertor area will not have any preference.</p>
-</dd>
-<dt><strong>smooth_boundary</strong><span class="classifier">float, optional</span></dt><dd><p>Specifies weight for pixels outside of vacuum vessel, that is used for smoothing the boundary.
+</div></blockquote>
+<p><strong>smooth_boundary</strong> : float, optional</p>
+<blockquote>
+<div><p>Specifies weight for pixels outside of vacuum vessel, that is used for smoothing the boundary.
 Vacuum vessel coordinates are defined by bdr parameter. Recommended value is 0.1</p>
-</dd>
-<dt><strong>bdr</strong><span class="classifier">tuple of numpy.ndarray</span></dt><dd><p>Contains coordinates of vacuum vessel border. Must be provided if smooth_boundary is requested.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray dtype float64</dt><dd><p>matrix with pixel weights with same shape as grid (#y pixels, #x pixels)</p>
-</dd>
-</dl>
-</dd>
-</dl>
+</div></blockquote>
+<p><strong>bdr</strong> : tuple of numpy.ndarray</p>
+<blockquote>
+<div><p>Contains coordinates of vacuum vessel border. Must be provided if smooth_boundary is requested.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray dtype float64</p>
+<blockquote class="last">
+<div><p>matrix with pixel weights with same shape as grid (#y pixels, #x pixels)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">download_mag_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tvec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">download_mag_field</code><span class="sig-paren">(</span><em>shot</em>, <em>tvec=None</em>, <em>source=None</em><span class="sig-paren">)</span></dt>
 <dd><p>Dowloads magnetic field data from network.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>shot</strong><span class="classifier">int</span></dt><dd></dd>
-<dt><strong>tvec</strong><span class="classifier">list-like, optional</span></dt><dd><p>specifies timeslices to be loaded</p>
-</dd>
-<dt><strong>source</strong><span class="classifier">string, optional</span></dt><dd><p>specifies source for loading magnetics data</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>dict</dt><dd><p>Psi normalized stored in dict with keys (values, time, z, r)</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>shot</strong> : int</p>
+<p><strong>tvec</strong> : list-like, optional</p>
+<blockquote>
+<div><p>specifies timeslices to be loaded</p>
+</div></blockquote>
+<p><strong>source</strong> : string, optional</p>
+<blockquote>
+<div><p>specifies source for loading magnetics data</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict</p>
+<blockquote class="last">
+<div><p>Psi normalized stored in dict with keys (values, time, z, r)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">fetch_mag_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tvec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_dl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">fetch_mag_field</code><span class="sig-paren">(</span><em>shot</em>, <em>mag_path</em>, <em>grid=None</em>, <em>tvec=None</em>, <em>save=False</em>, <em>force_dl=False</em><span class="sig-paren">)</span></dt>
 <dd><p>Loads magnetic field from local storage or database and interpolates it if grid is provided.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>shot</strong><span class="classifier">int</span></dt><dd></dd>
-<dt><strong>mag_path</strong><span class="classifier">str or Path</span></dt><dd></dd>
-<dt><strong>grid</strong><span class="classifier">RegularGrid, optional</span></dt><dd><p>Returned values are interpolated to this grid if provided.</p>
-</dd>
-<dt><strong>tvec</strong><span class="classifier">numpy.ndarray, optional</span></dt><dd><p>Time vector  of requested  magnetic field for download</p>
-</dd>
-<dt><strong>save</strong><span class="classifier">bool, optional</span></dt><dd></dd>
-<dt><strong>force_dl</strong><span class="classifier">bool, optional</span></dt><dd><p>forces download from remote database</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>shot</strong> : int</p>
+<p><strong>mag_path</strong> : str or Path</p>
+<p><strong>grid</strong> : RegularGrid, optional</p>
+<blockquote>
+<div><p>Returned values are interpolated to this grid if provided.</p>
+</div></blockquote>
+<p><strong>tvec</strong> : numpy.ndarray, optional</p>
+<blockquote>
+<div><p>Time vector  of requested  magnetic field for download</p>
+</div></blockquote>
+<p><strong>save</strong> : bool, optional</p>
+<p><strong>force_dl</strong> : bool, optional</p>
+<blockquote class="last">
+<div><p>forces download from remote database</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_divertor_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">get_divertor_area</code><span class="sig-paren">(</span><em>grid</em>, <em>boundary=None</em><span class="sig-paren">)</span></dt>
 <dd><p>Returns mask matrix with True for indexes representing pixels inside 
-predefined divertor area. Size and shape is obtained from <code class="xref py py-attr docutils literal notranslate"><span class="pre">grid</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>grid</strong><span class="classifier">RegularGrid</span></dt><dd></dd>
-<dt><strong>boundary</strong><span class="classifier">numpy.ndarray, optional</span></dt><dd><p>Boundary matrix with same shape as grid</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>Bool mask matrix for determining divertor pixels with shape ny, nx</p>
-</dd>
-</dl>
-</dd>
-</dl>
+predefined divertor area. Size and shape is obtained from <code class="xref py py-attr docutils literal"><span class="pre">grid</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
+<p><strong>boundary</strong> : numpy.ndarray, optional</p>
+<blockquote>
+<div><p>Boundary matrix with same shape as grid</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>Bool mask matrix for determining divertor pixels with shape ny, nx</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">get_divertor_chnls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">get_divertor_chnls</code><span class="sig-paren">(</span><em>gmat</em>, <em>grid</em>, <em>boundary=None</em><span class="sig-paren">)</span></dt>
 <dd><p>Finds channels of geometry matrix that have contributions in divertor area.
 Uses dot product of geometry and divertor area matrices.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>gmat</strong><span class="classifier">csr_matrix</span></dt><dd></dd>
-<dt><strong>grid</strong><span class="classifier">RegularGrid</span></dt><dd></dd>
-<dt><strong>boundary</strong><span class="classifier">numpy.ndarray, optional</span></dt><dd><p>Boundary matrix with same shape as grid</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>mask</strong><span class="classifier">numpy.ndarray of bool</span></dt><dd><p>mask array with True on channels interfering with predefined divertor area</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>gmat</strong> : csr_matrix</p>
+<p><strong>grid</strong> : RegularGrid</p>
+<p><strong>boundary</strong> : numpy.ndarray, optional</p>
+<blockquote>
+<div><p>Boundary matrix with same shape as grid</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>mask</strong> : numpy.ndarray of bool</p>
+<blockquote class="last">
+<div><p>mask array with True on channels interfering with predefined divertor area</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">interpolate_mag_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">magfield</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tvec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><code class="descname">interpolate_mag_field</code><span class="sig-paren">(</span><em>magfield</em>, <em>grid</em>, <em>tvec=None</em><span class="sig-paren">)</span></dt>
 <dd><p>Interpolates given magnetic field to provided grid using rectangular bivariate spline.</p>
 <p>If tvec is provided, only one nearest time slice of magnetic field is interpolated for each value in tvec.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>magfield</strong><span class="classifier">dict</span></dt><dd></dd>
-<dt><strong>grid</strong><span class="classifier">RegularGrid</span></dt><dd></dd>
-<dt><strong>tvec</strong><span class="classifier">int, float, list, tuple, np.ndarray, optional</span></dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>dict</dt><dd></dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>magfield</strong> : dict</p>
+<p><strong>grid</strong> : RegularGrid</p>
+<p><strong>tvec</strong> : int, float, list, tuple, np.ndarray, optional</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">load_mag_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">load_mag_field</code><span class="sig-paren">(</span><em>loc</em><span class="sig-paren">)</span></dt>
 <dd><p>Loads magnetic field from hdf file saved at loc</p>
 <p>If loc is path to a directory, default data file name from property mag_name is assumed.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>loc</strong><span class="classifier">str or Path</span></dt><dd><p>location of hdf file containing magnetic field</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>dict</dt><dd><p>Psi normalized stored in dict with keys (values, time, z, R)</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>loc</strong> : str or Path</p>
+<blockquote>
+<div><p>location of hdf file containing magnetic field</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">dict</p>
+<blockquote class="last">
+<div><p>Psi normalized stored in dict with keys (values, time, z, R)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">save_mag_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag_field</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="staticmethod">
+<dt>
+<em class="property">static </em><code class="descname">save_mag_field</code><span class="sig-paren">(</span><em>loc</em>, <em>mag_field</em><span class="sig-paren">)</span></dt>
 <dd><p>Saves magnetic field into hdf file.</p>
 <p>Expects to have name included to mag_loc if magname is omitted.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>loc</strong><span class="classifier">str or pathlib.Path</span></dt><dd><p>Path to file</p>
-</dd>
-<dt><strong>mag_field</strong><span class="classifier">dict, optional</span></dt><dd><p>DataArray with magnetic field</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>loc</strong> : str or pathlib.Path</p>
+<blockquote>
+<div><p>Path to file</p>
+</div></blockquote>
+<p><strong>mag_field</strong> : dict, optional</p>
+<blockquote class="last">
+<div><p>DataArray with magnetic field</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="derivative.html" class="btn btn-neutral float-right" title="5.3. Derivative matrix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="geometry.html" class="btn btn-neutral" title="5.1. Geometry" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Institute of Plasma Physics of CAS.</p>
-  </div>
+    <p>
+        &copy; Copyright 2021, Institute of Plasma Physics of CAS.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.StickyNav.enable();
       });
-  </script> 
+  </script>
+   
 
 </body>
 </html>

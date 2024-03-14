@@ -1,35 +1,78 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Geometry &mdash; tomotok 1.2.2 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.1. Geometry &mdash; tomotok 1.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="tomotok 1.3 documentation" href="../index.html"/>
+        <link rel="up" title="5. Auxiliary functions" href="auxilia.html"/>
+        <link rel="next" title="5.2. Database access (IO)" href="io.html"/>
+        <link rel="prev" title="5. Auxiliary functions" href="auxilia.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav" role="document">
+
+   
   <div class="wy-grid-for-nav">
+
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
+          
+
+          
             <a href="../index.html" class="icon icon-home"> tomotok
+          
+
+          
           </a>
+
+          
+            
+            
               <div class="version">
-                1.2.2
+                1.3
               </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -37,376 +80,610 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../welcome.html">1. Welcome</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../licence.html">2. Licence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../inversions/inversions.html">4. Inversions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="auxilia.html">5. Auxiliary functions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="auxilia.html">5. Auxiliary functions</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.1. Geometry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#geometry-matrix">5.1.1. Geometry matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reconstruction-grids">5.1.2. Reconstruction grids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lines-of-sight">5.1.3. Lines of sight</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="io.html">5.2. Database access (IO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="derivative.html">5.3. Derivative matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phantoms.html">5.4. Phantoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html">5.5. Tools</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../gui/gui.html">6. Graphical User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">7. Glossary</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Api Doc</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.core.html">tomotok.core package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">tomotok.gui package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.core.html">1. tomotok.core package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">2. tomotok.gui package</a></li>
 </ul>
 
+            
+          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">tomotok</a>
+        
       </nav>
 
+
+      
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Geometry</li>
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="auxilia.html">5. Auxiliary functions</a> &raquo;</li>
+        
+      <li>5.1. Geometry</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+            
             <a href="../_sources/auxilia/geometry.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="geometry">
-<h1>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline"></a></h1>
-<p>takes care of creating artificial geometry and computation of geometry (sensitivity/contribution) matrices with single line of sight approximation.</p>
-<section id="geometry-matrix">
-<h2>Geometry matrix<a class="headerlink" href="#geometry-matrix" title="Permalink to this headline"></a></h2>
+            
+  <div class="section" id="geometry">
+<h1>5.1. Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h1>
+<p>Handles geometry of the inversion task. This includes definition of reconstruction grid, creating artificial geometry and computation of geometry (sensitivity/contribution) matrices. Currently only algorithms using single line of sight approximation are implemented.</p>
+<div class="section" id="geometry-matrix">
+<h2>5.1.1. Geometry matrix<a class="headerlink" href="#geometry-matrix" title="Permalink to this headline">¶</a></h2>
 <p>Module with numeric generators of geometry matrix.</p>
-<dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">tomotok.core.geometry.generators.</span></span><span class="sig-name descname"><span class="pre">calcam_sparse_line_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pupil</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elong</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.geometry.generators.</code><code class="descname">calcam_sparse_line_3d</code><span class="sig-paren">(</span><em>pupil</em>, <em>dirs</em>, <em>grid</em>, <em>step=0.001</em>, <em>rmin=None</em>, <em>elong=1.0</em>, <em>steps=None</em><span class="sig-paren">)</span></dt>
 <dd><p>Computes geometry matrix from calcam input using sparse_line_3d algorithm.</p>
 <p>Assumes that pupil and dirs coordinates are (x, y, z) = (horizontal, horizontal, vertical)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>pupil</strong><span class="classifier">np.ndarray</span></dt><dd><p>(x, y, z) coordinates of pupil position</p>
-</dd>
-<dt><strong>dirs</strong><span class="classifier">np.ndarray</span></dt><dd><p>(#rows, #columns, 3) line of sight direction vector coordinates</p>
-</dd>
-<dt><strong>grid</strong><span class="classifier">tomotok.core.geometry.RegularGrid</span></dt><dd><p>reconstruction grid</p>
-</dd>
-<dt><strong>step</strong><span class="classifier">float, optional</span></dt><dd><p>Integration step in meters.</p>
-</dd>
-<dt><strong>rmin</strong><span class="classifier">float, optional</span></dt><dd><p>cut lines of sight if they intersect cylinder with radius of rmin, by default 0.3</p>
-</dd>
-<dt><strong>elong</strong><span class="classifier">float, optional</span></dt><dd><p>multiplier for direction vectors elongation</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>sparse.csr_matrix</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">tomotok.core.geometry.generators.</span></span><span class="sig-name descname"><span class="pre">sparse_line_3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rchord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vchord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ychord</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Computes geometry matrix using simple numerical integration algorithm.</p>
-<p>Assumes toroidally symmetric reconstruction nodes. 
-Optimized version working with sparse matrices.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>rchord</strong><span class="classifier">array-like</span></dt><dd><p>radial coordinates of chord start and end points</p>
-</dd>
-<dt><strong>vchord</strong><span class="classifier">array-like</span></dt><dd><p>vertical coordinates of chord start and end points</p>
-</dd>
-<dt><strong>grid</strong><span class="classifier">RegularGrid</span></dt><dd></dd>
-<dt><strong>ychord</strong><span class="classifier">array_like, optional</span></dt><dd><p>if specified, 3D Cartesian coordinates are assumed and rchord represents coordinates of x axis</p>
-</dd>
-<dt><strong>step</strong><span class="classifier">float, optional</span></dt><dd><p>Integration step in meters.</p>
-</dd>
-<dt><strong>rmin</strong><span class="classifier">float, optional</span></dt><dd><p>Stop iteration if r is lower. Useful when chords may go through central column.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>sparse.csr_matrix</dt><dd></dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-<section id="reconstruction-grid">
-<h2>Reconstruction grid<a class="headerlink" href="#reconstruction-grid" title="Permalink to this headline"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tomotok.core.geometry.</span></span><span class="sig-name descname"><span class="pre">RegularGrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nr</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nz</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rlims</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zlims</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Rectangular grid of regularly spaced rectangles of same size</p>
-<p>Describes rectangular reconstruction grid consisting of regularly spaced toroidally symmetric nodes
-that have rectangular projection to reconstruction plane.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>nr</strong><span class="classifier">int</span></dt><dd><p>number of nodes along r (radial) axis</p>
-</dd>
-<dt><strong>nz</strong><span class="classifier">int</span></dt><dd><p>number of nodes along z (vertical) axis</p>
-</dd>
-<dt><strong>nodes_num</strong><span class="classifier">int</span></dt><dd><p>total number of nodes</p>
-</dd>
-<dt><strong>rmin, rmax</strong><span class="classifier">float</span></dt><dd><p>limits of r axis</p>
-</dd>
-<dt><strong>zmin, zmax</strong><span class="classifier">float</span></dt><dd><p>limits of z axis</p>
-</dd>
-<dt><strong>rlims, zlims</strong><span class="classifier">Tuple[float, float]</span></dt><dd><p>grid limits along respective axis</p>
-</dd>
-<dt><strong>dr, dz</strong><span class="classifier">float</span></dt><dd><p>dimension of node in r or z axis</p>
-</dd>
-<dt><strong>r_border, z_border</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>arrays containing r resp. z coordinates of node borders</p>
-</dd>
-<dt><strong>r_center, z_center</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>arrays containing r resp. z coordinates of node centers</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">nodevol</span></code><span class="classifier">numpy.ndarray</span></dt><dd><p>Volumes of individual nodes</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">corners</span></code>([mask])</p></td>
-<td><p>Creates an array with r, z coordinates of node corners.</p></td>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pupil</strong> : np.ndarray</p>
+<blockquote>
+<div><p>(x, y, z) coordinates of pupil position</p>
+</div></blockquote>
+<p><strong>dirs</strong> : np.ndarray</p>
+<blockquote>
+<div><p>(#rows, #columns, 3) line of sight direction vector coordinates</p>
+</div></blockquote>
+<p><strong>grid</strong> : tomotok.core.geometry.RegularGrid</p>
+<blockquote>
+<div><p>reconstruction grid</p>
+</div></blockquote>
+<p><strong>step</strong> : float, optional</p>
+<blockquote>
+<div><p>Integration step in meters.</p>
+</div></blockquote>
+<p><strong>rmin</strong> : float, optional</p>
+<blockquote>
+<div><p>cut lines of sight if they intersect cylinder with radius of rmin, by default 0.3</p>
+</div></blockquote>
+<p><strong>elong</strong> : float, optional</p>
+<blockquote>
+<div><p>multiplier for direction vectors elongation</p>
+</div></blockquote>
+</td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_inside</span></code>(r, z)</p></td>
-<td><p>Determines whether node centers are inside given polygon.</p></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">sparse.csr_matrix</p>
+</td>
 </tr>
 </tbody>
 </table>
-<dl class="py property">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">centre</span></span><em class="property"><span class="pre">:</span> <span class="pre">Tuple[float,</span> <span class="pre">float]</span></em></dt>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.geometry.generators.</code><code class="descname">sparse_line</code><span class="sig-paren">(</span><em>starts</em>, <em>ends</em>, <em>grid</em>, <em>step=0.001</em>, <em>rmin=-1</em><span class="sig-paren">)</span></dt>
+<dd><p>Computes geometry matrix using simple numerical integration algorithm.</p>
+<p>Uses lines of sight start and end points in 3D Cartesian coordinates as input.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>starts, ends</strong> : ndarray</p>
+<blockquote>
+<div><p>Contains lines of sight start/end points, with shape (…, 3)</p>
+</div></blockquote>
+<p><strong>grid</strong> : RegularGrid</p>
+<blockquote>
+<div><p>Reconstruction grid</p>
+</div></blockquote>
+<p><strong>step</strong> : float, optional</p>
+<blockquote>
+<div><p>Integration step, by default 1e-3</p>
+</div></blockquote>
+<p><strong>rmin</strong> : int, optional</p>
+<blockquote>
+<div><p>Stops the lines of sight if they intersect cylinder with radius of rmin, by default -1</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">sparse.csr_matrix</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.geometry.generators.</code><code class="descname">sparse_line_3d</code><span class="sig-paren">(</span><em>rchord</em>, <em>vchord</em>, <em>grid</em>, <em>ychord=None</em>, <em>step=0.001</em>, <em>rmin=None</em><span class="sig-paren">)</span></dt>
+<dd><p>Computes geometry matrix using simple numerical integration algorithm.</p>
+<p>Assumes toroidally symmetric reconstruction nodes. 
+Optimized version working with sparse matrices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>rchord</strong> : array-like</p>
+<blockquote>
+<div><p>radial coordinates of chord start and end points</p>
+</div></blockquote>
+<p><strong>vchord</strong> : array-like</p>
+<blockquote>
+<div><p>vertical coordinates of chord start and end points</p>
+</div></blockquote>
+<p><strong>grid</strong> : RegularGrid</p>
+<p><strong>ychord</strong> : array_like, optional</p>
+<blockquote>
+<div><p>if specified, 3D Cartesian coordinates are assumed and rchord represents coordinates of x axis</p>
+</div></blockquote>
+<p><strong>step</strong> : float, optional</p>
+<blockquote>
+<div><p>Integration step in meters.</p>
+</div></blockquote>
+<p><strong>rmin</strong> : float, optional</p>
+<blockquote>
+<div><p>Stop iteration if r is lower. Useful when chords may go through central column.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">sparse.csr_matrix</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="reconstruction-grids">
+<h2>5.1.2. Reconstruction grids<a class="headerlink" href="#reconstruction-grids" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">tomotok.core.geometry.</code><code class="descname">RegularGrid</code><span class="sig-paren">(</span><em>nr: int, nz: int, rlims: typing.Tuple[float, float], zlims: typing.Tuple[float, float]</em><span class="sig-paren">)</span> &#x2192; None</dt>
+<dd><p>Rectangular grid of regularly spaced rectangles of same size</p>
+<p>Describes rectangular reconstruction grid consisting of regularly spaced toroidally symmetric nodes
+that have rectangular projection to reconstruction plane.</p>
+<p class="rubric">Attributes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>nr</td>
+<td>(int) number of nodes along r (radial) axis</td>
+</tr>
+<tr class="row-even"><td>nz</td>
+<td>(int) number of nodes along z (vertical) axis</td>
+</tr>
+<tr class="row-odd"><td>nodes_num</td>
+<td>(int) total number of nodes</td>
+</tr>
+<tr class="row-even"><td>rmin, rmax</td>
+<td>(float) limits of r axis</td>
+</tr>
+<tr class="row-odd"><td>zmin, zmax</td>
+<td>(float) limits of z axis</td>
+</tr>
+<tr class="row-even"><td>rlims, zlims</td>
+<td>(Tuple[float, float]) grid limits along respective axis</td>
+</tr>
+<tr class="row-odd"><td>dr, dz</td>
+<td>(float) dimension of node in r or z axis</td>
+</tr>
+<tr class="row-even"><td>r_border, z_border</td>
+<td>(numpy.ndarray) arrays containing r resp. z coordinates of node borders</td>
+</tr>
+<tr class="row-odd"><td>r_center, z_center</td>
+<td>(numpy.ndarray) arrays containing r resp. z coordinates of node centers</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods</p>
+<dl class="attribute">
+<dt>
+<code class="descname">centre</code></dt>
 <dd><p>Returns the mean of rmin, rmax and zmin, zmax</p>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">corners</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span></dt>
+<dl class="method">
+<dt>
+<code class="descname">corners</code><span class="sig-paren">(</span><em>mask: numpy.ndarray = None</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray</dt>
 <dd><p>Creates an array with r, z coordinates of node corners.</p>
 <p>Corners are in clockwise order starting with top left corner.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>mask</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>2D bool matrix for selecting nodes, shape (#z, #r)</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>corner coordinates for each node in reconstruction plane, shape (#z, #r, 4, 2)</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>mask</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>2D bool matrix for selecting nodes, shape (#z, #r)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>corner coordinates for each node in reconstruction plane, shape (#z, #r, 4, 2)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">extent</span></span><em class="property"><span class="pre">:</span> <span class="pre">Tuple[float,</span> <span class="pre">float,</span> <span class="pre">float,</span> <span class="pre">float]</span></em></dt>
+<dl class="attribute">
+<dt>
+<code class="descname">extent</code></dt>
 <dd><p>Grid extent in format for use in matplotlib</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>tuple of floats</dt><dd><p>rmin, rmax, zmin, zmax</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">tuple of floats</p>
+<blockquote class="last">
+<div><p>rmin, rmax, zmin, zmax</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py">
-<span class="sig-name descname"><span class="pre">is_inside</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">numpy.ndarray</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">numpy.ndarray</span></dt>
-<dd><p>Determines whether node centers are inside given polygon.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>r, z</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>Coordinate vectors of polygon</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>Mask matrix for pixgrid with True values for nodes inside polygon</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<dl class="method">
+<dt>
+<code class="descname">is_inside</code><span class="sig-paren">(</span><em>r: numpy.ndarray</em>, <em>z: numpy.ndarray</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray</dt>
+<dd><p>Selects nodes with centers inside given polygon.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>r, z</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Coordinate vectors of polygon</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>Mask matrix for pixgrid with True values for nodes inside polygon</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py property">
-<dt class="sig sig-object py">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">nodevol</span></span><em class="property"><span class="pre">:</span> <span class="pre">numpy.ndarray</span></em></dt>
+<dl class="method">
+<dt>
+<code class="descname">is_inside_any</code><span class="sig-paren">(</span><em>r: numpy.ndarray</em>, <em>z: numpy.ndarray</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray</dt>
+<dd><p>Selects nodes with at least one corner inside given polygon.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>r, z</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>Coordinate vectors of polygon</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>Mask matrix for pixgrid with True values for nodes inside polygon</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">nodevol</code></dt>
 <dd><p>Volumes of individual nodes</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>matrix with volume values for each node with shape (nz, nr)</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>matrix with volume values for each node with shape (nz, nr)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="lines-of-sight">
-<h2>Lines of sight<a class="headerlink" href="#lines-of-sight" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="lines-of-sight">
+<h2>5.1.3. Lines of sight<a class="headerlink" href="#lines-of-sight" title="Permalink to this headline">¶</a></h2>
 <p>Routines for generation of line of sight start and end points.</p>
 <p>Creates the lines of sights in x axis direction and then rotates them about the other horizontal axis, then about vertical axis.</p>
-<dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">tomotok.core.geometry.los.</span></span><span class="sig-name descname"><span class="pre">generate_directions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(10,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fov</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(45,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elong</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.geometry.los.</code><code class="descname">generate_directions</code><span class="sig-paren">(</span><em>num=(10</em>, <em>1)</em>, <em>fov=(45</em>, <em>0)</em>, <em>axis=(1</em>, <em>0</em>, <em>0)</em>, <em>elong=1.0</em><span class="sig-paren">)</span></dt>
 <dd><p>Creates direction vectors for lines of sight using camera like convention.</p>
 <p>The first line of sight is top left, then the numbering follows a row, the last one is bottom right.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>num</strong><span class="classifier">int or (int,int), optional</span></dt><dd><p>number of generated chords (vertical, horizontal)</p>
-</dd>
-<dt><strong>fov</strong><span class="classifier">float, or tuple of two float, optional</span></dt><dd><p>vertical or (vertical, horizontal) field of view in degrees</p>
-</dd>
-<dt><strong>axis</strong><span class="classifier">tuple of three floats, optional</span></dt><dd><p>direction of symmetry axis</p>
-</dd>
-<dt><strong>elong</strong><span class="classifier">float, optional</span></dt><dd><p>vector length multiplier</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>dirs</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>contains direction vectors cartesian coordinates, shape (#los, 3)</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>num</strong> : int or (int,int), optional</p>
+<blockquote>
+<div><p>number of generated chords (vertical, horizontal)</p>
+</div></blockquote>
+<p><strong>fov</strong> : float, or tuple of two float, optional</p>
+<blockquote>
+<div><p>vertical or (vertical, horizontal) field of view in degrees</p>
+</div></blockquote>
+<p><strong>axis</strong> : tuple of three floats, optional</p>
+<blockquote>
+<div><p>direction of symmetry axis</p>
+</div></blockquote>
+<p><strong>elong</strong> : float, optional</p>
+<blockquote>
+<div><p>vector length multiplier</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>dirs</strong> : numpy.ndarray</p>
+<blockquote class="last">
+<div><p>contains direction vectors cartesian coordinates, shape (#los, 3)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">tomotok.core.geometry.los.</span></span><span class="sig-name descname"><span class="pre">generate_los</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pinhole</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(10,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fov</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(45,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elong</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.geometry.los.</code><code class="descname">generate_los</code><span class="sig-paren">(</span><em>pinhole=(0</em>, <em>0</em>, <em>0)</em>, <em>num=(10</em>, <em>1)</em>, <em>fov=(45</em>, <em>0)</em>, <em>axis=(1</em>, <em>0</em>, <em>0)</em>, <em>elong=1.0</em><span class="sig-paren">)</span></dt>
 <dd><p>Creates line of sight endpoints with uniform distribution.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>num</strong><span class="classifier">int or (int,int), optional</span></dt><dd><p>number of generated chords (vertical, horizontal)</p>
-</dd>
-<dt><strong>pinhole</strong><span class="classifier">tuple of three floats, optional</span></dt><dd><p>r and z coordinates of pinhole</p>
-</dd>
-<dt><strong>fov</strong><span class="classifier">float, or tuple of two float, optional</span></dt><dd><p>vertical and horizontal field of view in degrees</p>
-</dd>
-<dt><strong>axis</strong><span class="classifier">tuple of three floats, optional</span></dt><dd><p>direction of chordal axis</p>
-</dd>
-<dt><strong>elong</strong><span class="classifier">float, optional</span></dt><dd><p>chord length multiplier</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>start</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>array with line of sight start points coordinates, shape (#los, 3)</p>
-</dd>
-<dt><strong>end</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>array with line of sight end points coordinates, shape (#los, 3)</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>num</strong> : int or (int,int), optional</p>
+<blockquote>
+<div><p>number of generated chords (vertical, horizontal)</p>
+</div></blockquote>
+<p><strong>pinhole</strong> : tuple of three floats, optional</p>
+<blockquote>
+<div><p>r and z coordinates of pinhole</p>
+</div></blockquote>
+<p><strong>fov</strong> : float, or tuple of two float, optional</p>
+<blockquote>
+<div><p>vertical and horizontal field of view in degrees</p>
+</div></blockquote>
+<p><strong>axis</strong> : tuple of three floats, optional</p>
+<blockquote>
+<div><p>direction of chordal axis</p>
+</div></blockquote>
+<p><strong>elong</strong> : float, optional</p>
+<blockquote>
+<div><p>chord length multiplier</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>start</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>array with line of sight start points coordinates, shape (#los, 3)</p>
+</div></blockquote>
+<p><strong>end</strong> : numpy.ndarray</p>
+<blockquote class="last">
+<div><p>array with line of sight end points coordinates, shape (#los, 3)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">tomotok.core.geometry.los.</span></span><span class="sig-name descname"><span class="pre">rot_h</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.geometry.los.</code><code class="descname">rot_h</code><span class="sig-paren">(</span><em>points</em>, <em>angle</em><span class="sig-paren">)</span></dt>
 <dd><p>Rotates given points in horizontal direction, that is about vertical axis z.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>points</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>3D coordinates of points to be rotated with shape (#points, 3)</p>
-</dd>
-<dt><strong>angle</strong><span class="classifier">float</span></dt><dd><p>angle of rotation in radians</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>array of rotated points</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>points</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>3D coordinates of points to be rotated with shape (#points, 3)</p>
+</div></blockquote>
+<p><strong>angle</strong> : float</p>
+<blockquote>
+<div><p>angle of rotation in radians</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>array of rotated points</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">tomotok.core.geometry.los.</span></span><span class="sig-name descname"><span class="pre">rot_v</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angle</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.geometry.los.</code><code class="descname">rot_v</code><span class="sig-paren">(</span><em>points</em>, <em>angle</em><span class="sig-paren">)</span></dt>
 <dd><p>Rotates given points in vertical direction, that is about horizontal y axis perpendicular to r/x.</p>
 <p>Should be done before horizontal rotation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>points</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>3D coordinates of points to be rotated with shape (#points, 3)</p>
-</dd>
-<dt><strong>angle</strong><span class="classifier">float</span></dt><dd><p>angle of rotation in radians</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>array of rotated points</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>points</strong> : numpy.ndarray</p>
+<blockquote>
+<div><p>3D coordinates of points to be rotated with shape (#points, 3)</p>
+</div></blockquote>
+<p><strong>angle</strong> : float</p>
+<blockquote>
+<div><p>angle of rotation in radians</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>array of rotated points</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="io.html" class="btn btn-neutral float-right" title="5.2. Database access (IO)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="auxilia.html" class="btn btn-neutral" title="5. Auxiliary functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Institute of Plasma Physics of CAS.</p>
-  </div>
+    <p>
+        &copy; Copyright 2021, Institute of Plasma Physics of CAS.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.StickyNav.enable();
       });
-  </script> 
+  </script>
+   
 
 </body>
 </html>

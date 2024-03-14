@@ -1,35 +1,78 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tools &mdash; tomotok 1.2.2 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5.5. Tools &mdash; tomotok 1.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="tomotok 1.3 documentation" href="../index.html"/>
+        <link rel="up" title="5. Auxiliary functions" href="auxilia.html"/>
+        <link rel="next" title="6. Graphical User Interface" href="../gui/gui.html"/>
+        <link rel="prev" title="5.4. Phantoms" href="phantoms.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav" role="document">
+
+   
   <div class="wy-grid-for-nav">
+
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
+          
+
+          
             <a href="../index.html" class="icon icon-home"> tomotok
+          
+
+          
           </a>
+
+          
+            
+            
               <div class="version">
-                1.2.2
+                1.3
               </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -37,125 +80,282 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../welcome.html">1. Welcome</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../licence.html">2. Licence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../inversions/inversions.html">4. Inversions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="auxilia.html">5. Auxiliary functions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="auxilia.html">5. Auxiliary functions</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="geometry.html">5.1. Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html">5.2. Database access (IO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="derivative.html">5.3. Derivative matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phantoms.html">5.4. Phantoms</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.5. Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hdf-interface">5.5.1. HDF interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-processing">5.5.2. Post Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#projection-space">5.5.3. Projection space</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../gui/gui.html">6. Graphical User Interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">7. Glossary</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Api Doc</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.core.html">tomotok.core package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">tomotok.gui package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.core.html">1. tomotok.core package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/tomotok.gui.html">2. tomotok.gui package</a></li>
 </ul>
 
+            
+          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">tomotok</a>
+        
       </nav>
 
+
+      
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Tools</li>
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="auxilia.html">5. Auxiliary functions</a> &raquo;</li>
+        
+      <li>5.5. Tools</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+            
             <a href="../_sources/auxilia/tools.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
-  <section id="tools">
-<h1>Tools<a class="headerlink" href="#tools" title="Permalink to this headline"></a></h1>
-<p>Simple functions complementing the core functionalities. Includes post processing and visualisations.</p>
-<section id="post-processing">
-<h2>Post Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline"></a></h2>
+            
+  <div class="section" id="tools">
+<h1>5.5. Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h1>
+<p>Utilities complementing the core functionalities. Includes post-processing and visualizations.</p>
+<div class="section" id="hdf-interface">
+<h2>5.5.1. HDF interface<a class="headerlink" href="#hdf-interface" title="Permalink to this headline">¶</a></h2>
+<p>Handles saving and loading of sparse matrices to/from HDF files.</p>
+<dl class="docutils">
+<dt>Currently supported formats:</dt>
+<dd><ul class="first last simple">
+<li>scipy.sparse.csc_matrix</li>
+<li>scipy.sparse.csr_matrix</li>
+<li>scipy.sparse.dia_matrix</li>
+</ul>
+</dd>
+</dl>
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.tools.hdf.</code><code class="descname">cs_to_hdf</code><span class="sig-paren">(</span><em>matrix: typing.Union[scipy.sparse.csc.csc_matrix, scipy.sparse.csr.csr_matrix], group: h5py._hl.group.Group</em><span class="sig-paren">)</span></dt>
+<dd><p>Saves compressed sparse matrix to hdf group.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.tools.hdf.</code><code class="descname">dia_to_hdf</code><span class="sig-paren">(</span><em>matrix: scipy.sparse.dia.dia_matrix</em>, <em>group: h5py._hl.group.Group</em><span class="sig-paren">)</span></dt>
+<dd><p>Saves dia matrix to hdf group.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.tools.hdf.</code><code class="descname">hdf_to_cs</code><span class="sig-paren">(</span><em>group: h5py._hl.group.Group</em><span class="sig-paren">)</span> &#x2192; typing.Union[scipy.sparse.csc.csc_matrix, scipy.sparse.csr.csr_matrix]</dt>
+<dd><p>Loads compressed sparse matrix from hdf group.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.tools.hdf.</code><code class="descname">hdf_to_dia</code><span class="sig-paren">(</span><em>group: h5py._hl.group.Group</em><span class="sig-paren">)</span> &#x2192; scipy.sparse.dia.dia_matrix</dt>
+<dd><p>Loads dia matrix from hdf group.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.tools.hdf.</code><code class="descname">hdf_to_sparse</code><span class="sig-paren">(</span><em>group: h5py._hl.group.Group</em><span class="sig-paren">)</span> &#x2192; scipy.sparse.base.spmatrix</dt>
+<dd><p>Loads scipy.sparse matrix of formats (csc, csr, dia) from hdf file group.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.tools.hdf.</code><code class="descname">sparse_to_hdf</code><span class="sig-paren">(</span><em>matrix: typing.Union[scipy.sparse.dia.dia_matrix, scipy.sparse.csc.csc_matrix, scipy.sparse.csr.csr_matrix], group: h5py._hl.group.Group</em><span class="sig-paren">)</span></dt>
+<dd><p>Saves scipy.sparse matrix of formats (csc, csr, dia) into hdf file group.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="post-processing">
+<h2>5.5.2. Post Processing<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h2>
 <p>Processing of tomography results. Planned to be expanded. Currently only power computation implemented.</p>
-<dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">tomotok.core.tools.postproc.</span></span><span class="sig-name descname"><span class="pre">compute_power</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">recs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.tools.postproc.</code><code class="descname">compute_power</code><span class="sig-paren">(</span><em>recs</em>, <em>grid</em><span class="sig-paren">)</span></dt>
 <dd><p>Computes total radiated power from whole reconstruction area.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>grid</strong><span class="classifier">RegularGrid</span></dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt>numpy.ndarray</dt><dd><p>Contains values of total radiated power for all time slices</p>
-</dd>
-</dl>
-</dd>
-</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>grid</strong> : RegularGrid</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">numpy.ndarray</p>
+<blockquote class="last">
+<div><p>Contains values of total radiated power for all time slices</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-</section>
-<section id="projection-space">
-<h2>Projection space<a class="headerlink" href="#projection-space" title="Permalink to this headline"></a></h2>
-<p>Transforms lines of sights into projections space parametrisation.</p>
-<dl class="py function">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">tomotok.core.tools.projection.</span></span><span class="sig-name descname"><span class="pre">projection_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centre</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magnetics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maglvl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>chords</strong><span class="classifier">tuple</span></dt><dd></dd>
-<dt><strong>centre</strong><span class="classifier">tuple of float</span></dt><dd></dd>
-<dt><strong>magnetics</strong><span class="classifier">dict</span></dt><dd></dd>
-<dt><strong>maglvl</strong><span class="classifier">float, list of float</span></dt><dd></dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>fig</strong><span class="classifier">matplotlib.figure</span></dt><dd></dd>
-</dl>
-</dd>
-</dl>
+</div>
+<div class="section" id="projection-space">
+<h2>5.5.3. Projection space<a class="headerlink" href="#projection-space" title="Permalink to this headline">¶</a></h2>
+<p>Transforms lines of sights into projections space parametrization.</p>
+<dl class="function">
+<dt>
+<code class="descclassname">tomotok.core.tools.projection.</code><code class="descname">projection_space</code><span class="sig-paren">(</span><em>chords</em>, <em>centre=(0</em>, <em>0)</em>, <em>magnetics=None</em>, <em>maglvl=1</em><span class="sig-paren">)</span></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>chords</strong> : tuple</p>
+<p><strong>centre</strong> : tuple of float</p>
+<p><strong>magnetics</strong> : dict</p>
+<p><strong>maglvl</strong> : float, list of float</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>fig</strong> : matplotlib.figure</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../gui/gui.html" class="btn btn-neutral float-right" title="6. Graphical User Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="phantoms.html" class="btn btn-neutral" title="5.4. Phantoms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, Institute of Plasma Physics of CAS.</p>
-  </div>
+    <p>
+        &copy; Copyright 2021, Institute of Plasma Physics of CAS.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
+
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.StickyNav.enable();
       });
-  </script> 
+  </script>
+   
 
 </body>
 </html>
